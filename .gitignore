@@ -1,50 +1,10 @@
-# ============================================
-# Rural Healthcare Accessibility Index (RHAI)
-# .gitignore — set up BEFORE first commit
-# ============================================
-
-# --- Large rasters (re-downloadable — never commit) ---
-*.tif
-*.tif.aux.xml
-*.img
-*.vrt
-
-# --- Large raw source data (document source in README instead) ---
-*.osm.pbf
-*.osm
-pakistan-latest*
-*-latest-free.shp*
-
-# --- Python ---
-venv/
-.venv/
-env/
-__pycache__/
-*.pyc
-*.pyo
-.ipynb_checkpoints/
-
-# --- QGIS sidecar / temp ---
-*.qmd
-*.gpkg-shm
-*.gpkg-wal
-
-# --- staging / scratch ---
-gee_upload/
-scratch/
-tmp/
-
-# --- editor / OS junk ---
-.vscode/
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# --- secrets / keys (NEVER commit) ---
-.env
-*.key
-credentials*.json
-
-# --- NOTE: small .gpkg outputs (<50MB) ARE committed on purpose.
-#     Comment the next lines out only if a specific one gets too big.
-# *.gpkg
+$rules = @(
+  "venv/","__pycache__/","*.pyc",
+  "*.tif","*.tif.aux.xml","*.img","*.vrt",
+  "*.osm.pbf","*.osm","pakistan-latest*","*-latest-free.shp*",
+  "*.qmd","*.gpkg-shm","*.gpkg-wal",
+  "gee_upload/","scratch/","tmp/","cache/","data/",
+  ".vscode/",".DS_Store","Thumbs.db","desktop.ini",
+  ".env","*.key","credentials*.json"
+)
+[System.IO.File]::WriteAllLines("C:\projects\rhai\.gitignore", $rules)
