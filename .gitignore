@@ -1,10 +1,26 @@
-$rules = @(
-  "venv/","__pycache__/","*.pyc",
-  "*.tif","*.tif.aux.xml","*.img","*.vrt",
-  "*.osm.pbf","*.osm","pakistan-latest*","*-latest-free.shp*",
-  "*.qmd","*.gpkg-shm","*.gpkg-wal",
-  "gee_upload/","scratch/","tmp/","cache/","data/",
-  ".vscode/",".DS_Store","Thumbs.db","desktop.ini",
-  ".env","*.key","credentials*.json"
-)
-[System.IO.File]::WriteAllLines("C:\projects\rhai\.gitignore", $rules)
+venv/
+__pycache__/
+*.pyc
+*.tif
+*.tif.aux.xml
+*.img
+*.vrt
+*.osm.pbf
+*.osm
+pakistan-latest*
+*-latest-free.shp*
+*.qmd
+*.gpkg-shm
+*.gpkg-wal
+gee_upload/
+scratch/
+tmp/
+cache/
+data/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
+*.key
+credentials*.json
