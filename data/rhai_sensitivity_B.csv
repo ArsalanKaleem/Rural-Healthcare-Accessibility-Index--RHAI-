@@ -1,0 +1,4 @@
+variant,spearman_rho,p_value,max_rank_shift
+strict_30,0.9908,0.0,2.0
+lenient_120,0.7897,0.0,16.0
+log_vs_clinical_district,0.8494,,

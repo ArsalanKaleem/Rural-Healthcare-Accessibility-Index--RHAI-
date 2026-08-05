@@ -1,0 +1,1358 @@
+region,district,name,hf_type_raw,source_pdf,page,parse_mode,hf_code,hf_type,tier,type_confirmed
+Hyderabad,Hyderabad,BHU Darya Baig Mughal,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,BHU Hatri,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,BHU Jhando Narejo,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,DCD Ibrahim Sihano,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,DCD Moosa Shoro,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,RHC Hoosri,RHC,HF-HYD.pdf,1,table,RHC,RHC,primary,True
+Hyderabad,Hyderabad,BHU Massu Bhurgri,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,GD Talib-Ul-Mola Colony,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,GD Wanki Wasi,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,BHU Mir Allah Bux Talpur,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,GD Khari Muhammad Thebo,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,GD Mehrab Talpur,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,BHU Moosa Khatyan,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,GD Arif Khatyan,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,GD Taj Muhammad Junejo,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,BHU Khesana Mori,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,DCD Abri,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,DCD Darya Khan Nahiyoon,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,BHU Norai Sharif,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,DCD Darhoon Panhwar,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,DCD GM Jamali,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,DCD Ramzan Brohi,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,DCD Umaid Ali Rind,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,DCD Umar Jamali,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,GD Mehrab Solangi,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,MCHC Seri,MCH,HF-HYD.pdf,1,table,MCH,MCH,primary,True
+Hyderabad,Hyderabad,BHU Sono Khan Almani,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,BHU Tando Fazal,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,DCD Bakhshu Leghari,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,DCD Khan Muhammad Unar,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,BHU Bhawal Zunr,BHU,HF-HYD.pdf,1,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,GD Faizabad Tando Haider,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,MCHC Jeando Halepoto,MCH,HF-HYD.pdf,1,table,MCH,MCH,primary,True
+Hyderabad,Hyderabad,RHC Tando Jam,RHC,HF-HYD.pdf,1,table,RHC,RHC,primary,True
+Hyderabad,Hyderabad,GD Bhindo Sharif,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,GD Habibullah Memon,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,GD Hussain Khan Thora,GD,HF-HYD.pdf,1,table,GD,Dispensary,primary,True
+Hyderabad,Hyderabad,MCHC Jhando Khoso,MCH,HF-HYD.pdf,1,table,MCH,MCH,primary,True
+Hyderabad,Hyderabad,RHC Tando Qaisar,RHC,HF-HYD.pdf,1,table,RHC,RHC,primary,True
+Hyderabad,Hyderabad,DCD Noor Khan Chang,DCD,HF-HYD.pdf,1,table,DCD,Dispensary,primary,True
+Hyderabad,Hyderabad,BHU Sehrish Nagar,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,BHU AMI Qazi,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Hyderabad,GD Marvi Garden,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,BHU Karo Khaho,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Christian Colony,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Jummo Shoro,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD LSB Jamshoro,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Akro,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Manjho,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,BHU Khado,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Bihar Colony,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Khurshed Colony,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,BHU Khuda Ki Basti,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Sindh University,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,DCD Aliabad,DCD,HF-HYD.pdf,2,table,DCD,Dispensary,primary,True
+Hyderabad,Jamshoro,BHU Lakha,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Makhdoom Sharabad,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Qubi,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,RHC Uner Pur,RHC,HF-HYD.pdf,2,table,RHC,RHC,primary,True
+Hyderabad,Jamshoro,BHU Khanoth,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,DCD Manzorabad,DCD,HF-HYD.pdf,2,table,DCD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Budhapur,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,ED Khasai,ED,HF-HYD.pdf,2,table,ED,Dispensary,primary,False
+Hyderabad,Jamshoro,BHU Mole,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Ali Murad Barejo,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,BHU Sari,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,BHU Thano Ahmed Khan,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Karchat,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,SHC Thano Arab Khan,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Mehanda Palari,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,SHC Dhamach,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,BHU Toung,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,BHU Walidad Gabool,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Gul Muhammad Sehtani,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,ED Juma Khan Gabol,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,Ed Wada Chhachhar,ED,HF-HYD.pdf,2,table,ED,Dispensary,primary,False
+Hyderabad,Jamshoro,GD Bacha,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,RHC Wada Chhachhar,RHC,HF-HYD.pdf,2,table,RHC,RHC,primary,True
+Hyderabad,Jamshoro,BHU Amri,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,BHU Laki,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Shalmani,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,BHU Garwari,BHU,HF-HYD.pdf,2,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,RHC Bhansaeedabad,RHC,HF-HYD.pdf,2,table,RHC,RHC,primary,True
+Hyderabad,Jamshoro,ED Qadir Bux Mallah,ED,HF-HYD.pdf,2,table,ED,Dispensary,primary,False
+Hyderabad,Jamshoro,GD Bajara,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Gaher,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,ED Paryal Shah,ED,HF-HYD.pdf,2,table,ED,Dispensary,primary,False
+Hyderabad,Jamshoro,ED Umed Ali Katohar,ED,HF-HYD.pdf,2,table,ED,Dispensary,primary,False
+Hyderabad,Jamshoro,G.D Karampur,GD,HF-HYD.pdf,2,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,G.D Pacca Channa,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,RHC Arazi,RHC,HF-HYD.pdf,3,table,RHC,RHC,primary,True
+Hyderabad,Jamshoro,GD Nagar Khan Brohi,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Yousif Jamali,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,MCHC Jhangara,MCH,HF-HYD.pdf,3,table,MCH,MCH,primary,True
+Hyderabad,Jamshoro,RHC Jhangara,RHC,HF-HYD.pdf,3,table,RHC,RHC,primary,True
+Hyderabad,Jamshoro,BHU Nao Wahan,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,ED LAL Khan Lashari,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,ED Wadioon Manhayoon,ED,HF-HYD.pdf,3,table,ED,Dispensary,primary,False
+Hyderabad,Jamshoro,ED Weehar Sahrif,ED,HF-HYD.pdf,3,table,ED,Dispensary,primary,False
+Hyderabad,Jamshoro,GD Bilalpur,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD DURI DERO,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Kot Lashari,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Mahi Otho,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,GD Nandhyoon Manhayoon,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,MCHC Bambha,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,BHU Bubak,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,BHU Wahur,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,BHU Tajuji,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Jamshoro,GD Band Manchar,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Jamshoro,BHU Talti,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Bau Khan Pathan,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,DCD Pali jani,DCD,HF-HYD.pdf,3,table,DCD,Dispensary,primary,True
+Hyderabad,Matiari,GD Shahmir Ji Wasi,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Matiari,BHU Plus Fakir Nooh Hothiani,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,GD Sher Muhammad Thorha,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Matiari,BHU Plus Odero lal Village,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Tahir Hingoro,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,DCD Dhaloo Khaskheli,DCD,HF-HYD.pdf,3,table,DCD,Dispensary,primary,True
+Hyderabad,Matiari,BHU Plus Sekhat,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,DCD Jumma Shahok,DCD,HF-HYD.pdf,3,table,DCD,Dispensary,primary,True
+Hyderabad,Matiari,BHU Plus Laloo Mangwano,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,GD Soomar Chand,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Matiari,BHU Allah Dino Sand,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Plus Bhanothe,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Saeed Khan Laghari,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,DCD Mari Muhammad Khan,DCD,HF-HYD.pdf,3,table,DCD,Dispensary,primary,True
+Hyderabad,Matiari,RHC Bhit Shah,RHC,HF-HYD.pdf,3,table,RHC,RHC,primary,True
+Hyderabad,Matiari,GD Punhal Khan Jamali,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Matiari,BHU Plus Hala Old,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Plus Khandu,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,GD Hala Old,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Matiari,GD Khanothe,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Matiari,MCHC Hala Old,MCH,HF-HYD.pdf,3,table,MCH,MCH,primary,True
+Hyderabad,Matiari,BHU Karam khan Nizamani,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Bago Khan Jamali,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Nabi Bux Jamali,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Sirachu Kaka,BHU,HF-HYD.pdf,3,table,BHU,BHU,primary,True
+Hyderabad,Matiari,GD Old Saeedabad,GD,HF-HYD.pdf,3,table,GD,Dispensary,primary,True
+Hyderabad,Matiari,BHU Ilyas Abreja,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Plus Panj Moro,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Shahmir Rahu,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Plus Maher Shah,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Matiari,BHU Yousuf Hajano,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Matiari,DCD Awal Chachar,DCD,HF-HYD.pdf,4,table,DCD,Dispensary,primary,True
+Hyderabad,Matiari,DCD Zair Pir,DCD,HF-HYD.pdf,4,table,DCD,Dispensary,primary,True
+Hyderabad,Matiari,GD Rano Bughio,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Kauro Diadano,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,BHU Shadiyoon,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Ghani Khan Qaimkhani,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Salleh Arisar,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Dodo Rind,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Muhammad Hassan Dal,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Sobho Rind,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Naseer Khan Leghari,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Mevo Kurkuli,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Rawat Khan Laghari,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,RHC Chamber,RHC,HF-HYD.pdf,4,table,RHC,RHC,primary,True
+Hyderabad,Tando Allahyar,GD Bachal Pittafi,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Bail Sharif,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Masoo Bozdar,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Saeed Khan Laghari,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Sanjar Chang,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Sache Dino Panhwar,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Taj Mori,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Allah Rakhio Pathan,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,BHU Shahnawaz Muhajir,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Dassori,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Usman Shah Hurri,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Jhando Mari,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Mashaikh Hoti,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Mail Mori,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD New Mirabad,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Wali Muhammad Dars,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Sultanabad Stand,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Missan Nandhi,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Sadique Memon,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Piyaro Lund,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,BHU Tando Soomro,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Bahar Khan Mirjat,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Bukera Sharif,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Ghulam Hussain Khokhar,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Dhingano Bozdar,BHU,HF-HYD.pdf,4,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Lal Faqir Behrani,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Mehroo Khan Lashari,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Dariya Khan Hingoro,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Golo Halepoto,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Pak Singhar,GD,HF-HYD.pdf,4,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,BHU Ditto Kalro,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,BHU Sultanabad Village,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Allahyar,GD Ghulam Hussain Lund,GD,HF-HYD.pdf,5,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Hakra Mori,GD,HF-HYD.pdf,5,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Mitho Khaskheli,GD,HF-HYD.pdf,5,table,GD,Dispensary,primary,True
+Hyderabad,Tando Allahyar,GD Ghulam Khan Sanjrani,GD,HF-HYD.pdf,5,table,GD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Plus Mulakatiar,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Allah Yar Turk,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Ghulam Muhammad Jut,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Anwar Rind,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Dadoon,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Jhanhan Soomro,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Abdul Rahim Katiar,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Wasi Malook Shah,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Suleman Soomro,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,GD Asgharabad,GD,HF-HYD.pdf,5,table,GD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Plus Saeed Khan Lund,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Sehrani,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Muhammad Khan Magsi,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Shahmir Khan Lund,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Plus Saeed Matto,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Soomar Laghari,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Plus Saeed Pur Takkar,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,RHC Bulri Shah Kareem,RHC,HF-HYD.pdf,5,table,RHC,RHC,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Hakimani Syed,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Kouro Khan Lashari,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Plus Ghulam Shah Bagrani,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Ali Ghulam Chandio,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Plus Nazar Pur,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Mir Muhammad Warar,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Sadik Jagsi,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Haji Karim Dino Siyal,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Khan Muhammad Vigamal,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Nango Shah,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Lakhat,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Sain Bux Khoso,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,BHU Plus Shaikh bhirkio,BHU,HF-HYD.pdf,5,table,BHU,BHU,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Saindad Wasan,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,USK Dig Mori,USK,HF-HYD.pdf,5,table,USK,USK,primary,False
+Hyderabad,Tando Muhammad Khan,DCD Baqar Nizamani,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Mohabat Bhurgari,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,DCD Plus Tando Saindad,DCD,HF-HYD.pdf,5,table,DCD,Dispensary,primary,True
+Hyderabad,Tando Muhammad Khan,RHC Rajo Nizamani,RHC,HF-HYD.pdf,5,table,RHC,RHC,primary,True
+Karachi,Karachi East,BHU Lassi Goth,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Karachi East,Sindh Government Hospital Jannat Gull,MCH,HF-KHI.pdf,1,table,MCH,MCH,primary,True
+Karachi,Karachi East,ED Ghareebabad,ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Karachi East,ED Junejo Colony,ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Karachi East,ED Junjhar,ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Karachi East,ED Machar Colony,ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Karachi East,ED Yasrab Goth,ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Karachi East,MCH Lassi Goth,MCH,HF-KHI.pdf,1,table,MCH,MCH,primary,True
+Karachi,Karachi West,MCH Khuda Ki Basti,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Karachi West,BHU Tharo Mengal,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Karachi West,SGD Mullah Hussain Brohi,GD,HF-KHI.pdf,1,table,GD,Dispensary,primary,True
+Karachi,Karachi West,MCH Abdullah Gabool,MCH,HF-KHI.pdf,1,table,MCH,MCH,primary,True
+Karachi,Karachi West,ED Raja Tanveer Colony,ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Karachi West,ED Islamia Colony,ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Karachi West,ED Kanwari Colony,ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Keamari,ED Block D Area (Itehad Town),ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Keamari,ED Muhammad Khan Colony,ED,HF-KHI.pdf,1,table,ED,Dispensary,primary,False
+Karachi,Malir,Maternity Home Laboour Square,MCH,HF-KHI.pdf,1,table,MCH,MCH,primary,True
+Karachi,Malir,BHU Haji Ahmed Jokhio,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,BHU Karam Dad Jokhio,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,MCHC Gaghar Village,MCH,HF-KHI.pdf,1,table,MCH,MCH,primary,True
+Karachi,Malir,SGD Allah Bux Himayati,GD,HF-KHI.pdf,1,table,GD,Dispensary,primary,True
+Karachi,Malir,SGH Ibrahim Hyderi,HOSP,HF-KHI.pdf,1,table,Hospital,Hospital,secondary,True
+Karachi,Malir,BHU Jumo Himayati Goth,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,BHU Model Village @ Gulshan-e-Hadid,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,SGD Sheedi Goth,GD,HF-KHI.pdf,1,table,GD,Dispensary,primary,True
+Karachi,Malir,UHU Saleh Muhammad Goth,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,RHC Rehri Mirani,RHC,HF-KHI.pdf,1,table,RHC,RHC,primary,True
+Karachi,Malir,SGD Chashma Goth,GD,HF-KHI.pdf,1,table,GD,Dispensary,primary,True
+Karachi,Malir,SGD Lath Basti,GD,HF-KHI.pdf,1,table,GD,Dispensary,primary,True
+Karachi,Malir,BHU Bakhsha Village,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,BHU Dur Muhammad Goth,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,SGD Abdul Hakeem Gabool,GD,HF-KHI.pdf,1,table,GD,Dispensary,primary,True
+Karachi,Malir,SGD Darsano Channo (MCH),GD,HF-KHI.pdf,1,table,GD,Dispensary,primary,True
+Karachi,Malir,SGH 36 Beded Dumba Goth,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,BHU Angara Village Gaddap,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,BHU Hyderwah,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,MCHC Kathore,MCH,HF-KHI.pdf,1,table,MCH,MCH,primary,True
+Karachi,Malir,SGD Dhani Bux @ Mohiuddin Goth,GD,HF-KHI.pdf,1,table,GD,Dispensary,primary,True
+Karachi,Malir,BHU Radho Jokhio Goth Gaddap,BHU,HF-KHI.pdf,1,table,BHU,BHU,primary,True
+Karachi,Malir,SGD Pathan Goth,GD,HF-KHI.pdf,2,table,GD,Dispensary,primary,True
+Karachi,Malir,MCH: MH: Murad Memon Goth,MCH,HF-KHI.pdf,2,table,MCH,MCH,primary,True
+Karachi,Malir,MCHC Mat: Home Old Thaano,MCH,HF-KHI.pdf,2,table,MCH,MCH,primary,True
+Karachi,Malir,RHC Old Thaana,RHC,HF-KHI.pdf,2,table,RHC,RHC,primary,True
+Karachi,Malir,SGD Jaam Goth,GD,HF-KHI.pdf,2,table,GD,Dispensary,primary,True
+Karachi,Malir,SGH Murad Memon Goth,HOSP,HF-KHI.pdf,2,table,Hospital,Hospital,secondary,True
+Karachi,Malir,ED Bilal Colony,ED,HF-KHI.pdf,2,table,ED,Dispensary,primary,False
+Karachi,Malir,ED Muslimabad,ED,HF-KHI.pdf,2,table,ED,Dispensary,primary,False
+Karachi,Malir,ED Old Muzafarabad,ED,HF-KHI.pdf,2,table,ED,Dispensary,primary,False
+Karachi,Malir,ED Waziristan Chowk/ Ghulshan e buneer,ED,HF-KHI.pdf,2,table,ED,Dispensary,primary,False
+Karachi,Malir,36 Bedded Urban Health Center Malir City,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Malir,(Asso Goth) (Thado Nalo),BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Begna Mori,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Raj Sheikh Bachal,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,GD Aresar Hingoro,GD,HF-KHI.pdf,2,table,GD,Dispensary,primary,True
+Karachi,Sujawal,BHU Gul Muhammad Baran,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Boohar,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Raj Malik,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Kothi,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Maro Bula Khan,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Plus Mureed Khoso,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,GD Tarr Khowaja,GD,HF-KHI.pdf,2,table,GD,Dispensary,primary,True
+Karachi,Sujawal,BHU Ali Muhammad Gugo,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Plus Bannu,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Rahooth,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Darya Khan Soho,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Plus Kandhra,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,GD Ahmed Khan Khoor,GD,HF-KHI.pdf,2,table,GD,Dispensary,primary,True
+Karachi,Sujawal,BHU Plus Jhoke Sharif,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Laiq Pur,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Mureed Jarejo,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,RHC Chohar Jamali,RHC,HF-KHI.pdf,2,table,RHC,RHC,primary,True
+Karachi,Sujawal,BHU Jeand Zangejo,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Goongani,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Jungo Jalbani,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Ladiyoon,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Syed Qadir Dino Shah,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Plus Bello,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Khair Bux Laghari,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Kot Alamo,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Shah Nawaz Laghari,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,GD Sher Ali Shah,GD,HF-KHI.pdf,2,table,GD,Dispensary,primary,True
+Karachi,Sujawal,BHU Jaar,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Muzafar Khan Laghari,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Plus Nodo Baran,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Sujawal,BHU Syed Ghulam Mustafa Shah,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Garho,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Gail Mori,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Ghora Bari,BHU,HF-KHI.pdf,2,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Dandhari,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Sajan Wari,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Buhara,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Jokhio Village,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Dhabeji,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Noor Muhammad Thahim,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Ghulamullah,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Gujjo,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Mathino Khan Rind,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Haji Muhammad Sodho,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Garhi Wah,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,GD Pir Bux Brohi,GD,HF-KHI.pdf,3,table,GD,Dispensary,primary,True
+Karachi,Thatta,BHU Chatochand,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Peer Jo Goth,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Jhangree,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Jhimpeer,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Achar Jakhro,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Turkish Housing Scheme,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,GD New Road,GD,HF-KHI.pdf,3,table,GD,Dispensary,primary,True
+Karachi,Thatta,GD Haji Jaffer Helayo,GD,HF-KHI.pdf,3,table,GD,Dispensary,primary,True
+Karachi,Thatta,BHU Ali Bahar,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Karachi,Thatta,BHU Tando Hafiz Shah,BHU,HF-KHI.pdf,3,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Patt,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Sita Village,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Ibrahim Panhwar,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Piaro Goth,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Aminani,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,MCHC Khudabad,MCH,HF-LAR.pdf,1,table,MCH,MCH,primary,True
+Larkana,Dadu,BHU Makhdoom Bilawal,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Moundar,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Phulji Station,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Purano Dero,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,GD Jat Shahdad,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,BHU Phaka,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Samtani,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,RHC Sita Road,RHC,HF-LAR.pdf,1,table,RHC,RHC,primary,True
+Larkana,Dadu,BHU Allahyarani,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Bahawalpur,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,GD KB Chakar Khan,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,GD Sijawal Khan Alkhani,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,BHU Haji Khan,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Kamal Khan,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,GD Mureed Babar,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,BHU Wahi Pandhi,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,GD Mounder Khan Jamali,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,GD Murad Khan Jamali,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,GD Paryo Jamali,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,BHU Qasbo,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,GD Pir Gaji Shah,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,BHU Dhani Bux Bughio,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Burrira,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Chorre,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Borriri,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Baid,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Khanpur,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,GD Gul Mohammad Chandio,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,BHU Essa Khan Thebo,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Gozo,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Dougar,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Thallho,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Betto,BHU,HF-LAR.pdf,1,table,BHU,BHU,primary,True
+Larkana,Dadu,GD Nawab Jo Patt,GD,HF-LAR.pdf,1,table,GD,Dispensary,primary,True
+Larkana,Dadu,BHU Faridabad,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Dadu,GD Qadair Bux Rind,GD,HF-LAR.pdf,2,table,GD,Dispensary,primary,True
+Larkana,Dadu,MCHC Faridabad,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Dadu,BHU Qazi Arif,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Saeedpur,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Dadu,GD Gul Mohammad Jatoi,GD,HF-LAR.pdf,2,table,GD,Dispensary,primary,True
+Larkana,Dadu,BHU Kolachi,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Aghamani,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Butt Serrai,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Dadu,BHU Tharriri Mohabat,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,BHU Hashmatabad,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,MCHC Dodapur,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,DCD Miranpur Buriro,DCD,HF-LAR.pdf,2,table,DCD,Dispensary,primary,True
+Larkana,Jacobabad,BHU Ghulam Muhammad Jakhrani,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,GD Muhammad Rahim Jakhrani,GD,HF-LAR.pdf,2,table,GD,Dispensary,primary,True
+Larkana,Jacobabad,MCHC Muhammadpur Odho,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,MCHC Sheranpur,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,BHU Suhno Khan Rind,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,BHU Abdullah Lashari,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,GD Juma Khan Dashti,GD,HF-LAR.pdf,2,table,GD,Dispensary,primary,True
+Larkana,Jacobabad,BHU Banglow Saydan,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,GD Abad,GD,HF-LAR.pdf,2,table,GD,Dispensary,primary,True
+Larkana,Jacobabad,MCHC Police Head Quarter,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,GD Hindu Panchait,GD,HF-LAR.pdf,2,table,GD,Dispensary,primary,True
+Larkana,Jacobabad,MCHC Jaffarabad,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,BHU Mauladad,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,BHU Noor Muhammad Pathan,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,GD Adam Khan,GD,HF-LAR.pdf,2,table,GD,Dispensary,primary,True
+Larkana,Jacobabad,MCHC Ahmed Mian Soomro,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,MCHC Bachro,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,BHU Madadpur,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,DCD Abdul Rasool Khoso,DCD,HF-LAR.pdf,2,table,DCD,Dispensary,primary,True
+Larkana,Jacobabad,MCHC Imam Bux Kehar,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,MCHC Bangul,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,GD Naseer Khan Bhangar,GD,HF-LAR.pdf,2,table,GD,Dispensary,primary,True
+Larkana,Jacobabad,MCHC Joungal,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,BHU Karim Bux,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,MCHC Bahadurpur,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,BHU Azizabad,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,BHU Piyaro Khoso,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,MCHC Mubarakpur,MCH,HF-LAR.pdf,2,table,MCH,MCH,primary,True
+Larkana,Jacobabad,BHU Jumo Dakhan,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,BHU Bahoo Khoso,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,BHU Udi,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,DCD Gulsher Kandrani,DCD,HF-LAR.pdf,2,table,DCD,Dispensary,primary,True
+Larkana,Jacobabad,BHU Buxan Pahore,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Jacobabad,RHC Ghari Hassan Sarki,RHC,HF-LAR.pdf,2,table,RHC,RHC,primary,True
+Larkana,Kamber,BHU Gathar,BHU,HF-LAR.pdf,2,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Beer Shareef,GD,HF-LAR.pdf,2,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Thori Bijar,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Daffer,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Khair Muhammad Kartio,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Noor Muhammed Shaikh,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Ghaibi Dero,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Ghazi Khan Khuhawar,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Jean Abro,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Nourang Sharif,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Muhammad Ali Guramani,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Chhajra,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Gogharo,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Khairpur Juso,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Baig Muhammed Sangah,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Dedar,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Kot Ghulam Shah,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Meena,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Ranwati,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Behram,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Tharo Wadho,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Ghulam Ali Magsi,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Daleel Buriro,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Bhambho Khan Chandio,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Gahi Khan,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Deera,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Maroo Dera,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Khuda Bux Wahocho,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Allah Rakhio Jalbani,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Mian Dad Chinjni,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Wadho Kalhoro,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Hetum Suhoo,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Mirza Junejo,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,RHC Nasirabad,RHC,HF-LAR.pdf,3,table,RHC,RHC,primary,True
+Larkana,Kamber,MCHC Nasirabad,MCH,HF-LAR.pdf,3,table,MCH,MCH,primary,True
+Larkana,Kamber,BHU Mir Pur Buriro,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Abdul Wahab Khoso,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Aitbar Khan Chandio,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Chakyani,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Muhammed Khan Bhutto,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Dhing,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,MCHC Shahdadkot,MCH,HF-LAR.pdf,3,table,MCH,MCH,primary,True
+Larkana,Kamber,GD Kot Lal Bux Mahesar,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Luqman Siyal,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Ghulam Rasool Magsi,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Hyder Detho,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Suhno Khan,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Ubedullah Mastoi,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Arzi Bhutto,BHU,HF-LAR.pdf,3,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Pandhi Khan Jarwar,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Sijawal,GD,HF-LAR.pdf,3,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Thoof Chousool,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Khandu,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Kando,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Mir Muhammed Kalhoro,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kamber,USK Gull Buriro,USK,HF-LAR.pdf,4,table,USK,USK,primary,False
+Larkana,Kamber,BHU Gaji Khuhawar,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kamber,GD Garhi Makaro,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Jahan Khan Marfani,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Junani Sharif,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Lar Bhan,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kamber,GD Sadique Machhi,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kamber,BHU Lalu Raunk,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Hamal,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kamber,BHU Datu Teewna,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Jahan Khan Bhangwar,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Ali Muhammad Khoso,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Dari,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Sardarabad,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Jam Sunharo,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Muhammad Usman Khoso,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Badani,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Kashmore Colony-I,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Din Muhammad Kosh,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Muhammad Khan Mazari,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Mir Hassan Khoso,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Gulanpur,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Sardaro Khoso,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,THQ Kashmore,THQ,HF-LAR.pdf,4,table,THQ,Hospital,secondary,True
+Larkana,Kashmore,GD Mehrab Khan Mazari,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,MCH Center Kashmore,MCH,HF-LAR.pdf,4,table,MCH,MCH,primary,True
+Larkana,Kashmore,BHU Khewali,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Mando Khan Jakhrani,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Kumb,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,USK Doulatpur,USK,HF-LAR.pdf,4,table,USK,USK,primary,False
+Larkana,Kashmore,GD Khahi,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,GD Muhammad Azeem Golo,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Malguzar Khan Suhriyani,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Zorgarh,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Ghous Bakhsh Bhangwar,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,GD Illahi Bux Khoso,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,GD Nawab Khan Dahani,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Pir Jan Bajkani,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Rahmat Khan Bijarani,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Diyani,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Mir Mushtaque Khan,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,GD Nasarullah Khan Bijarani,GD,HF-LAR.pdf,4,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Abdul Qadir Bhayo,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Saeed Khan Rind,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Rasaldar,BHU,HF-LAR.pdf,4,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD 27 Mail,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Abdul Razak Suhandro,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Kashmore,BHU Sher Muhammad,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Shabeer abad,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Kashmore,BHU Ghulam Sarwar Sarki,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Kashmore,GD Hafizullah Khan Khoso,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Kashmore,GD Kajlo Khan,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Kashmore,RHC Tangwani,RHC,HF-LAR.pdf,5,table,RHC,RHC,primary,True
+Larkana,Kashmore,BHU Bijar Khan Bijarani,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Mud Bahoo,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Bakhar Karira,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Haji Dadhro,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Sono Jatoi,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Baqa Pur,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD Heesub Chandio,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Pathan,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU New Gud,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Mangria,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD Rasheed Wagan,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD Sher Muhammad Junejo,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Moen-Jo-Daro,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Lal Bux Shaikh,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD Gujjar,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Karani,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Seehar,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Veehar,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Tatri,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Usman kalhoro,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Akil,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Aghani,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Bero Chandio,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Arija at Ratokot,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Dhamrah,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Fateh Pur,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Dodai Sangi,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD Kanga,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD Mahota,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Kothi,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Sajan Sangi,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Shahabad,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Dodo Sanheri,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD Khairo Dero,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Ezat Ji Wandh,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Bahman,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD KT Mumtaz,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD Shahani,GD,HF-LAR.pdf,5,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Jumo Agham,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Lashari,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Khan Wah,BHU,HF-LAR.pdf,5,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Pir Bux Bhutto,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Abad Bhutto,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Larkana,GD Punjodero,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Saidudero,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Kot Bhutto,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Masodero,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Larkana,GD Mehar Buriro,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Larkana,BHU Waris Dino Machi,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Larkana,BHU Wasayo Bhutto,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Larkana,THQ Arija,THQ,HF-LAR.pdf,6,table,THQ,Hospital,secondary,True
+Larkana,Larkana,RHC Gerello,RHC,HF-LAR.pdf,6,table,RHC,RHC,primary,True
+Larkana,Larkana,RHC Badah,RHC,HF-LAR.pdf,6,table,RHC,RHC,primary,True
+Larkana,Larkana,THQ Dokri,THQ,HF-LAR.pdf,6,table,THQ,Hospital,secondary,True
+Larkana,Larkana,RHC Banguldero,RHC,HF-LAR.pdf,6,table,RHC,RHC,primary,True
+Larkana,Larkana,Government Hospital Naudero,HOSP,HF-LAR.pdf,6,table,Hospital,Hospital,secondary,True
+Larkana,Larkana,RHC Ghari Khuda Bux Bhutto,RHC,HF-LAR.pdf,6,table,RHC,RHC,primary,True
+Larkana,Larkana,THQ Ratodero,THQ,HF-LAR.pdf,6,table,THQ,Hospital,secondary,True
+Larkana,Shikarpur,BHU Bado,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Ali Khan,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Nim Sharif,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Nabi Shah Wagan,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Jahangir Thahim,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,RHC Khanpur,RHC,HF-LAR.pdf,6,table,RHC,RHC,primary,True
+Larkana,Shikarpur,BHU Mehmood Panhwar,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,RHC Napirabad,RHC,HF-LAR.pdf,6,table,RHC,RHC,primary,True
+Larkana,Shikarpur,GD Sardar Khadim Hussain Jatoi,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Shikarpur,GD Zangi Khan Brohi,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Shikarpur,BHU Abdo,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Nimoro,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,GD Bhirkan,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Shikarpur,BHU Jahan Khan,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Soomar Goth,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Jhali Kalwari,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Ruk,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Rustam,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,GD Borriri,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Shikarpur,BHU Jamra,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Dhani Bux Malik,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Wazirabad,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Hamayoon,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,GD Chodio Sadhayo,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Shikarpur,BHU Darwesh Kakepoto,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,BHU Haji Khawasti Brohi,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Larkana,Shikarpur,GD Muhammad Hayat Junejo,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Shikarpur,GD New Lalyoon,GD,HF-LAR.pdf,6,table,GD,Dispensary,primary,True
+Larkana,Shikarpur,BHU Feroza Begum,BHU,HF-LAR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Abdullah Shah,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Ali Murad Chandio,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Haji Muhammad Boohar,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,ED Haji Gul Mohammad Jamali,ED,HF-MIR.pdf,1,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,ED Qaziabad,ED,HF-MIR.pdf,1,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,BHU Yousuf Shah,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,MCH Center Badin,MCH,HF-MIR.pdf,1,table,MCH,MCH,primary,True
+Mirpurkhas,Badin,BHU Bedhmi,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,ED Dost Ali Chang,ED,HF-MIR.pdf,1,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,GD Allahabad,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Bhugra Memon,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Punjab Chak 2,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Ghulam Hussain Parhyar,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,ED Gul Mohammad Chang,ED,HF-MIR.pdf,1,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,ED Hamer Parhyar,ED,HF-MIR.pdf,1,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,GD Lakhadino Sarejo,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Lal Bux Notkani,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,GD Luwari Sharif,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Artillary Chak,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,GD Panhwar Mori,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Qabaili Chak,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Yousuf Soomro,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,ED Jumoon Abro,ED,HF-MIR.pdf,1,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,GD Haji Yousuf Soomro,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,RHC Nindo,RHC,HF-MIR.pdf,1,table,RHC,RHC,primary,True
+Mirpurkhas,Badin,DCD Hayat Solangi,DCD,HF-MIR.pdf,1,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,ED Ali Mohammad Khaskheli,ED,HF-MIR.pdf,1,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,ED Mohammad Hashim Jat,ED,HF-MIR.pdf,1,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,DCD Saboo Khan Chang,DCD,HF-MIR.pdf,1,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,DCD Talib Bucho,DCD,HF-MIR.pdf,1,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Seerani,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Adhori Tail,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Dadah,BHU,HF-MIR.pdf,1,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,DCD Abdul Sattar Pirzada,DCD,HF-MIR.pdf,1,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,DCD Mevo Khan Laghari,DCD,HF-MIR.pdf,1,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,DCD Sangi Pharo,DCD,HF-MIR.pdf,1,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Bakho Chandio,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Sultan Seenharo,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,DCD Choudhri Din Muhammad,DCD,HF-MIR.pdf,1,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Ishaque Dero,GD,HF-MIR.pdf,1,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Meena,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Wali Muhammad Malkani,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,DCD Allah Bux Liskani,DCD,HF-MIR.pdf,2,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,DCD Mehrab Chandio,DCD,HF-MIR.pdf,2,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,ED Ghulam Mohammad kamboh,ED,HF-MIR.pdf,2,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,BHU Khalifo Qasim,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Saeed Khan Bhugri,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Turk Farm,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,DCD Abdullah Junejo,DCD,HF-MIR.pdf,2,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,DCD Shadi Larg,DCD,HF-MIR.pdf,2,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Ali Bux Shah,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,DCD Saman Sarkar,DCD,HF-MIR.pdf,2,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,ED Misri Khoso,ED,HF-MIR.pdf,2,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,ED Mohammad Bachal Ahmedani,ED,HF-MIR.pdf,2,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,GD Pir Hamid Shah,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Naimat Gujar,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Ahmed Rajo,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Ali Muhammad Maheree,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,GD Abdullah Samoo,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Baghli,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Gharo,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Mataro Mandhro,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,DCD Ramzan Abro,DCD,HF-MIR.pdf,2,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Mavji Kolhi,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,RHC Kario Ghahnwar,RHC,HF-MIR.pdf,2,table,RHC,RHC,primary,True
+Mirpurkhas,Badin,BHU Junna,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Khorwah,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Rahuki,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Tarai,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,DCD Noor Mohammad Samejo,DCD,HF-MIR.pdf,2,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,ED Allah Bachayo Hajjam,ED,HF-MIR.pdf,2,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,BHU Haji Nizamuddin,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,DCD Budho Qambrani,DCD,HF-MIR.pdf,2,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,DCD Mir Mubarak Simnalo,DCD,HF-MIR.pdf,2,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,ED Haji Mevo Talpur,ED,HF-MIR.pdf,2,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,ED Murtaza Arain,ED,HF-MIR.pdf,2,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,ED Taj Muhammad Junejo,ED,HF-MIR.pdf,2,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,GD Amiruddin Punjabi,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Muhammad Khan Jarwar,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Sorhadi,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Choudhary Fateh Muhammad,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Haji Dodo Gishkori,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,ED Qazi Fateh Mohammad,ED,HF-MIR.pdf,2,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,GD Dumbalo,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Mohib Laghari,GD,HF-MIR.pdf,2,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,ED Ali Akbar Nizamani,ED,HF-MIR.pdf,2,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,BHU Kapri Mori,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Mir Muhammad Nizamani,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Nabi Bux,BHU,HF-MIR.pdf,2,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,GD Beero Lunjwani,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Gulab Laghari,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,ED Nawab Zubair Talpur,ED,HF-MIR.pdf,3,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,GD Manik Laghari,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Phalkara,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,ED Baran Laghari,ED,HF-MIR.pdf,3,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,GD Gehno Khan Laghari,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,ED Allah Dad Bhurgari,ED,HF-MIR.pdf,3,table,ED,Dispensary,primary,False
+Mirpurkhas,Badin,BHU Rip,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,DCD Achh Sharif,DCD,HF-MIR.pdf,3,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,DCD Madina Farm,DCD,HF-MIR.pdf,3,table,DCD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Peeru Lashari,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,BHU Ghulam Muhammad Nizamani,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,BHU Ghulam Shah Mori,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Badin,GD Bohro Sahib Khan,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,GD Motan Chandio,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Badin,USK Abdul Ghafoor,USK,HF-MIR.pdf,3,table,USK,USK,primary,False
+Mirpurkhas,Badin,BHU Saeed Pur,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Khann,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Patoyoon,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Bugti Farm,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Muhammad Hassan Mari,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,MCHC Khann,MCH,HF-MIR.pdf,3,table,MCH,MCH,primary,True
+Mirpurkhas,Mirpurkhas,BHU Lalchand Bungalow,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,DCD Mirpur Old,DCD,HF-MIR.pdf,3,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Ahmed Bux Narejo,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Imtiaz Panhwar,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Kamal Khan Laghari,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,MCHC Mirpur old,MCH,HF-MIR.pdf,3,table,MCH,MCH,primary,True
+Mirpurkhas,Mirpurkhas,USK Abdul Latif Narejo,USK,HF-MIR.pdf,3,table,USK,USK,primary,False
+Mirpurkhas,Mirpurkhas,DCD Hashim Brohi,DCD,HF-MIR.pdf,3,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,DCD Nazar Muhammad Brohi,DCD,HF-MIR.pdf,3,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,DCD Pir Azeem Shah,DCD,HF-MIR.pdf,3,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,DCD Zahid Abad,DCD,HF-MIR.pdf,3,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Ratanabad,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,MCHC Turk Ali Mari,MCH,HF-MIR.pdf,3,table,MCH,MCH,primary,True
+Mirpurkhas,Mirpurkhas,RHC Jhuddo,RHC,HF-MIR.pdf,3,table,RHC,RHC,primary,True
+Mirpurkhas,Mirpurkhas,BHU Hameed Pura Colony,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Nawab Colony,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Mehmoodabad,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Satellite Town,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Doulat Laghari,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Kak Bungalow,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Mir Sher Muhammad,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Tarique Farm,GD,HF-MIR.pdf,3,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,MCHC Doulat Leghari,MCH,HF-MIR.pdf,3,table,MCH,MCH,primary,True
+Mirpurkhas,Mirpurkhas,BHU Jhiluri,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Ghulam Hyder Shah,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Khadim Ali Shah,BHU,HF-MIR.pdf,3,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Makhan Samoon,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Nizamuddin Muhajir,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Taju Khaskheli,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Khumbri,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,MCHC Mirwah,MCH,HF-MIR.pdf,4,table,MCH,MCH,primary,True
+Mirpurkhas,Mirpurkhas,BHU Usman Junejo,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,DCD Bahadur Unar,DCD,HF-MIR.pdf,4,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,DCD Deedio Meghwar,DCD,HF-MIR.pdf,4,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Abdul Rauf Panhwer,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Jhurbi,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Girhore Sharif,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Faqeer Abdullah,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Hingorno,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Khan Sahab Din Muhammad Junejo,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,MCHC Hingorno,MCH,HF-MIR.pdf,4,table,MCH,MCH,primary,True
+Mirpurkhas,Mirpurkhas,MCHC Khan Sahab Din Muhammad Junejo,MCH,HF-MIR.pdf,4,table,MCH,MCH,primary,True
+Mirpurkhas,Mirpurkhas,BHU Ismail Jo Goth,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Moharram Kanhiyo,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,DCD Hussain Dars,DCD,HF-MIR.pdf,4,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,DCD Kathri,DCD,HF-MIR.pdf,4,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,DCD Shah Bux Lashari,DCD,HF-MIR.pdf,4,table,DCD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Dilber Mehar,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Mohsin Raza Farm,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Sharif Rind,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Malook Pahore,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Kangoro,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Abdullah Khan Jarwar,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD 25000 Mori,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Deh 190,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Qazi Ashraf,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Shah Mori,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Paban Deh 160,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Ramzan Junejo,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Deh 151,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Deh 170,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,USK Ghulam Nabi Junejo,USK,HF-MIR.pdf,4,table,USK,USK,primary,False
+Mirpurkhas,Mirpurkhas,BHU Abdul Qayoom Khair,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Faqeer Bashir Laghari,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Mir Hassan Kaloi,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,MCH Abdul Qayoom Khair,MCH,HF-MIR.pdf,4,table,MCH,MCH,primary,True
+Mirpurkhas,Mirpurkhas,BHU Tando Kolachi,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Ahori,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Ali Sher Shah,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Dajhero Mori,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Muhammad Khan Laghari,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Ali Murad Bhatti,GD,HF-MIR.pdf,4,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Faqeer Faiz Muhammad Bilalani,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Fazal Bhambro,BHU,HF-MIR.pdf,4,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,MCH Jhudo,MCH,HF-MIR.pdf,4,table,MCH,MCH,primary,True
+Mirpurkhas,Mirpurkhas,BHU Kot Mir Jan Muhammad,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Karam Ali Laghari,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Roshanabad,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Hashim Bhurgri,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Kachelo Station,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Dengan Bhurgri,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Ubedullah Bhurgri,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Dengan Rasti,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Muhammad Ali Kalro,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Ramzan Kalro,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Otaq Ahmed Khan,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Dial Garh,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Sikriyari,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,BHU Kot Mirs Landhi,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD Mir Ghulam Hussain,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,GD Roopchand Kolhi,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Mirpurkhas,BHU Kachelo Farm,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Mirpurkhas,GD 10 Mile Mori,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Chelhar,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Mubarak Rind,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Kantio,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,GD Goongio,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,GD Mithrio Suthar,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Jadam Janjhi,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,GD Bhagisal,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Samoon Rind,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Wahori Dora,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Sakrio,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,GD Dalan Jo Tar,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Kankio,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,RHC Kheensar,RHC,HF-MIR.pdf,5,table,RHC,RHC,primary,True
+Mirpurkhas,Tharparkar,BHU Khario Fazal,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Kot Arbab Mir Mohammed,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Mithi Gechu,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,GD Gorwari,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Narhori,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,GD Doonhai,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,GD Jhirmirio,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,GD Narhoro,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,GD Verhar,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Kaloi,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Chachi Moora,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Khetlari,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Arokhi,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Verijhap,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,RHC Islamkot,RHC,HF-MIR.pdf,5,table,RHC,RHC,primary,True
+Mirpurkhas,Tharparkar,GD Giryancho,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,GD Kehri,GD,HF-MIR.pdf,5,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Khario Ghulam Shah,BHU,HF-MIR.pdf,5,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Doonjh,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Wakrio,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,GD Jogi Marhi,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Bhakuo,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Amrio,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Choopani sameja,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Malanhor Veena,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Paboohar,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Mithrio Bhatti,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Kolhi Ji Veri,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Chanida,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,GD Pillu,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,GD Chachi Gaju,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,GD Jado Joyo,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,GD Wagho Bajeer,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,GD Adhigam,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Hirar Deeda,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,GD Rinpario,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Tharparkar,BHU Dano Dhandhal,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Tharparkar,BHU Virawah,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Mohammad Hassan Gujrati,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,GD Sajan Khan Chandio,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,BHU Kunri Memon,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Nabisar Thar,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,GD Maghan Khan Chandio,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,BHU Darello,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Dilawer Hussain Shah,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Talhi,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Saddique Abro,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Syed Nawaz Ali Shah,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Haji Pir Shah,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Shadi Palli,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Abdul Hakeem Arisar,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Ghulam Nabi Shah,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Sawan Rajar,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,GD Amin Mohammad Rajar,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,BHU Araro Bhurgari,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Saleh Bambhro,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,GD Ahmedabad,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,BHU Padhriyo Farm,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Toben Wari,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Pir Sarhandhi,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Samaro Road,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Mir Din Mohammad,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,GD Ismail Nohri,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,BHU Fakir Abdullah Janhero,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Haji Fateh Mohammad Rajar,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Okraro Chania,BHU,HF-MIR.pdf,6,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,GD Kerlo,GD,HF-MIR.pdf,6,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,BHU Ahori Farm,BHU,HF-MIR.pdf,7,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Kharoro Syed,BHU,HF-MIR.pdf,7,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Rana Jageer,BHU,HF-MIR.pdf,7,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,GD Muzzafer Hussain Shah Dhanaser,GD,HF-MIR.pdf,7,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,RHC Khokhrapar,RHC,HF-MIR.pdf,7,table,RHC,RHC,primary,True
+Mirpurkhas,Umerkot,BHU Dhamboro,BHU,HF-MIR.pdf,7,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Mahendre Jo Par,BHU,HF-MIR.pdf,7,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Vehraro,BHU,HF-MIR.pdf,7,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Digu,BHU,HF-MIR.pdf,7,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Fakir Ali Bux Halepota,BHU,HF-MIR.pdf,7,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,BHU Haji Moula Bux Rajar,BHU,HF-MIR.pdf,7,table,BHU,BHU,primary,True
+Mirpurkhas,Umerkot,GD Hurabad,GD,HF-MIR.pdf,7,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,GD Noor Mohammad Mangrio,GD,HF-MIR.pdf,7,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,GD Pir Moosa Jan Sarhandi,GD,HF-MIR.pdf,7,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,GD Shewani Mohalla Umerkot,GD,HF-MIR.pdf,7,table,GD,Dispensary,primary,True
+Mirpurkhas,Umerkot,MCH Center Shewani Mohallah UKot,MCH,HF-MIR.pdf,7,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Bhiria Road,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Chanheen Suleman,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,GD Lutufullah Panhwer,GD,HF-SBA.pdf,1,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Gher Gaju,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Dali,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Saeed Khan Lakho,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Kundha Khahi,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,GD Kouro Memon,GD,HF-SBA.pdf,1,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Palahno (Faqeer Usman Tunio),BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Soomer Channer,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Bhority,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Manjuth,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Mole Dino Larik,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Bazid Pur,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,GD Faiz Mohammad Rajper,GD,HF-SBA.pdf,1,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Kandher,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Kot Ghulam Shah,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Fazul Sahito,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Mehmood Chandio,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Khan Wahan,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Tunia Baqa Shah,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Bhounr,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Muhbat Dero Jatoi,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Ali Sher Chang,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Behlani,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Jiando Rajper,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Ali Mohammad Phariro,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Kotri Kabir,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Lakha Road,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Saeed Pur,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,RHC Halani,RHC,HF-SBA.pdf,1,table,RHC,RHC,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Nandha Doonger,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Deparja,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Fattoo Balal,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Mullo Ismail,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Rahim Chand,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Murad Pahore,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Qamer Din Chandio,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Puran,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Gul Mohammad Jatoi,BHU,HF-SBA.pdf,1,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Dilloo Shah,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Baig Mohammad Panhwer,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Kamil Rajper,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Miran Pur,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Dageja,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Pinjal Faqeer,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Masur Ji Wah,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Naushero Feroze,BHU Phull,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Bilawal Hingorjo,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Yamin Hingorjo,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,DCD Ghujhri,DCD,HF-SBA.pdf,2,table,DCD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Jadam Dars,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Dhilyar,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Hathungo,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Haji Hassan Hingoro,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Qazi Wali Muhammad Rajar,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Adam Bhanbro,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Muhammad Bux Rajar,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Kamil Hingoro,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Saeedaoo,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Hamzo Dars,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Khahi,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Kalu Rajar,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Malook Mehar,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,DCD Loon Khan,DCD,HF-SBA.pdf,2,table,DCD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Amin Dars,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Bhit Bhaitee,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Abdullah Shah,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Chotiaryoon,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Tando Mitha Khan,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Gujri,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Bassi,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Dhani Parto Rajper,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Karim Dad Junejo,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Dilber Nizamani,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Chak No 8,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Sabir Wassan,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Chaman Das,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Muhib Ali Junejo,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Peru Mal,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Awadh,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Head Jamraoo,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,DCD Chak-41,DCD,HF-SBA.pdf,2,table,DCD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,RHC Jaffar Khan Laghari,RHC,HF-SBA.pdf,2,table,RHC,RHC,primary,True
+Shaheed Benazirabad,Sanghar,BHU Karim Dino Wassan,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Rahimabad,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Wali Muhammad Keerio,BHU,HF-SBA.pdf,2,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,DCD Col: Sher Jhang,DCD,HF-SBA.pdf,2,table,DCD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Ghundan,GD,HF-SBA.pdf,2,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU 22 Jamraoo,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Khadro,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Muhammad Khan Rind,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Rukan Burirra,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Pritamabad,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU 30 Jamraoo,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Jiabad,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Rawtiani,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,DCD Bobi Town,DCD,HF-SBA.pdf,3,table,DCD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Naseer Khan Jalalani,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Soomar Faqir Mehar,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Usman Khan Nizamani,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Abdullah Sangrasi,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Berani,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Amal Wassan,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Mehrab Khan Liskani,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,RHC Jam Nawaz,RHC,HF-SBA.pdf,3,table,RHC,RHC,primary,True
+Shaheed Benazirabad,Sanghar,GD Dalore Mori,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Nauabad,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Khan Sanjrani,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Abdul Hakeem Bhambro,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,Unani Shifa Khan Shuja Jakhro,USK,HF-SBA.pdf,3,table,USK,USK,primary,False
+Shaheed Benazirabad,Sanghar,BHU Barhoon,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Mulla Hurmat,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Qazi Juman Dahiri,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Din Muhammad Kakepoto,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Gohram Jamali,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Alam Khan Zardari,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Jiando Rind,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Lundo,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Soomar Faqir Hingoro,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Golo Pir,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Juma Village,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Kamil Keerio,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Soomar Wassan,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Maroof Dahiri,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Mehar Ali Talpur,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Gidarh Ahpan,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Kumbh Darhoon,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,DCD Mulla Makhan,DCD,HF-SBA.pdf,3,table,DCD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Baqir Nizamani,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,GD Rana Rajput Nagar,GD,HF-SBA.pdf,3,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Bago Wadadani,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Khairo Kaloi,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Landhi,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,DCD Ali Muhammad Thaheem,DCD,HF-SBA.pdf,3,table,DCD,Dispensary,primary,True
+Shaheed Benazirabad,Sanghar,BHU Ali Mardan Jamali,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Mir Hassan Mari,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Malook Junejo,BHU,HF-SBA.pdf,3,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,BHU Piru Faqir Shoro,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Sanghar,GD Sachedino Wariyah,GD,HF-SBA.pdf,4,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU 60 Mile,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH- 60 Mile,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Ghulam Muhammad Jamali,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Karim Bux Dahri,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Bucheeri,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,RHC Daur,RHC,HF-SBA.pdf,4,table,RHC,RHC,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,GD Soomar Khan Korai,GD,HF-SBA.pdf,4,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Ghulam Hyder Shah,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Gupchani,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Ali Jan Brohi,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU 68 Mori,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Jam Sahib,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Asgharabad,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,GD Jhoro Shar,GD,HF-SBA.pdf,4,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,GD Mud Jamrao,GD,HF-SBA.pdf,4,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,GD Karim Bux Brohi,GD,HF-SBA.pdf,4,table,GD,Dispensary,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Shafi Muhammad Gujar,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Nawab Wali Mohd,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Ramzan Rahu,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Haberi,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Mitha Khan Jokhio,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Qutbi,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Aqil Rahu,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Kot Maqbool Shah,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU khar,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Mukeem Dahri,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Ghulam Mohammad Jamali,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Bado Mahar,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Masood Khan Bughio,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU San Saweri,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Bhai Khan Jamali,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Allah Bux Magsi,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Noor Nawaz Zardari,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Trimore,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCHC Laique Zardari.II,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Karam Ali Jamali,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Khair Shah,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Manuabad,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Budhal Shah,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Chattan Shah,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Shamil Unar,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Sukhio Manahejo,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Dino Shah,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Majeed Keerio,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Model Village,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Nasri Shareef,MCH,HF-SBA.pdf,4,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Hamal Fakir,BHU,HF-SBA.pdf,4,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Mohd Khan Magsi,BHU,HF-SBA.pdf,5,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Hassan Jamali,BHU,HF-SBA.pdf,5,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Karam Jamali,BHU,HF-SBA.pdf,5,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Shahmir Zardari,MCH,HF-SBA.pdf,5,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Khabar Lakhmir,BHU,HF-SBA.pdf,5,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Mari Jalbani,BHU,HF-SBA.pdf,5,table,BHU,BHU,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Bakhsho Magsi,MCH,HF-SBA.pdf,5,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,MCH Haji Murad Ali Chandio,MCH,HF-SBA.pdf,5,table,MCH,MCH,primary,True
+Shaheed Benazirabad,Shaheed Benazirabad,BHU Jalalani,BHU,HF-SBA.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Mohammad Khan Shar,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Dad Leghari,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Ghulam Hyder Leghari,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Ahmed Ali Pitafi,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,DCD Chatto Kot,DCD,HF-SUK.pdf,1,table,DCD,Dispensary,primary,True
+Sukkur,Ghotki,BHU Bago Bhutto,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Abdullah Rajri,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,DCD Dari,DCD,HF-SUK.pdf,1,table,DCD,Dispensary,primary,True
+Sukkur,Ghotki,RHC Adilpur,RHC,HF-SUK.pdf,1,table,RHC,RHC,primary,True
+Sukkur,Ghotki,BHU Jahanpur,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Bago Daho,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Ayoob Lakhan,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,DCD Rang Ali Shah,DCD,HF-SUK.pdf,1,table,DCD,Dispensary,primary,True
+Sukkur,Ghotki,GD Changlani,GD,HF-SUK.pdf,1,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,BHU Hussain Beli,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,GD Sijawal Dhandhu,GD,HF-SUK.pdf,1,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,BHU Qadirpur,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Taj Mohammad Ruk,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,GD Khadwari,GD,HF-SUK.pdf,1,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,BHU Sanghari,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Umar Daho,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,GD Khangarh,GD,HF-SUK.pdf,1,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,BHU Lohi,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Ali Mahar,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Forming Society,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Saleh Mahar,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,GD Qazi Badal,GD,HF-SUK.pdf,1,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,BHU Ghulam Hussain Leghari,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,MCH Centre Mirpur Mathelo,MCH,HF-SUK.pdf,1,table,MCH,MCH,primary,True
+Sukkur,Ghotki,BHU Darwesh Naich,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Garhi Chakar,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,GD Abul Ji Garhi,GD,HF-SUK.pdf,1,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,GD Hayat Pitafi,GD,HF-SUK.pdf,1,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,RHC Jarwar,RHC,HF-SUK.pdf,1,table,RHC,RHC,primary,True
+Sukkur,Ghotki,BHU Sono Pitafi,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Landhyoon Mahar,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Noorabad,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Punhoo Khan Mazari,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,RHC Reti,RHC,HF-SUK.pdf,1,table,RHC,RHC,primary,True
+Sukkur,Ghotki,BHU Kamoo Shaheed,BHU,HF-SUK.pdf,1,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Khambhra,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Haso Daho,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Ranwati,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Syedpur,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Ghotki,GD Chak Shahbazpur,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,GD Mohammadpur,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,GD Pir Jo Goth,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Ghotki,BHU Abdul Sattar,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Jam Khan Samejo,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Ghotki,BHU Soi Sharif,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Babarloi,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Shahladhni,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Ubhri,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,SMBB Poli Clinic,Others,HF-SUK.pdf,2,table,Other,Other,unclassified,True
+Sukkur,Khairpur,GD Faiz Abad,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,PPHI Eye Hospital,Others,HF-SUK.pdf,2,table,Hospital,Hospital,secondary,True
+Sukkur,Khairpur,BHU Tando Nazar Ali,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,Gd Khanpur,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Mitho Mari,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Bago Maitlo,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Pir Mangio,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Allah Bux Katohar,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Allah Dino Phulpoto (Autari),GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Gabar Maitlo,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Razi Goth,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Phat,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Siming,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,MCH Kausar Hospital,HOSP,HF-SUK.pdf,2,table,Hospital,Hospital,secondary,True
+Sukkur,Khairpur,BHU Loung Fakir,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Manghi Khan,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Nihal Khan Baloch,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Shah Abdul Latif University,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Lal Bux Mangi,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Tando Masti,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Therhi,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Palh,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,MCH Therhi,MCH,HF-SUK.pdf,2,table,MCH,MCH,primary,True
+Sukkur,Khairpur,BHU Gagri,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Wada Machyoon,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Amir Ali Shah,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Mithri,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Bakhar Kanasra,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Haji Imam Bux Palh,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Fakir Abad,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Karam Ali Khan Lashari,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,DCD Aziz Chandio,DCD,HF-SUK.pdf,2,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,GD Fateh Pur,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Jan Mohammad Windir,BHU,HF-SUK.pdf,2,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Talpur Wada,GD,HF-SUK.pdf,2,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,MCH Saeed Nangrejo,MCH,HF-SUK.pdf,3,table,MCH,MCH,primary,True
+Sukkur,Khairpur,BHU Haji Nawab Khan Wassan,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Jiskani,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Abu Zahbi,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,MCH Kotdeji,MCH,HF-SUK.pdf,3,table,MCH,MCH,primary,True
+Sukkur,Khairpur,BHU Agha Hashim Shah Jagir,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Arab Machi,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Kumb,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Hussain Abad,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Layari,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Murad Khan Gopang,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Babar Wada,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Bago Daro,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,DCD Atta Muhammad Bhambhro,DCD,HF-SUK.pdf,3,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,GD Naseer Fakir Jallani,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Bachal Bhambro,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Soorah,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,MCHC Nara Medical Complex,MCH,HF-SUK.pdf,3,table,MCH,MCH,primary,True
+Sukkur,Khairpur,BHU Pir Bux Gaho,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,DCD Khanwari,DCD,HF-SUK.pdf,3,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,DCD Suleman Ardin,DCD,HF-SUK.pdf,3,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,GD Qadan wari Taj Mohammad Mehrani,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Rab Rakhyo,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Padhriyo,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Pharyaro,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Sikandarabad,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Mohammad Sidique Bhambhro,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Kathore,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Tajjal Sharif,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Model Village Tajjal,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Kharrah,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Bozdar Wada,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Deparja,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Hindyari,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,Gd Mohammad Dawood Shar,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Tarko,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Mandan,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Sutyaro,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Dhoro,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Kabir Khan Siyal,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Dubi,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Akan Khan Behan,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Imdad Ali Shar,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Mengo Fakir Shar,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Sabar Rind,GD,HF-SUK.pdf,3,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Setharja,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Tando Mir Ali,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Akri,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Khush Khair Mohammad,BHU,HF-SUK.pdf,3,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Bangoo Behan,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Pir Bux Lothi,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Baseero,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Zafar Abad,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Khair Mohammad Lashari,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,DCD Nangar Khan Shar,DCD,HF-SUK.pdf,4,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,GD Karoundi,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Ghulam Nabi Rajper,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Arraro,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Niazabad,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Mohammad Ramzan Mullo,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,DCD Raza Abad,DCD,HF-SUK.pdf,4,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Razi Dero,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Belharo,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Arab Phull,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Jado Wahan,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Lakha Wada,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Fakir Mohammed Lakho,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Ghulam Jaffar Jamro,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Kamal Dero,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Saidi Lower,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Kharalabad,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Ali Mohammad Khan Sarohi,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Saleem Ahmed Kharal,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Khuhra,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Larhi,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Ripri,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Ahmedpur,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Mahesar Wada,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Drib Mehar Shah,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Hadal Shah,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,DCD Mangharji,DCD,HF-SUK.pdf,4,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,DCD Mehar Ali Unar,DCD,HF-SUK.pdf,4,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Kolab Jial,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Kot Mir Mohammed,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,DCD Shadi Dhoondhan,DCD,HF-SUK.pdf,4,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,GD Jadal Khan Khorkhani,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Manghan Wari,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Rahooja,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Bahar Larik,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Phori Chandio,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,RHC Pir jo Goth,RHC,HF-SUK.pdf,4,table,RHC,RHC,primary,True
+Sukkur,Khairpur,MCHC Pir Jo Goth,MCH,HF-SUK.pdf,4,table,MCH,MCH,primary,True
+Sukkur,Khairpur,BHU Piryaloi,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Ali Hyder Jalbani,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Kandhar,GD,HF-SUK.pdf,4,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Sadar Ji Bhatyoon,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,DCD Keti Mir Mohammed,DCD,HF-SUK.pdf,4,table,DCD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Bhellar Wada,BHU,HF-SUK.pdf,4,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Gadeji,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Gaad Sharif,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,GD Setharja Bala,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Razal Memon,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Pir Hayat Shah,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Tando Mir karam Ali Talpur,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Shah Ali Jamro,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Khairpur,BHU Bachal Bhambro (SD),BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Rukrani,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Sagyoon,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Khalifa Huryah,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU New Goth Sahito,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,BHU Sami,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Khairpur,GD Imdad Ali Sahito,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Sukkur,BHU Abad,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Kandowahan,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,MCH Centre Arain,MCH,HF-SUK.pdf,5,table,MCH,MCH,primary,True
+Sukkur,Sukkur,BHU Newpind,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,GD Jaffarabad,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Sukkur,GD Naseerabad,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Sukkur,BHU Haji Khan Chachar,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Chechro,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,MCH Dadloi,MCH,HF-SUK.pdf,5,table,MCH,MCH,primary,True
+Sukkur,Sukkur,BHU Hingoro,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Thekratho,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,GD Mubarakpur,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Sukkur,BHU Hussain Kalwar,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Nouraja,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Qasimpur,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Samo chachar,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Nirch,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Sultanpur,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,GD Ali Wahan,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Sukkur,BHU Arore,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Thariri,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Fakirabad,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Lutuf Ali Jagirani,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Tando Thatti,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,MD Loung Bhatti,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Sukkur,BHU Dubar,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Patni,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Darawahan,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Dodanko,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,BHU Kandri,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,GD Sehta,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Sukkur,BHU Salehpat,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,GD Riazabad,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Sukkur,BHU Gagro,BHU,HF-SUK.pdf,5,table,BHU,BHU,primary,True
+Sukkur,Sukkur,GD Miani Road,GD,HF-SUK.pdf,5,table,GD,Dispensary,primary,True
+Sukkur,Sukkur,GD Shamsabad,GD,HF-SUK.pdf,6,table,GD,Dispensary,primary,True
