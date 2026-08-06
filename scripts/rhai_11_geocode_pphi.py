@@ -104,7 +104,7 @@ PREFIX = re.compile(
     r"|M\.?C\.?H\.?C?\.?(\s+CENT\w*)?|MATERNITY\s+HOME|MOTHER\s+(AND|&)\s+CHILD"
     r"|T\.?H\.?Q\.?|D\.?H\.?Q\.?|TALUKA\s+HEAD\s*QUARTER|DISTRICT\s+HEAD\s*QUARTER"
     r"|GOV(ERNMENT)?\s+HOSPITAL|CIVIL\s+HOSPITAL|HOSPITAL"
-    r"|SUB\s*-?\s*HEALTH\s+CENT\w*|HEALTH\s+CENT\w*)\s*[-:,]?\s*",
+   r"|SUB\s*-?\s*HEALTH\s+CENT\w*|HEALTH\s+CENT\w*|PLUS)\s*[-:,]?\s*",
     re.I,
 )
 GOTH = re.compile(r"^\s*GOTH\s+|\s+GOTH\s*$", re.I)
@@ -275,7 +275,7 @@ def main() -> int:
             choices, sub, scope = gaz["place_name"].tolist(), gaz, "province_fallback"
 
         m = process.extractOne(row.settlement, choices,
-                               scorer=fuzz.token_set_ratio, score_cutoff=REVIEW)
+                               scorer=fuzz.token_sort_ratio, score_cutoff=REVIEW)
         if m is None:
             results.append({"matched_place": None, "score": 0.0, "lon": np.nan,
                             "lat": np.nan, "gaz_source": None, "match_scope": scope})
