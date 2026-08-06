@@ -135,7 +135,7 @@ def fig1_facility_density(plt) -> None:
                  fontsize=12, fontweight="bold", x=0.02, ha="left", y=0.97)
     fig.text(0.02, 0.03,
              "Open sources capture private urban clinics well and rural public "
-             "primary care poorly. Only 3.1% of PPHI facilities\nfall within 250 m of "
+             "primary care poorly. Only 5.2% of PPHI facilities\nfall within 250 m of "
              "any facility in the open data — the two sources describe near-disjoint "
              "sets of buildings.",
              fontsize=7.5, color="#555555")
