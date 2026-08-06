@@ -1,0 +1,51 @@
+sample_id,verdict,structure,notes,district,name,settlement,matched_place,score,hf_type
+1,yes,,,Kamber,GD Beer Shareef,Beer Shareef,Ber Sharif,81.81818181818181,Dispensary
+2,yes,,,Tharparkar,BHU Bhakuo,Bhakuo,Bhakuo,100.0,BHU
+3,unclear,,,Tando Muhammad Khan,BHU Ghulam Muhammad Jut,Ghulam Muhammad Jut,Ghulam Muhammad,88.23529411764706,BHU
+4,yes,,,Jacobabad,BHU Piyaro Khoso,Piyaro Khoso,Piyaro Khosa,91.66666666666666,BHU
+5,yes,,,Shikarpur,BHU Bado,Bado,Bado,100.0,BHU
+6,yes,,,Dadu,BHU Wahi Pandhi,Wahi Pandhi,Wahi Pandhi,100.0,BHU
+7,yes,,,Kamber,BHU Hamal,Hamal,Hamal,100.0,BHU
+8,yes,,,Thatta,BHU Sajan Wari,Sajan Wari,Sajanwari,84.21052631578947,BHU
+9,yes,,,Badin,GD Seerani,Seerani,Seerani,100.0,Dispensary
+10,yes,,,Malir,MCHC Kathore,Kathore,Kathor,92.3076923076923,MCH
+11,yes,,,Jacobabad,MCHC Jaffarabad,Jaffarabad,Jafarabad,94.73684210526316,MCH
+12,yes,,,Ghotki,BHU Saleh Mahar,Saleh Mahar,Saleh Mahar,100.0,BHU
+13,no,,,Khairpur,BHU Phat,Phat,Pat,85.71428571428572,BHU
+14,yes,,,Dadu,MCHC Faridabad,Faridabad,Faridabad,100.0,MCH
+15,yes,,,Mirpurkhas,BHU Ramzan Junejo,Ramzan Junejo,Goth Ramzan Junejo,83.87096774193549,BHU
+16,yes,,,Dadu,GD Gul Mohammad Jatoi,Gul Mohammad Jatoi,Goth Gul Muhammad Jatoi,82.92682926829268,Dispensary
+17,yes,,,Naushero Feroze,BHU Khan Wahan,Khan Wahan,Khan Wahan,100.0,BHU
+18,yes,,,Khairpur,BHU Tando Nazar Ali,Tando Nazar Ali,Tando Nazar Ali,100.0,BHU
+19,yes,,,Sujawal,BHU Gul Muhammad Baran,Gul Muhammad Baran,Got Gul Muhammad Baran,90.0,BHU
+20,yes,,,Matiari,BHU Saeed Khan Laghari,Saeed Khan Laghari,Said Khan Laghari,91.42857142857143,BHU
+21,yes,,,Tharparkar,BHU Mithrio Bhatti,Mithrio Bhatti,Mithrio Bhatti,100.0,BHU
+22,no,,,Jamshoro,GD Kot Lashari,Kot Lashari,Goth Lashkari,83.33333333333334,Dispensary
+23,yes,,,Ghotki,BHU Soi Sharif,Soi Sharif,Soi Sharif,100.0,BHU
+24,yes,,,Kamber,MCHC Shahdadkot,Shahdadkot,Shahdadkot,100.0,MCH
+25,yes,,,Larkana,BHU Dhamrah,Dhamrah,Dhamraha,93.33333333333333,BHU
+26,yes,,,Mirpurkhas,BHU Kangoro,Kangoro,Kangora,85.71428571428572,BHU
+27,yes,,,Khairpur,BHU Gagri,Gagri,Gaghri,90.9090909090909,BHU
+28,yes,,,Hyderabad,DCD Noor Khan Chang,Noor Khan Chang,Nur Khan Chang,89.65517241379311,Dispensary
+29,yes,,,Badin,BHU Khalifo Qasim,Khalifo Qasim,Khalifa Qasim,92.3076923076923,BHU
+30,yes,,,Tando Allahyar,GD Muhammad Hassan Dal,Muhammad Hassan Dal,Goth Muhammad Husain Dal,79.06976744186046,Dispensary
+31,yes,,,Khairpur,BHU Khuhra,Khuhra,Khuhra,100.0,BHU
+32,yes,,,Larkana,GD Rasheed Wagan,Rasheed Wagan,Rasheed Wagan,100.0,Dispensary
+33,no,,,Sanghar,GD Rawtiani,Rawtiani,Rawatiani,94.11764705882352,Dispensary
+34,no,,,Larkana,BHU Kothi,Kothi,Kothi,100.0,BHU
+35,yes,,,Sukkur,BHU Abad,Abad,Abad,100.0,BHU
+36,yes,,,Badin,DCD Budho Qambrani,Budho Qambrani,Goth Budho Kambrani,78.78787878787878,Dispensary
+37,yes,,,Karachi West,MCH Abdullah Gabool,Abdullah Gabool,Goth Abdullah Gabol,82.35294117647058,MCH
+38,yes,,,Badin,GD Lakhadino Sarejo,Lakhadino Sarejo,Haji Lakhano Sarejo,80.0,Dispensary
+39,yes,,,Sanghar,BHU Khahi,Khahi,Khahi,100.0,BHU
+40,yes,,,Sanghar,BHU Mulla Hurmat,Mulla Hurmat,Mullan Hurmat,96.0,BHU
+41,yes,,,Mirpurkhas,BHU Khumbri,Khumbri,Khumbri,100.0,BHU
+42,yes,,,Keamari,ED Muhammad Khan Colony,Muhammad Khan Colony,Muhammad Khan Colony,100.0,Dispensary
+43,yes,,,Shaheed Benazirabad,BHU Karim Bux Dahri,Karim Bux Dahri,Karim Bakhsh Dahri,78.78787878787878,BHU
+44,yes,,,Hyderabad,BHU Darya Baig Mughal,Darya Baig Mughal,Darya Beg Mughal,90.9090909090909,BHU
+45,unclear,,,Kashmore,BHU Zorgarh,Zorgarh,Zorgarh,100.0,BHU
+46,yes,,,Kamber,GD Dhing,Dhing,Dhing,100.0,Dispensary
+47,no,,,Umerkot,GD Maghan Khan Chandio,Maghan Khan Chandio,Goth Maghan Chando,81.08108108108108,Dispensary
+48,yes,,,Karachi East,ED Ghareebabad,Ghareebabad,Gharibabad,85.71428571428572,Dispensary
+49,unclear,,,Ghotki,BHU Umar Daho,Umar Daho,Goth Umar Daho,78.26086956521739,BHU
+50,yes,,,Shaheed Benazirabad,BHU Mitha Khan Jokhio,Mitha Khan Jokhio,Mitha Khan Jokhio,100.0,BHU
