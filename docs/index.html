@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Travel time to health facilities — Sindh</title>
+<meta name="description" content="Estimated road travel time from villages in Sindh, Pakistan to the nearest health facility. Look up a district.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<style>
+:root{
+  --ink:#14100c;            /* near-black, warm */
+  --paper:#faf7f2;          /* survey-sheet cream */
+  --rule:#d9d1c4;           /* hairline */
+  --field:#5b7c5a;          /* irrigated green — under 15 min */
+  --silt:#c9a227;           /* canal silt — 15 to 30 */
+  --dust:#c2703d;           /* dust — 30 to 60 */
+  --thar:#8f3b1b;           /* desert — over 60 */
+  --sky:#2f5d7c;            /* register/PPHI accent */
+  --muted:#7b7268;
+  --warn:#8a4b12;
+  --panel:#fffdf9;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  color:var(--ink);background:var(--paper);
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:500;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+/* ---------- shell ---------- */
+.app{display:grid;grid-template-columns:400px 1fr;height:100dvh}
+@media(max-width:900px){
+  .app{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  #map{min-height:45dvh}
+  .side{max-height:55dvh}
+}
+
+/* ---------- sidebar ---------- */
+.side{background:var(--panel);border-right:1px solid var(--rule);overflow-y:auto;display:flex;flex-direction:column}
+.masthead{padding:22px 22px 16px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.masthead h1{font-size:25px;line-height:1.14;letter-spacing:-.012em}
+.masthead p{margin:9px 0 0;font-size:13px;color:var(--muted);line-height:1.45}
+
+.block{padding:18px 22px;border-bottom:1px solid var(--rule)}
+label.fld{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+select,input[type=search]{
+  width:100%;padding:10px 11px;font:inherit;font-size:14px;
+  border:1px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink);
+}
+select:focus,input:focus,button:focus-visible{outline:2px solid var(--sky);outline-offset:1px}
+
+/* headline readout — the signature element */
+.readout{padding:22px;border-bottom:1px solid var(--rule);background:
+  repeating-linear-gradient(180deg,transparent 0 27px,rgba(217,209,196,.4) 27px 28px)}
+.readout .lede{font-family:Newsreader,serif;font-size:17px;line-height:1.42;margin:0 0 14px}
+.big{font-family:"IBM Plex Mono",monospace;font-size:46px;line-height:1;font-weight:500;letter-spacing:-.03em}
+.big small{font-size:15px;letter-spacing:0;color:var(--muted);margin-left:5px;font-weight:400}
+.sub{font-size:12.5px;color:var(--muted);margin-top:5px}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:16px}
+.stat{background:var(--panel);padding:11px 12px}
+.stat .k{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:"IBM Plex Mono",monospace;font-size:19px;margin-top:3px;font-weight:500}
+.stat .v.wide{font-size:16px}
+
+.flag{margin:16px 0 0;padding:11px 13px;border-left:3px solid var(--warn);background:#fdf6ec;font-size:12.5px;line-height:1.5;color:#5c3d16}
+.flag b{font-weight:600}
+
+/* village list */
+.listhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:16px 22px 9px}
+.listhead h2{font-size:15px}
+.listhead .count{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted)}
+.rows{padding:0 12px 22px}
+.row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;
+  padding:8px 10px;border-radius:2px;cursor:pointer;border:1px solid transparent}
+.row:hover,.row:focus-visible{background:#f3efe7;border-color:var(--rule);outline:none}
+.row .nm{font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .pp{font-size:11px;color:var(--muted)}
+.row .tt{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:500;text-align:right}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:1px}
+
+.foot{padding:18px 22px;font-size:11.5px;color:var(--muted);line-height:1.55}
+.foot a{color:var(--sky)}
+.foot p{margin:0 0 9px}
+
+/* ---------- map ---------- */
+#map{position:relative}
+.legend{position:absolute;left:14px;bottom:14px;background:rgba(255,253,249,.95);
+  border:1px solid var(--rule);border-radius:2px;padding:11px 13px;font-size:11.5px;
+  backdrop-filter:blur(6px);max-width:230px}
+.legend .t{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.legend .k{display:flex;align-items:center;gap:8px;margin:4px 0}
+.tools{position:absolute;right:14px;top:14px;display:flex;flex-direction:column;gap:7px;align-items:flex-end}
+.btn{font:inherit;font-size:12.5px;padding:7px 11px;background:rgba(255,253,249,.95);
+  border:1px solid var(--rule);border-radius:2px;cursor:pointer;color:var(--ink);backdrop-filter:blur(6px)}
+.btn[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.maplibregl-popup-content{font-family:"IBM Plex Sans",sans-serif;font-size:13px;padding:11px 13px;border-radius:2px}
+.pop-n{font-family:Newsreader,serif;font-size:15px;margin-bottom:6px}
+.pop-r{display:flex;justify-content:space-between;gap:16px;font-size:12.5px;padding:2px 0}
+.pop-r .mono{font-weight:500}
+.loading{position:absolute;inset:0;display:grid;place-items:center;background:var(--paper);z-index:5;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);letter-spacing:.08em}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="masthead">
+      <div class="eyebrow">Rural Healthcare Accessibility Index</div>
+      <h1>Travel time to health facilities</h1>
+      <p>Estimated road travel time from each village in Sindh to its nearest health facility. Pick a district.</p>
+    </div>
+
+    <div class="block">
+      <label class="fld" for="district">District</label>
+      <select id="district"></select>
+    </div>
+
+    <div class="readout" id="readout"></div>
+
+    <div class="listhead">
+      <h2>Villages, furthest first</h2>
+      <span class="count" id="vcount"></span>
+    </div>
+    <div class="block" style="border:0;padding-top:0">
+      <input type="search" id="search" placeholder="Find a village by name" aria-label="Find a village by name">
+    </div>
+    <div class="rows" id="rows"></div>
+
+    <div class="foot">
+      <p><b>What this measures.</b> How long it takes to reach a facility by road. Not whether the facility is staffed, stocked or open.</p>
+      <p id="metaline"></p>
+      <p><a href="https://github.com/ArsalanKaleem/Rural-Healthcare-Accessibility-Index--RHAI-">Method and data on GitHub</a></p>
+    </div>
+  </aside>
+
+  <div id="map">
+    <div class="loading" id="loading">Loading villages…</div>
+    <div class="tools">
+      <button class="btn" id="toggleFac" aria-pressed="false">Show facilities</button>
+      <button class="btn" id="toggleScn" aria-pressed="false" title="Scenario A uses open data only and overstates travel time">Compare with open data only</button>
+      <button class="btn" id="download">Download district CSV</button>
+    </div>
+    <div class="legend">
+      <div class="t">Minutes to nearest facility</div>
+      <div class="k"><span class="dot" style="background:var(--field)"></span>under 15</div>
+      <div class="k"><span class="dot" style="background:var(--silt)"></span>15 to 30</div>
+      <div class="k"><span class="dot" style="background:var(--dust)"></span>30 to 60</div>
+      <div class="k"><span class="dot" style="background:var(--thar)"></span>over 60</div>
+      <div class="t" style="margin-top:10px" id="legScn">Scenario B — with PPHI register</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+const C={field:'#5b7c5a',silt:'#c9a227',dust:'#c2703d',thar:'#8f3b1b',sky:'#2f5d7c',ink:'#14100c'};
+const fmt=n=>n==null?'—':n.toLocaleString();
+const mins=n=>n==null?'—':(n<10?n.toFixed(1):Math.round(n));
+const pop=n=>n==null?'—':n>=1e6?(n/1e6).toFixed(2)+'M':n>=1e3?Math.round(n/1e3)+'k':n;
+const colour=t=>t==null?'#bbb':t<15?C.field:t<30?C.silt:t<60?C.dust:C.thar;
+
+let V=[],D=[],F=null,META={},cur=null,scn='B',showFac=false,map,popup;
+
+async function boot(){
+  const [v,d,m]=await Promise.all([
+    fetch('data/villages.json').then(r=>r.json()),
+    fetch('data/districts.json').then(r=>r.json()),
+    fetch('data/meta.json').then(r=>r.json()).catch(()=>({}))
+  ]);
+  V=v.rows.map(r=>({id:r[0],name:r[1],district:r[2],lon:r[3],lat:r[4],tA:r[5],tB:r[6],pop:r[7]}));
+  D=d; META=m;
+  document.getElementById('metaline').textContent =
+    `${fmt(META.villages||V.length)} villages · ${META.districts||D.length} districts · generated ${META.generated||''}`;
+
+  const sel=document.getElementById('district');
+  sel.innerHTML=D.map(x=>`<option value="${x.d}">${x.d}</option>`).join('');
+  sel.addEventListener('change',e=>select(e.target.value));
+
+  initMap();
+  select(D[0].d);
+  document.getElementById('loading').remove();
+}
+
+function initMap(){
+  map=new maplibregl.Map({
+    container:'map',
+    style:{version:8,sources:{
+      osm:{type:'raster',tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+           tileSize:256,attribution:'© OpenStreetMap contributors'}},
+      layers:[{id:'osm',type:'raster',source:'osm',paint:{'raster-saturation':-0.75,'raster-opacity':0.5}}]},
+    center:[68.6,26.2],zoom:6.1,attributionControl:{compact:true}
+  });
+  map.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+  popup=new maplibregl.Popup({closeButton:true,maxWidth:'270px'});
+
+  map.on('load',()=>{
+    map.addSource('v',{type:'geojson',data:fc([])});
+    map.addLayer({id:'v',type:'circle',source:'v',paint:{
+      'circle-radius':['interpolate',['linear'],['zoom'],6,3,9,5.5,12,8],
+      'circle-color':['get','c'],'circle-opacity':.88,
+      'circle-stroke-width':1,'circle-stroke-color':'rgba(20,16,12,.35)'}});
+    map.addSource('f',{type:'geojson',data:fc([])});
+    map.addLayer({id:'f',type:'symbol',source:'f',layout:{
+      'icon-image':'','text-field':'+','text-size':13,'text-allow-overlap':true},
+      paint:{'text-color':['case',['==',['get','s'],1],C.sky,C.ink],'text-opacity':.75}});
+    map.on('click','v',e=>showPopup(e.features[0]));
+    map.on('mouseenter','v',()=>map.getCanvas().style.cursor='pointer');
+    map.on('mouseleave','v',()=>map.getCanvas().style.cursor='');
+    if(cur) draw();
+  });
+
+  document.getElementById('toggleScn').addEventListener('click',e=>{
+    scn = scn==='B' ? 'A' : 'B';
+    const on = scn==='A';
+    e.target.setAttribute('aria-pressed',on);
+    e.target.textContent = on ? 'Showing open data only' : 'Compare with open data only';
+    document.getElementById('legScn').textContent =
+      on ? 'Scenario A — open data only' : 'Scenario B — with PPHI register';
+    render();
+  });
+  document.getElementById('toggleFac').addEventListener('click',async e=>{
+    showFac=!showFac;
+    e.target.setAttribute('aria-pressed',showFac);
+    e.target.textContent = showFac ? 'Hide facilities' : 'Show facilities';
+    if(showFac && !F){
+      try{ F=await fetch('data/facilities.json').then(r=>r.json()); }
+      catch(err){ F={rows:[]}; }
+    }
+    drawFac();
+  });
+  document.getElementById('search').addEventListener('input',()=>renderList());
+  document.getElementById('download').addEventListener('click',csv);
+}
+
+const fc=f=>({type:'FeatureCollection',features:f});
+
+function select(name){
+  cur=D.find(x=>x.d===name);
+  document.getElementById('district').value=name;
+  document.getElementById('search').value='';
+  render();
+  const pts=V.filter(v=>v.district===name);
+  if(pts.length&&map&&map.isStyleLoaded()){
+    const b=new maplibregl.LngLatBounds();
+    pts.forEach(p=>b.extend([p.lon,p.lat]));
+    map.fitBounds(b,{padding:60,maxZoom:10,duration:600});
+  }
+}
+
+function render(){ readout(); draw(); renderList(); }
+
+function readout(){
+  const d=cur, B=scn==='B';
+  const med=B?d.medB:d.medA, wmed=B?d.wmedB:d.wmedA;
+  const o30=B?d.over30B:d.over30A, o60=B?d.over60B:d.over60A;
+  const el=document.getElementById('readout');
+  el.innerHTML=`
+    <p class="lede">In <b>${d.d}</b>, half of villages are within</p>
+    <div class="big">${mins(med)}<small>minutes of a facility</small></div>
+    <div class="sub">Population-weighted median ${mins(wmed)} min · ${fmt(d.n)} villages${d.pop?` · ${pop(d.pop)} people`:''}</div>
+    <div class="stats">
+      <div class="stat"><div class="k">People over 30 min</div><div class="v">${pop(o30)}</div></div>
+      <div class="stat"><div class="k">People over 60 min</div><div class="v">${pop(o60)}</div></div>
+      <div class="stat"><div class="k">Facilities counted</div><div class="v">${fmt(B?d.facTotal:d.facOpen)}</div></div>
+      <div class="stat"><div class="k">Furthest village</div><div class="v">${mins(B?d.maxB:d.p90A)} min</div></div>
+    </div>
+    ${d.undercounted&&B?`<div class="flag"><b>These times are a best case.</b>
+      Only ${d.geoRate||0}% of the ${fmt(d.regTotal)} facilities PPHI operates in ${d.d} could be
+      placed on the map, so the real network is denser than shown and some villages
+      will be closer to care than these figures suggest.</div>`:''}
+    ${!B?`<div class="flag"><b>Open data only.</b> This view leaves out most rural public
+      facilities and overstates travel time roughly twofold. Shown for comparison.</div>`:''}`;
+}
+
+function draw(){
+  if(!map||!map.getSource('v'))return;
+  const B=scn==='B';
+  const f=V.filter(v=>v.district===cur.d).map(v=>{
+    const t=B?v.tB:v.tA;
+    return {type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
+      properties:{c:colour(t),n:v.name||'Unnamed village',tA:v.tA,tB:v.tB,p:v.pop}};
+  });
+  map.getSource('v').setData(fc(f));
+  drawFac();
+}
+
+function drawFac(){
+  if(!map||!map.getSource('f'))return;
+  if(!showFac||!F){ map.getSource('f').setData(fc([])); return; }
+  const pts=V.filter(v=>v.district===cur.d);
+  if(!pts.length){ map.getSource('f').setData(fc([])); return; }
+  let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+  pts.forEach(p=>{x0=Math.min(x0,p.lon);x1=Math.max(x1,p.lon);y0=Math.min(y0,p.lat);y1=Math.max(y1,p.lat)});
+  const pad=.25;
+  const f=F.rows.filter(r=>r[0]>x0-pad&&r[0]<x1+pad&&r[1]>y0-pad&&r[1]<y1+pad)
+    .map(r=>({type:'Feature',geometry:{type:'Point',coordinates:[r[0],r[1]]},properties:{s:r[2]}}));
+  map.getSource('f').setData(fc(f));
+}
+
+function showPopup(ft){
+  const p=ft.properties;
+  popup.setLngLat(ft.geometry.coordinates).setHTML(`
+    <div class="pop-n">${p.n}</div>
+    <div class="pop-r"><span>With PPHI register</span><span class="mono">${mins(+p.tB)} min</span></div>
+    <div class="pop-r"><span>Open data only</span><span class="mono">${mins(+p.tA)} min</span></div>
+    ${p.p&&p.p!=='null'?`<div class="pop-r"><span>Population</span><span class="mono">${fmt(+p.p)}</span></div>`:''}
+  `).addTo(map);
+}
+
+function renderList(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  const B=scn==='B';
+  let list=V.filter(v=>v.district===cur.d);
+  if(q) list=list.filter(v=>(v.name||'').toLowerCase().includes(q));
+  list.sort((a,b)=>((B?b.tB:b.tA)??-1)-((B?a.tB:a.tA)??-1));
+  document.getElementById('vcount').textContent=`${fmt(list.length)} shown`;
+  document.getElementById('rows').innerHTML=list.slice(0,300).map(v=>{
+    const t=B?v.tB:v.tA;
+    return `<div class="row" tabindex="0" data-lon="${v.lon}" data-lat="${v.lat}">
+      <div><div class="nm"><span class="dot" style="background:${colour(t)}"></span>${v.name||'Unnamed village'}</div>
+      ${v.pop?`<div class="pp">${fmt(v.pop)} people</div>`:''}</div>
+      <div class="tt">${mins(t)}<span style="font-size:10px;color:var(--muted)"> min</span></div>
+    </div>`}).join('') || `<div style="padding:14px 10px;color:var(--muted);font-size:13px">No village matches that name in ${cur.d}.</div>`;
+  document.querySelectorAll('.row').forEach(el=>{
+    const go=()=>{map.flyTo({center:[+el.dataset.lon,+el.dataset.lat],zoom:12,duration:700})};
+    el.addEventListener('click',go);
+    el.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+  });
+}
+
+function csv(){
+  const rows=V.filter(v=>v.district===cur.d)
+    .sort((a,b)=>(b.tB??-1)-(a.tB??-1));
+  const head='village_id,name,district,lon,lat,minutes_scenarioB,minutes_scenarioA,population';
+  const body=rows.map(v=>[v.id,`"${(v.name||'').replace(/"/g,'""')}"`,v.district,
+    v.lon,v.lat,v.tB??'',v.tA??'',v.pop??''].join(',')).join('\n');
+  const blob=new Blob([head+'\n'+body],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`RHAI_${cur.d.replace(/\s+/g,'_')}.csv`;
+  a.click();URL.revokeObjectURL(a.href);
+}
+
+boot().catch(e=>{
+  document.getElementById('loading').textContent='Could not load the data files. Run rhai_21_build_web.py first.';
+  console.error(e);
+});
+</script>
+</body>
+</html>
