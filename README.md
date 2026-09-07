@@ -1,312 +1,278 @@
-# RHAI — Full Project Status
+# RHAI — Rural Healthcare Accessibility Index (Sindh, Pakistan)
 
-**Project:** Rural Healthcare Accessibility Index, Sindh, Pakistan
-**Author:** Arsalan Kaleem — ORCID 0009-0002-9054-6965 | github.com/ArsalanKaleem
-**Folder:** `C:\Projects\RHAI` | **Repo:** Rural-Healthcare-Accessibility-Index--RHAI-
-**Direction:** Data-gap paper
-**Updated:** August 2026
+Village-level travel time to the nearest health facility across Sindh, computed over the
+real road network, and a measurement of how badly open geospatial data represents rural
+public primary care infrastructure in Pakistan.
 
----
-
-## 1. What the project is now
-
-It started as "map healthcare access in Sindh." It is now something more defensible:
-
-> **A measurement of how badly open geospatial data represents rural health
-> infrastructure in Pakistan, and what that does to accessibility estimates built on it.**
-
-The routing model is no longer the headline. It is the instrument that demonstrates the
-consequence of the gap. This change happened because the evidence forced it, and it is a
-stronger paper for it — the original version would not have survived review.
-
-Working title:
-*What open geospatial data can and cannot tell us about rural healthcare access:
-a village-level case study from Sindh, Pakistan*
+**The finding this repository exists to document:** open geospatial data omits most rural
+public primary care facilities in Sindh. Accessibility estimates built on it overstate
+travel times roughly twofold, overstate the underserved population tenfold, and
+misidentify which districts are worst served.
 
 ---
 
-## 2. What is built and working
+## Scope
 
-### Routing engine — validated
-- OSMnx 2.1.0 + NetworkX 3.6.1, multi-source Dijkstra outward from each facility node.
-- District-by-district execution with mirror rotation, retries, resumability, and a
-  15 km facility halo for edge effects. Province-scale single-request routing fails
-  (Overpass "70x max query area"); district-wise is the working design.
-- Rural speed assumptions: motorway 90, trunk 70, primary 55, secondary 45, tertiary 35,
-  unclassified 25, residential 20, track 15, path 8, service 20 km/h.
-- **Validated:** Shah Bandar, Thatta — model 103.8 min vs Google Maps 101 min (<3% error).
+This study measures **geographic access to rural public primary care**. The comparison
+register covers basic health units, rural health centres, dispensaries and
+mother-and-child health centres operated by PPHI Sindh. Taluka and district headquarter
+hospitals fall under the provincial health department and were not obtained; private
+facilities are not recorded centrally anywhere. The shortfall reported here is a
+shortfall in how open data represents that one tier.
 
-### Coverage achieved
-- **5,159 villages routed**, 0 duplicates, 2 unreachable, 25 of 27 GADM districts.
-- Karachi Central and South contain zero village points (fully urban) — legitimately
-  excluded, not failed runs.
+### What this measures, and what it does not
 
-### Provisional results (open data only — NOT publishable as stated)
-| Metric | Value |
-|---|---|
-| Median travel time | 19.1 min |
-| Mean | 28.1 min |
-| p90 / p95 / p99 | 52.0 / 101.3 / 178.1 min |
-| Max | 263.8 min |
-| Villages at ≤0 min | 75 (snapped to same node as a facility) |
+The index estimates **physical reachability**: how long it takes to travel from a village
+to the nearest health facility over the road network, accounting for road class and rural
+driving speeds.
 
-Sensitivity already run: ρ(score_log, score_clinical) = 0.971 village-level,
-0.839 district-level. Alternative anchors: strict_30 ρ=0.989 (max rank shift 3),
-lenient_120 ρ=0.952 (max shift 6). **District ranks are robust to the scoring choice.**
+It does **not** measure:
 
-### Scripts (all in `scripts/`)
-| Script | Purpose | Status |
+- whether a facility is **staffed or functional** — a BHU with no doctor is a building
+- whether medicines, equipment or electricity are present
+- opening hours, or whether the facility is open when needed
+- quality of care, affordability, or whether people actually use it
+- transport availability — the model assumes a vehicle exists
+
+Accessibility ≠ availability ≠ quality.
+
+### The three-tier frame
+
+| Tier | Question | This project |
 |---|---|---|
-| `rhai_01_setup_thatta.py` | Thatta pilot district | superseded |
-| `rhai_02_route.py` | first router | superseded |
-| `rhai_03_facilities_from_healthsites.py` | first tiering attempt | superseded (had the upside-down pyramid bug) |
-| `rhai_03b_facilities_honest_tiers.py` | name-only tiering, no guessing | current |
-| `rhai_04_route_final.py` | single-district router | current |
-| `rhai_05_route_by_district.py` | resilient province router | **current, needs rerun with new facilities** |
-| `rhai_06_check_coverage.py` | coverage audit + stitch + QA | done |
-| `rhai_07_score.py` | scoring, aggregation, sensitivity | done |
-| `rhai_08_layer_audit.py` | village/facility density diagnostics | done |
-| `rhai_09b_shp_name_sweep.py` | OSM name-based facility sweep | **result invalid, see §4** |
-| `rhai_10_parse_pphi.py` | PPHI PDF parser | done |
-| `rhai_11_geocode_pphi.py` | fuzzy geocoder | done, 81.8% |
+| 1. Reachable | Can a person get there? | **Answered** — this is what the routing computes |
+| 2. Physically present | Does the building exist? | **Partly** — satellite-checked on a sample |
+| 3. Operational | Is it staffed, stocked, open? | **Not answered.** Needs ground data |
 
-### Repo hygiene — resolved
-`.gitignore` was broken because the **PowerShell generator script had been saved as the
-file itself** (`$rules = @(`, quoted patterns, `WriteAllLines` call). Not a BOM, which is
-what the SWAI notes assumed. 43 files in `data/` were being tracked. Now fixed: raw data
-untracked, ignore rule verified live via `git check-ignore -v`.
-
-Diagnostic worth remembering:
-```powershell
-Get-Content .gitignore | ForEach-Object { "[$_]" }
-```
-Quotes, commas or `$` in the output means you are looking at code, not patterns.
+Tier 3 is the wall this project cannot cross with open data. Satellite imagery can
+confirm a roof; it cannot confirm a doctor. Staff posted but not attending is invisible
+from orbit.
 
 ---
 
-## 3. The findings
+## Headline results
 
-### Finding 1 — Facility data is missing, not mistagged
-Open sources (OpenStreetMap, healthsites.io) hold 2,725 facilities for Sindh.
-**2,246 of them — 82% — are in Karachi**, roughly 1% of the province's land area.
+| | Scenario A<br>(open data only) | Scenario B<br>(+ operator register) |
+|---|---|---|
+| Facilities | 2,725 | 3,308 |
+| Median travel time | 19.1 min | 9.2 min |
+| Population-weighted median | 14.3 min | 7.1 min |
+| People over 30 min from care | **6.95 million** | **0.68 million** |
+| People over 60 min | 1.26 million | 0.05 million |
+| Maximum travel time | 263.8 min | 84.9 min |
 
-Against PPHI's published lists (1,357 facilities parsed from six regional PDFs):
+- **Overstatement factor: 2.01×** population-weighted, 2.08× unweighted. Robust to
+  excluding zero-distance cases (1.96×) and sub-minute cases (1.94×).
+- **Only 5.2%** of located register facilities fall within 250 m of any facility in the
+  open data. The two sources describe substantially different sets of buildings.
+- **District priority rankings are not preserved** (Spearman ρ = 0.657 across all
+  districts, 0.557 for the 22 with ≥10 villages; largest shift 14 places). Tharparkar and
+  Dadu exchange first place depending on which facility layer is used.
+- **Satellite check:** 42 of 50 sampled geocodes had a plausible facility structure
+  within 500 m (84.0%, 95% CI 71.5–91.7).
 
-| District | PPHI listed | Open data | Captured |
+### Coverage gap, selected districts
+
+| District | Open data | + register | Multiplier | Register total |
+|---|---|---|---|---|
+| Ghotki | 1 | 34 | **34×** | 50 |
+| Matiari | 1 | 17 | 17× | 36 |
+| Kashmore | 1 | 15 | 15× | 44 |
+| Tharparkar (Mithi) | 4 | 38 | 9.5× | 51 |
+| Dadu | 4 | 35 | 8.8× | 50 |
+| Jacobabad | 3 | 26 | 8.7× | 37 |
+| Khairpur | 10 | 71 | 7.1× | 151 |
+| **Tando Allahyar** | **0** | **1** | — | 47 |
+| Karachi East / West / Central, Malir | — | — | **1.0×** | — |
+
+Tando Allahyar — a district of over a million people — has **zero** health facilities in
+open geospatial data, and only one of its 47 registered facilities could be geocoded.
+Every metropolitan district gains nothing: open sources already had them. The bias is a
+step function between urban and rural, not a gradient.
+
+---
+
+## Method
+
+**Villages** → 5,159 settlement points across Sindh.
+**Roads** → OpenStreetMap drive network, downloaded per district via Overpass.
+**Routing** → OSMnx + NetworkX, one multi-source Dijkstra traversal seeded from all
+facility nodes.
+**Speeds** → set for rural conditions, not library defaults: motorway 90, trunk 70,
+primary 55, secondary 45, tertiary 35, unclassified 25, residential 20, track 15,
+path 8 km/h. These are judgement, not measurement — no speed survey exists for rural
+Sindh. The same values apply to both scenarios, so the *comparison* does not depend on
+them being right, though absolute times do.
+**Halo** → 15 km facility buffer beyond each district boundary, so edge villages can
+reach facilities across administrative lines.
+
+**Cross-check.** Shah Bandar, Thatta: model 103.8 min vs independent routing 101 min,
+under 3% apart. One case. It shows the graph and speeds produce a plausible result on one
+long rural journey, and no more.
+
+### Recovering the facility register
+
+PPHI Sindh publishes district facility lists as PDFs with **names but no coordinates**.
+Those were parsed and geocoded by matching each facility's embedded settlement name
+against gazetteers, constrained to the facility's own district and verified against
+district polygons.
+
+| Step | Operation | Retained | Lost |
 |---|---|---|---|
-| Khairpur | 151 | 10 | 7% |
-| Badin | 107 | 68 | 64% |
-| Sanghar | 92 | 65 | 71% |
-| Jamshoro | 67 | 13 | 19% |
-| **Tharparkar** | **51** | **4** | **8%** |
-| Dadu | 50 | 4 | 8% |
-| Ghotki | 50 | 1 | 2% |
-| Naushero Feroze | 48 | 5 | 10% |
-| Tando Allahyar | 47 | 0 | 0% |
-| **Karachi East** | **8** | **800** | — |
+| 1 | Parsed from six regional PDFs | 1,357 | — |
+| 2 | Settlement name extractable | 1,356 | 1 |
+| 3 | Matched within own district at score ≥88 | 507 | 849 |
+| 4 | Match inside expected district polygon | 477 | 30 |
+| 5 | Borderline 78–87 screened by hand | +139 | 127 of 266 rejected |
+| | **Recovered layer** | **616** | **741** |
 
-That last row is the paper in one line: open data over-represents private urban clinics
-by two orders of magnitude while missing public rural infrastructure almost entirely.
-The bias is not noise — it is structural, and it runs exactly opposite to where
-accessibility research needs accuracy.
-
-PPHI's own figures (Baig et al. 2025, *Malaria Journal* 24:265): 1,469 facilities managed
-across 26 districts; 1,088 primary analysed (681 BHU, 331 dispensaries, 36 MCH, 40 other);
-mean 13,462 people served per facility; district population coverage 17%–79%, mean 46%.
-
-### Finding 2 — Mithi's number was an artefact
-Tharparkar's median of 97.7 min and "72.3% of villages over 60 min" were computed against
-**4 facilities in 19,653 km²**, when 51 exist. Direction plausible, magnitude wrong.
-This is the clearest illustration of why the study could not be published as originally
-framed, and it belongs in the paper as a worked example.
-
-### Finding 3 — OSM stores Sindh place names in Urdu script
-**23% of OSM place names in Sindh are Urdu script** (خیرپور, سکھر, نوشہرو فیروز).
-Taluka headquarters towns — Dokri, Ratodero, Naudero, Setharja — returned **zero**
-matches against a 29,746-place national extract when searched in Latin.
-
-Consequence for record linkage: of 1,109 successful geocodes, **GeoNames supplied 1,078
-and OSM places supplied 2.** OSM was not merely less useful; it was unusable for this task.
-
-This appears to be undocumented and is a genuine methodological contribution.
-
-### Finding 4 — Village layer is an OSM convenience sample
-Density range across districts: **2.0 to 289.4 villages per 1,000 km² — a 148-fold spread.**
-Over-sampled: Hyderabad 289.4, Shikarpur 148.7, Larkana 116.9. Under-sampled: Thatta 3.5,
-Tando Allahyar 2.8, Jamshoro 2.0.
-
-Still valid: individual village travel times.
-Not valid: the province median, unweighted district means, cross-district "% over 60 min".
-
-### Finding 5 — Geocoding by settlement name works
-1,357 PPHI facilities parsed → **1,109 geocoded (81.8%)**, 115 in review band, 132 failed.
-Rural districts that carry the argument all scored high: Ghotki 94%, Kashmore 91%,
-Dadu 88%, Khairpur 85%, Tharparkar 71%.
-
-**Tharparkar goes from 4 facilities to 36.**
+**616 of 1,357 facilities (45.4%)** recovered with verified coordinates.
 
 ---
 
-## 4. Corrections to earlier conclusions — do not carry these forward
+## Limitations
 
-Four things were concluded and later shown wrong. Recording them because two are still
-sitting in outputs.
+Stated plainly, because they are the point of the paper.
 
-1. **"Six schema variants = six script versions."** Wrong. The differing columns are only
-   tier columns, and their presence tracks whether a named-tier facility exists in each
-   district's halo. One script behaving as designed. `district_results/` was nearly
-   deleted on this basis.
-2. **"Karachi Central and South failed."** Wrong. Zero village points — fully urban.
-3. **"The `.gitignore` problem is a BOM."** Wrong. The generator script had been saved as
-   the file. Different cause, different fix.
-4. **`rhai_09b` name sweep result is invalid.** It searched for "BHU", "RHC", "Hospital"
-   in a `name` column that is 23% Urdu script. Facilities named in Urdu were invisible
-   to it. The reported 1.9% gain and the conclusion "the buildings were never mapped"
-   are both unsupported. **Must be rerun against `name:en` / `name:ur` before any claim
-   about OSM facility coverage is made.**
+1. **The village layer is an OSM convenience sample.** Density ranges from 2.0 to 289.4
+   villages per 1,000 km² — a 148-fold spread. Individual travel times are valid;
+   unweighted aggregates partly describe where OSM contributors were active. All headline
+   figures are population-weighted.
 
----
+2. **Facilities sit at settlement centroids, not buildings.** Typical positional error
+   0–2 km, roughly 0–5 minutes at rural speeds, biased toward *underestimating* travel
+   time.
 
-## 5. What to do next
+3. **372 villages (7.2%) show zero travel time under Scenario B**, because a facility
+   geocoded to a settlement centroid snaps to the same graph node as the village named
+   after it. Defensible, but an artefact. Results reported with and without.
 
-### Immediate — before rerouting
-- [ ] **Circularity check.** Correlate per-district geocode match rate against
-      per-district village density from `rhai_layer_audit.csv` (Spearman). If they
-      correlate, geocoding succeeds preferentially where OSM already mapped things —
-      the same bias being measured. Ghotki at 94% with 1 mapped facility argues against
-      it, but test properly. State the result either way.
-- [ ] **Review the 115 rows** in `pphi_geocode_review.csv` (80–89 band) by hand.
-- [ ] **District name crosswalk.** PPHI vs GADM spellings differ and the join will
-      silently drop rows: Tharparkar/Mithi, Kamber/Qambar, Naushero Feroze/Naushahro
-      Firoz, Shaheed Benazirabad/Nawab Shah, Jacobabad/Jakobabad, Tando Muhammad
-      Khan/Tando M. Khan. Sujawal and Keamari appear in PPHI but not in the routed set.
-- [ ] **Copy `village_population.csv`** from the SWAI folder. Every
-      `underservice_burden` is currently NaN.
-- [ ] **Confirm ED and USK** facility codes from a PPHI legend page if one exists.
-      Currently treated as primary and flagged as unconfirmed (ED n≈46, USK n=3).
+4. **Scenario B remains an undercount**, worst where geocoding recovered least: Tando
+   Allahyar (2%), Tando Muhammad Khan (8%), Umerkot (22%). Their travel times are still
+   upper bounds and are not presented as corrected.
 
-### Validation — this is what makes the layer publishable
-- [ ] Sample ~50 accepted geocodes, open in QGIS over satellite basemap, check a
-      plausible facility building sits near each point. Report the accuracy rate with a
-      confidence interval.
-- [ ] Have a second person code 30 of them; report Cohen's κ if you can arrange it.
-- [ ] Three more Google Maps route spot-checks: one over-sampled district (Larkana),
-      one under-sampled (Jamshoro), one desert (Mithi).
+5. **The correction is not fully independent of the bias.** Geocoding success was
+   unassociated with open-data facility density (ρ = −0.12, p = 0.59) but showed a
+   borderline association with settlement mapping density (ρ = +0.41, p = 0.064, n = 21).
+   Underpowered rather than null.
 
-### The central experiment
-- [ ] Merge `pphi_geocoded.gpkg` into the facility layer.
-- [ ] Rerun `rhai_05_route_by_district.py`.
-- [ ] **Scenario A** (open data only) = upper bound on travel time.
-      **Scenario B** (open + PPHI) = lower bound.
-- [ ] Report per district: median under A, median under B, and the ratio.
-      *"Open-data-only estimates overstate median rural travel time by a factor of N"*
-      is the result that gets cited.
-- [ ] Report Spearman ρ between A and B district rankings. If ranks hold while
-      magnitudes do not, that is a useful methodological finding in itself.
+6. **17 villages (0.3%) show marginally longer times under Scenario B** (median +0.3 min,
+   max +7.7 min), from non-deterministic OSM graph retrieval between runs.
 
-### Analysis to finish
-- [ ] Population-weight every province and district statistic.
-- [ ] Recompute `underservice_burden` = Σ((100 − score)/100 × population).
-- [ ] Drop or caveat districts with <10 villages (Rann of Kutch scoring 100/100 on five
-      villages in a salt flat is indefensible).
-- [ ] Sensitivity on road speeds (±20%), not just time anchors.
-- [ ] Investigate the 75 villages at ≤0 min and the 2 unreachable — one line each in methods.
-- [ ] Rerun `rhai_09b` against `name:en`/`name:ur` (see §4.4).
-- [ ] Optional robustness: rerun on a 1 km WorldPop grid clipped to populated cells,
-      report ρ between grid- and village-derived district ranks. Pre-empts the referee
-      comment that is otherwise guaranteed.
+7. **Secondary and tertiary facilities are absent.** The register covers primary care only.
 
-### Figures
-1. **Coverage gap by district** — PPHI vs open data. *Figure 1.*
-2. Facility density map — open data vs PPHI, side by side.
-3. Village density map — the 148-fold spread.
-4. Travel-time bounds — Scenario A vs B per district, range shaded.
-5. Score distribution, population-weighted.
-6. District ranking by underservice burden.
-7. Interactive Folium map — repo only, not the paper.
+8. **No functionality data.** See the three-tier frame above.
 
-### Paper
-Structure: intro (open-data reliance is untested for Pakistan) → study area → methods →
-results part 1 (the gap) → results part 2 (the consequence) → discussion (what open data
-can and cannot be used for) → limitations → conclusion.
-
-Keep the three-tier honesty frame:
-- **Tier 1 Reachable** — what the routing computes.
-- **Tier 2 Physically present** — satellite-verifiable.
-- **Tier 3 Operational** — staffed, stocked, open. Needs ground data. **This project
-  cannot cross that line and must say so.** The "ghost worker" problem is invisible
-  from orbit.
-
-Targets: *International Journal of Health Geographics* (best fit) · *BMC Health Services
-Research* · *Geospatial Health* · *PLOS ONE* (fallback) · *Scientific Data* later, as a
-descriptor covering SWAI + RHAI together.
-
-**Do not:** publish a named list of facilities believed missing or non-functional — report
-rates and district aggregates. Do not present bounded estimates as measurements. Do not
-lead with a triumphant claim.
-
-### Release
-- [ ] README following SWAI's template — lead with the limitation.
-- [ ] Force-add small derived tables (`git add -f`), keep large inputs ignored.
-- [ ] Verify which Zenodo record is canonical for SWAI — handoff says
-      10.5281/zenodo.21422759, but record 21470648 is also live. Use the concept DOI.
-- [ ] Cite **GeoNames (CC-BY 4.0)** — it supplied 97% of successful geocodes.
-- [ ] Cite the Geofabrik extract date: **12 July 2026** (`pakistan-260712-free.shp`).
-- [ ] Frontend, deferred: static MapLibre GL site on GitHub Pages. 5,159 points ≈ 1.5 MB
-      GeoJSON, no server. Build after the paper; put the URL in it.
+9. **Satellite validation was single-rater** with a permissive criterion. It establishes
+   that coordinates land where a facility could plausibly stand, not that a specific
+   facility was identified.
 
 ---
 
-## 6. Outreach — parallel track, do not block on it
+## Methodological findings
 
-Emails drafted and ready. Send them, then carry on as if no reply is coming.
+Three results that transfer beyond this study area.
 
-| Contact | Email | Notes |
+**OpenStreetMap stores Sindh place names in Urdu script.** Taluka headquarter towns —
+Dokri, Ratodero, Naudero, Setharja — returned no matches when searched in Latin against a
+national extract of 29,746 places. Of the verified geocodes, GeoNames supplied the
+overwhelming majority and OpenStreetMap place names supplied a handful. For Latin-script
+record linkage in Pakistan, a Latin gazetteer with alternate-name coverage is a
+requirement, not a supplement.
+
+**Person-named settlements defeat unconstrained matching.** Rural Sindhi settlements are
+named after landowners and clans, and those names recur province-wide. Unconstrained
+fuzzy matching placed only 25.7% of facilities in the correct district, with 78 km median
+displacement, while returning high similarity scores throughout. Spatial constraint is a
+correctness requirement, not an optimisation.
+
+**Metric choice is not neutral.** The token set ratio, a common default, scores subset
+matches as perfect: "Khalifa Huryah" against "Khalifa" returns 100. This affected 30.3% of
+accepted matches, including cases where two distinct facilities collapsed onto one
+settlement. Substituting the token sort ratio removed the failure mode at the cost of a
+lower recovery rate.
+
+**And a limit on the approach itself.** In Tando Allahyar the register names settlements
+by person and clan — Dodo Rind, Masoo Bozdar, Bachal Pittafi — while the gazetteer records
+the same territory under settlement-type toponyms such as Saidpur, Padhar and Matli. Two
+naming conventions describing the same landscape without intersecting. No threshold
+adjustment bridges them.
+
+---
+
+## Repository layout
+
+```
+scripts/     analysis pipeline, numbered in execution order
+data/        derived outputs (raw inputs gitignored — see data/README.md)
+figures/     publication figures
+docs/        district lookup tool (GitHub Pages)
+```
+
+Run `scripts/rhai_15_sanity_check.py` to verify pipeline invariants and
+`scripts/rhai_20_final_audit.py` to regenerate every number reported in the paper.
+
+---
+
+## Data sources
+
+| Source | Use | Licence |
 |---|---|---|
-| Dr. Muhammad Ahmed, NED Urban & Infrastructure Eng. | muhammadahmed@neduet.edu.pk | **Send first.** GIS geographer, built PPHI's facility maps, ext. 2454 |
-| Ms. Nelofer Baig, Dep. Director Research, PPHI | nelofer.baig@pphisindh.org | Address pattern unverified — **CC info@pphisindh.org.pk** |
-| PPHI Head Office | info@pphisindh.org.pk | Clifton Block 2, Karachi. 021-35872214 |
-| Prof. Zafar Fatmi, AKU CHS | zafar.fatmi@aku.edu | Corresponding author, malaria paper |
-| Sindh Health Department | info@sindhhealth.gov.pk | Holds THQ/DHQ/tertiary tier |
-| CDC Sindh | contact@cdc.gos.pk | Dr. Samreen Qureshi, +92 345 4997711 |
-
-The specific ask: their 2025 *Malaria Journal* paper states each facility was geolocated
-with GPS coordinates validated by cross-validation and accuracy assessment, processed in
-ArcMap 10.8. So the coordinate layer demonstrably exists. Request that, not "do you have
-data."
-
-Attachment: one A4 PDF. Map on top (captioned as evidence of the gap, not as a finding
-about PPHI), coverage-gap table in the middle, method/ask/contact at the bottom.
-One file, under 1 MB.
-
-Ghotki = 50 and Khairpur = 151 are **confirmed** by the parser. The email is correct.
+| OpenStreetMap (Geofabrik extract, 12 July 2026) | roads, POIs, settlements | ODbL |
+| GeoNames (PK) | gazetteer — supplied most geocodes | CC-BY 4.0 |
+| GADM v4.1 level 3 | district boundaries | free for academic use |
+| healthsites.io / HDX | health facility points | ODbL |
+| PPHI Sindh district facility lists | facility register (names only) | published PDFs, linked not redistributed |
+| WorldPop-derived village population | population weighting | CC-BY 4.0 |
 
 ---
 
-## 7. Approaches ruled out
+## Reproducing
 
-- **Google Earth Engine for facilities** — GEE serves raster imagery, holds no POI data.
-- **Google Places API / Selenium scraping** — terms prohibit storing content and building
-  competing datasets. Result would be unpublishable and would undermine a paper about
-  data integrity. Google Maps remains fine for spot-check route validation.
-- **Full `pakistan-latest.osm.pbf` sweep** — at 93.6% already-known in the shapefile
-  sweep, marginal. Revisit only if the `name:en` rerun suggests otherwise.
-- **VIIRS nightlights for facility operation** — 500 m pixels vs ~200 m² buildings;
-  load-shedding makes darkness uninformative; no ground truth to validate against.
-  A narrow version (excess radiance over a 1–3 km annulus, tertiary facilities only,
-  reported as "night-time electrification signal") is defensible later. Not now, and
-  never as an operational-status layer.
+```bash
+pip install -r requirements.txt
+python scripts/rhai_05_route_by_district.py      # Scenario A  (hours)
+python scripts/rhai_10_parse_pphi.py             # parse operator PDFs
+python scripts/rhai_11_geocode_pphi.py           # district-constrained geocoding
+python scripts/rhai_16_review_helper.py          # borderline match review
+python scripts/rhai_12_merge_facilities.py       # build Scenario B layer
+python scripts/rhai_05b_route_scenarioB.py       # Scenario B  (hours)
+python scripts/rhai_13_compare_scenarios.py      # the comparison
+python scripts/rhai_17_figures.py                # figures
+```
+
+Routing scripts are resumable — rerun to pick up any district that failed.
 
 ---
 
-## 8. Discipline carried from SWAI
+## Related work
 
-- Reproject to EPSG:32642 before any distance or buffer operation.
-- QGIS "temporary layer" trap — always Save to File explicitly.
-- Never `git add .` — add by name, `git status` before every commit.
-- Close CSVs in Excel before running scripts that write them (PermissionError).
-- Activate the venv — check for `(venv)` in the prompt before running anything.
-- Validate against real-world ground truth before trusting anything at scale.
-- Accessibility ≠ availability ≠ quality. State the distinction often.
-- Satellite data verifies presence, never operation.
-- The project's real value is documenting where and why the method fails.
+**SWAI — Sindh Water Access Index.** Same 5,159 villages, drinking-water accessibility.
+DOI: 10.5281/zenodo.21422759
+
+Cross-project note: Shah Bandar scores 93.2/100 for water accessibility but sits 104
+minutes from the nearest health facility under open data. Water-rich, healthcare-poor.
+
+---
+
+## Citation
+
+```
+Kaleem, A. (2026). Rural Healthcare Accessibility Index (RHAI): village-level
+travel time to health facilities in Sindh, Pakistan.
+https://github.com/ArsalanKaleem/Rural-Healthcare-Accessibility-Index--RHAI-
+```
+
+ORCID: [0009-0002-9054-6965](https://orcid.org/0009-0002-9054-6965)
+
+## Licence
+
+Code: MIT. Derived data: CC-BY 4.0, subject to the source licences above.
+
+## Contact
+
+Arsalan Kaleem — arsalanabbasi.here@gmail.com
+
+Corrections and challenges to these numbers are welcome. If you hold facility coordinate
+data for Sindh and are willing to share it, please get in touch — a complete facility
+register would be the largest single improvement to this work.
