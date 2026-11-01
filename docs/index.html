@@ -160,6 +160,7 @@ select,input[type=search]{width:100%;min-height:46px;padding:10px 14px;font:inhe
 select{padding-right:38px;font-weight:500}
 input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23776e64' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat 14px 50%}
 .seg{display:grid;grid-template-columns:1fr 1fr;background:var(--sunk);border:1px solid var(--rule);border-radius:9px;padding:3px;gap:3px}
+.seg3{grid-template-columns:repeat(3,1fr)}
 .seg button{font:500 13.5px/1.2 var(--sans);min-height:40px;padding:6px 8px;border:0;border-radius:7px;background:transparent;color:var(--ink-2);cursor:pointer}
 .seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(26,22,18,.12),0 0 0 1px var(--rule)}
 .tool-row{display:flex;flex-wrap:wrap;gap:8px}
@@ -429,6 +430,14 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
               <button type="button" data-scn="A" aria-pressed="false">Open data only</button>
             </div>
           </div>
+          <div>
+            <span class="fld" id="viewLbl">Map view</span>
+            <div class="seg" id="viewSeg" role="group" aria-labelledby="viewLbl">
+              <button type="button" data-view="dots" aria-pressed="true">Villages</button>
+              <button type="button" data-view="hex" aria-pressed="false">Hexagons</button>
+            </div>
+            <div class="fld-hint" id="viewHint"></div>
+          </div>
           <div class="tool-row">
             <button type="button" class="btn" id="toggleFac" aria-pressed="false">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>
@@ -629,7 +638,7 @@ const PAGE=60;
 
 const hidden=new Set();   // travel-time bands switched off in the legend
 const hoverable=matchMedia('(hover:hover) and (pointer:fine)').matches;
-let V=[],D=[],F=null,META={},cur=null,scn='B',showFac=false,sizeByPop=false,map,popup,hover,mapReady=false,list=[],shown=0;
+let V=[],D=[],F=null,META={},cur=null,scn='B',view='dots',HEX=[],showFac=false,sizeByPop=false,map,popup,hover,mapReady=false,list=[],shown=0;
 
 async function boot(){
   const [v,d,m]=await Promise.all([
@@ -647,6 +656,7 @@ async function boot(){
   sel.addEventListener('change',e=>select(e.target.value));
 
   initMap();
+  setView('dots');
   select(D[0].d);
   $('loading').remove();
 }
@@ -679,6 +689,9 @@ function initMap(){
       'circle-radius':radius(0),
       'circle-color':['get','c'],'circle-opacity':1,
       'circle-stroke-width':1.5,'circle-stroke-color':'#fff'}});
+    map.addSource('h',{type:'geojson',data:fc([])});
+    map.addLayer({id:'h',type:'fill',source:'h',paint:{'fill-color':['get','c'],'fill-opacity':.8}},'v-halo');
+    map.addLayer({id:'h-line',type:'line',source:'h',paint:{'line-color':'#fff','line-width':1.2}},'v-halo');
     map.addSource('sel',{type:'geojson',data:fc([])});
     map.addLayer({id:'sel',type:'circle',source:'sel',paint:{
       'circle-radius':['interpolate',['linear'],['zoom'],6,10,12,17],
@@ -735,6 +748,7 @@ function initMap(){
     map.setPaintProperty('v','circle-radius',radius(0));
     map.setPaintProperty('v-halo','circle-radius',radius(1.75));
   });
+  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
   $('search').addEventListener('input',()=>renderList());
   $('moreBtn').addEventListener('click',()=>renderRows(shown+PAGE));
   $('download').addEventListener('click',csv);
@@ -793,12 +807,42 @@ function readout(){
       facilities and overstates travel time roughly twofold. Shown for comparison.</div>`:''}`;
 }
 
+const VIEW_HINT={
+  dots:'Each dot is a village, coloured by minutes to the nearest facility.',
+  hex:'Villages grouped into hexagons, coloured by their population-weighted median.'
+};
+
+function setView(k){
+  view=k;
+  document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.view===k));
+  $('viewHint').textContent=VIEW_HINT[k];
+  popup&&popup.remove();
+  draw();
+}
+
 function draw(){
   if(!map||!map.getSource('v'))return;
-  const f=inDistrict().filter(v=>!hidden.has(band(tOf(v)))).map(v=>({type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
-    properties:{c:colour(tOf(v)),i:v.i,p:v.pop||0}}));
-  map.getSource('v').setData(fc(f));
+  const pts=inDistrict().filter(v=>!hidden.has(band(tOf(v))));
+  map.getSource('v').setData(fc(view!=='dots'?[]:pts.map(v=>({type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
+    properties:{c:colour(tOf(v)),i:v.i,p:v.pop||0}}))));
+  map.getSource('h').setData(fc(view==='hex'?hexFeatures(pts):[]));
   drawFac();
+}
+
+function hexFeatures(pts){
+  if(!pts.length){ HEX=[]; return []; }
+  let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+  pts.forEach(p=>{x0=Math.min(x0,p.lon);x1=Math.max(x1,p.lon);y0=Math.min(y0,p.lat);y1=Math.max(y1,p.lat)});
+  // hexagon size scales with the district so each has a handful of villages
+  const diag=Math.hypot((x1-x0)*101,(y1-y0)*110.6);
+  const r=Math.min(12,Math.max(2.5,diag/16));
+  HEX=hexbin(pts,r).map(b=>{
+    const med=wmedian(b.pts.map(v=>({t:tOf(v),w:v.pop||1})));
+    const people=b.pts.reduce((a,v)=>a+(v.pop||0),0);
+    const o30=b.pts.reduce((a,v)=>a+((tOf(v)??0)>=30?(v.pop||0):0),0);
+    return {...b,med,people,o30};
+  });
+  return HEX.map((h,k)=>({type:'Feature',geometry:{type:'Polygon',coordinates:[h.ring]},properties:{c:colour(h.med),k}}));
 }
 
 function drawFac(){
