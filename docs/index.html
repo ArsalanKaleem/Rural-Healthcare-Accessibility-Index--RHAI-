@@ -706,7 +706,7 @@ function initMap(){
     const k=+b.dataset.band;
     hidden.has(k)?hidden.delete(k):hidden.add(k);
     b.setAttribute('aria-pressed',!hidden.has(k));
-    draw();
+    draw(); renderList();
   }));
   $('search').addEventListener('input',()=>renderList());
   $('moreBtn').addEventListener('click',()=>renderRows(shown+PAGE));
@@ -791,10 +791,10 @@ function showPopup(v){
 
 function renderList(){
   const q=$('search').value.trim().toLowerCase();
-  list=inDistrict();
+  list=inDistrict().filter(v=>!hidden.has(band(tOf(v))));
   if(q) list=list.filter(v=>(v.name||'').toLowerCase().includes(q));
   list.sort((a,b)=>(tOf(b)??-1)-(tOf(a)??-1));
-  $('vcount').textContent=`${fmt(list.length)} village${list.length===1?'':'s'}`;
+  $('vcount').textContent=`${fmt(list.length)} village${list.length===1?'':'s'}${hidden.size?' · filtered':''}`;
   renderRows(PAGE);
 }
 
