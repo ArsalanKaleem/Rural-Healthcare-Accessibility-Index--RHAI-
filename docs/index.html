@@ -432,9 +432,10 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
           </div>
           <div>
             <span class="fld" id="viewLbl">Map view</span>
-            <div class="seg" id="viewSeg" role="group" aria-labelledby="viewLbl">
+            <div class="seg seg3" id="viewSeg" role="group" aria-labelledby="viewLbl">
               <button type="button" data-view="dots" aria-pressed="true">Villages</button>
               <button type="button" data-view="hex" aria-pressed="false">Hexagons</button>
+              <button type="button" data-view="heat" aria-pressed="false">Heatmap</button>
             </div>
             <div class="fld-hint" id="viewHint"></div>
           </div>
@@ -692,6 +693,14 @@ function initMap(){
     map.addSource('h',{type:'geojson',data:fc([])});
     map.addLayer({id:'h',type:'fill',source:'h',paint:{'fill-color':['get','c'],'fill-opacity':.8}},'v-halo');
     map.addLayer({id:'h-line',type:'line',source:'h',paint:{'line-color':'#fff','line-width':1.2}},'v-halo');
+    map.addSource('heat',{type:'geojson',data:fc([])});
+    map.addLayer({id:'heat',type:'heatmap',source:'heat',paint:{
+      'heatmap-weight':['get','w'],
+      'heatmap-intensity':['interpolate',['linear'],['zoom'],6,.9,12,2.2],
+      'heatmap-radius':['interpolate',['linear'],['zoom'],6,16,9,30,12,60],
+      'heatmap-opacity':.85,
+      'heatmap-color':['interpolate',['linear'],['heatmap-density'],
+        0,'rgba(224,172,43,0)',.15,'rgba(224,172,43,.55)',.45,C.dust,.8,C.thar,1,'#4a0d0a']}},'v-halo');
     map.addSource('sel',{type:'geojson',data:fc([])});
     map.addLayer({id:'sel',type:'circle',source:'sel',paint:{
       'circle-radius':['interpolate',['linear'],['zoom'],6,10,12,17],
@@ -812,7 +821,8 @@ function readout(){
 
 const VIEW_HINT={
   dots:'Each dot is a village, coloured by minutes to the nearest facility.',
-  hex:'Villages grouped into hexagons, coloured by their population-weighted median.'
+  hex:'Villages grouped into hexagons, coloured by their population-weighted median.',
+  heat:'Where people live 30 minutes or more from the nearest facility. Darker means more people.'
 };
 
 function setView(k){
@@ -829,7 +839,16 @@ function draw(){
   map.getSource('v').setData(fc(view!=='dots'?[]:pts.map(v=>({type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
     properties:{c:colour(tOf(v)),i:v.i,p:v.pop||0}}))));
   map.getSource('h').setData(fc(view==='hex'?hexFeatures(pts):[]));
+  map.getSource('heat').setData(fc(view==='heat'?heatFeatures():[]));
   drawFac();
+}
+
+// weight = village population, only for villages 30+ minutes away, scaled to the district's largest
+function heatFeatures(){
+  const far=inDistrict().filter(v=>(tOf(v)??0)>=30);
+  const top=Math.max(1,...far.map(v=>v.pop||0));
+  return far.map(v=>({type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
+    properties:{w:Math.max(.08,(v.pop||0)/top)}}));
 }
 
 function hexFeatures(pts){
