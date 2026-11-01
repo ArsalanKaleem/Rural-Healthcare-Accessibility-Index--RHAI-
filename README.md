@@ -11,6 +11,22 @@ misidentify which districts are worst served.
 
 ---
 
+## District explorer
+
+**[Open the explorer](http://arsalankaleem.me/Rural-Healthcare-Accessibility-Index--RHAI-/)**: travel time for every village, district by district.
+
+- Three map views: **Villages** (one dot per village, optionally sized by population),
+  **Hexagons** (population-weighted median per cell) and **Heatmap** (where people live
+  30+ minutes from care)
+- Switch between the open-data-only and register-corrected facility layers
+- Filter by travel-time band from the legend, hide the basemap, download a district CSV
+- Links keep the view, e.g. `?d=Dadu&scn=A&view=hex`
+
+The site is static (`docs/`) and served by GitHub Pages; `scripts/rhai_21_build_web.py`
+regenerates its data files.
+
+---
+
 ## Scope
 
 This study measures **geographic access to rural public primary care**. The comparison
