@@ -2,172 +2,622 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Travel time to health facilities — Sindh</title>
-<meta name="description" content="Estimated road travel time from villages in Sindh, Pakistan to the nearest health facility. Look up a district.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RHAI — Travel time to health facilities in Sindh</title>
+<meta name="description" content="Village-level road travel time to the nearest health facility across Sindh, Pakistan, and what open geospatial data misses. Interactive district explorer and published paper.">
+<meta name="author" content="Arsalan Kaleem">
+<meta name="theme-color" content="#faf7f2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RHAI — Rural Healthcare Accessibility Index, Sindh">
+<meta property="og:description" content="Open data overstates travel time to rural primary care in Sindh roughly twofold. Explore village-level travel times by district.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a1612'/%3E%3Cpath d='M13 8h6v5h5v6h-5v5h-6v-5H8v-6h5z' fill='%23faf7f2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
 <style>
 :root{
-  --ink:#14100c;            /* near-black, warm */
+  --ink:#1a1612;            /* near-black, warm */
+  --ink-2:#4a433c;
   --paper:#faf7f2;          /* survey-sheet cream */
-  --rule:#d9d1c4;           /* hairline */
-  --field:#5b7c5a;          /* irrigated green — under 15 min */
+  --panel:#fffdf9;
+  --sunk:#f3eee6;
+  --rule:#e3dbcf;           /* hairline */
+  --rule-2:#cfc5b6;
+  --field:#4f7a52;          /* irrigated green — under 15 min */
   --silt:#c9a227;           /* canal silt — 15 to 30 */
   --dust:#c2703d;           /* dust — 30 to 60 */
   --thar:#8f3b1b;           /* desert — over 60 */
   --sky:#2f5d7c;            /* register/PPHI accent */
-  --muted:#7b7268;
+  --sky-soft:#e6eef4;
+  --muted:#776e64;
   --warn:#8a4b12;
-  --panel:#fffdf9;
+  --radius:10px;
+  --shadow:0 1px 2px rgba(26,22,18,.05),0 8px 24px -12px rgba(26,22,18,.18);
+  --head:60px;
+  --gutter:16px;
+  --serif:Newsreader,Georgia,serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
 }
+@media(min-width:720px){:root{--gutter:32px}}
 *{box-sizing:border-box}
-html,body{margin:0;height:100%}
-body{
-  font-family:"IBM Plex Sans",system-ui,sans-serif;
-  color:var(--ink);background:var(--paper);
-  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;
-}
-h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:500;margin:0}
-.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-.01em}
+p{margin:0}
+a{color:var(--sky)}
+img,svg{display:block}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--gutter)}
+section{scroll-margin-top:calc(var(--head) + 8px)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 
-/* ---------- shell ---------- */
-.app{display:grid;grid-template-columns:400px 1fr;height:100dvh}
-@media(max-width:900px){
-  .app{grid-template-columns:1fr;grid-template-rows:auto 1fr}
-  #map{min-height:45dvh}
-  .side{max-height:55dvh}
-}
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;
+  font:500 15px/1 var(--sans);border-radius:999px;border:1px solid var(--rule-2);background:var(--panel);
+  color:var(--ink);text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;white-space:nowrap}
+.btn:hover{border-color:var(--ink-2);background:#fff}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:#000}
+.btn.sm{min-height:36px;padding:0 14px;font-size:13.5px}
+.btn svg{width:16px;height:16px;flex:none}
 
-/* ---------- sidebar ---------- */
-.side{background:var(--panel);border-right:1px solid var(--rule);overflow-y:auto;display:flex;flex-direction:column}
-.masthead{padding:22px 22px 16px;border-bottom:1px solid var(--rule)}
-.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
-.masthead h1{font-size:25px;line-height:1.14;letter-spacing:-.012em}
-.masthead p{margin:9px 0 0;font-size:13px;color:var(--muted);line-height:1.45}
+/* ---------- header ---------- */
+.site-head{position:sticky;top:0;z-index:50;height:var(--head);
+  background:rgba(250,247,242,.86);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--rule)}
+.site-head .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;min-width:0}
+.brand-mark{width:30px;height:30px;border-radius:7px;background:var(--ink);display:grid;place-items:center;flex:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-txt b{font-family:var(--mono);font-size:14px;letter-spacing:.06em;font-weight:600}
+.brand-txt span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a.lnk{font-size:14px;color:var(--ink-2);text-decoration:none;padding:8px 12px;border-radius:999px}
+.nav a.lnk:hover{background:var(--sunk);color:var(--ink)}
+.icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:999px;color:var(--ink);border:1px solid transparent}
+.icon-btn:hover{background:var(--sunk)}
+.icon-btn svg{width:20px;height:20px}
+@media(max-width:879px){.nav a.lnk{display:none}}
+@media(max-width:420px){.brand-txt span{display:none}}
 
-.block{padding:18px 22px;border-bottom:1px solid var(--rule)}
-label.fld{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-select,input[type=search]{
-  width:100%;padding:10px 11px;font:inherit;font-size:14px;
-  border:1px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink);
-}
-select:focus,input:focus,button:focus-visible{outline:2px solid var(--sky);outline-offset:1px}
+/* ---------- hero ---------- */
+.hero{padding:44px 0 36px;border-bottom:1px solid var(--rule);
+  background:
+    radial-gradient(1200px 400px at 85% -10%,rgba(47,93,124,.08),transparent 60%),
+    radial-gradient(900px 380px at -10% 110%,rgba(194,112,61,.08),transparent 60%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center}
+/* grid children may hold nowrap text; let them shrink below their min-content width */
+.hero-grid>*,.cite-grid>*,.method>*,.findings>*,.tiers>*,.foot-grid>*{min-width:0}
+@media(min-width:960px){.hero{padding:72px 0 64px}.hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:56px}}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 8px;border:1px solid var(--rule);
+  background:var(--panel);border-radius:999px;font-size:13px;color:var(--ink-2);text-decoration:none;max-width:100%}
+.badge:hover{border-color:var(--rule-2)}
+.badge .pill{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--sky);color:#fff;padding:3px 8px;border-radius:999px;flex:none}
+.badge .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero h1{font-size:clamp(34px,6.4vw,58px);line-height:1.04;margin:20px 0 18px;letter-spacing:-.022em}
+.hero h1 em{font-style:italic;color:var(--thar)}
+.hero .lede{font-size:clamp(17px,2.1vw,19.5px);line-height:1.55;color:var(--ink-2);max-width:40em}
+.hero .lede b{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+@media(max-width:479px){.cta .btn{flex:1 1 100%}}
 
-/* headline readout — the signature element */
-.readout{padding:22px;border-bottom:1px solid var(--rule);background:
-  repeating-linear-gradient(180deg,transparent 0 27px,rgba(217,209,196,.4) 27px 28px)}
-.readout .lede{font-family:Newsreader,serif;font-size:17px;line-height:1.42;margin:0 0 14px}
-.big{font-family:"IBM Plex Mono",monospace;font-size:46px;line-height:1;font-weight:500;letter-spacing:-.03em}
-.big small{font-size:15px;letter-spacing:0;color:var(--muted);margin-left:5px;font-weight:400}
-.sub{font-size:12.5px;color:var(--muted);margin-top:5px}
+/* paper card */
+.paper{position:relative;background:#fff;border:1px solid var(--rule);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:24px 22px 20px;overflow:hidden}
+.paper::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--field),var(--silt),var(--dust),var(--thar))}
+.paper .jr{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.paper h2{font-size:20px;line-height:1.3;margin:14px 0 12px}
+.paper .au{font-size:14px;color:var(--ink-2)}
+.paper .au a{color:inherit;text-decoration-color:var(--rule-2)}
+.paper dl{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:18px 0}
+.paper dl div{background:var(--panel);padding:10px 12px}
+.paper dt{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.paper dd{margin:2px 0 0;font-family:var(--mono);font-size:14px;font-weight:500;white-space:nowrap}
+@media(max-width:400px){.paper dl div{padding:10px}.paper dd{font-size:13px}}
+.paper .acts{display:flex;gap:8px;flex-wrap:wrap}
+.paper .acts .btn{flex:1 1 auto}
+.kw{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.kw span{font-size:12px;color:var(--muted);background:var(--sunk);padding:3px 9px;border-radius:999px}
 
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:16px}
+/* ---------- section heads ---------- */
+.sec{padding:56px 0}
+@media(min-width:960px){.sec{padding:80px 0}}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(28px,4vw,38px);line-height:1.1;margin-top:10px}
+.sec-head p{color:var(--ink-2);max-width:36em;font-size:16px}
+
+/* ---------- findings ---------- */
+.findings{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:560px){.findings{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.findings{grid-template-columns:repeat(4,1fr)}}
+.fcard{background:var(--panel);border:1px solid var(--rule);border-radius:var(--radius);padding:22px 20px;display:flex;flex-direction:column;gap:10px}
+.fcard .n{font-family:var(--mono);font-size:clamp(34px,4.4vw,42px);line-height:1;font-weight:500;letter-spacing:-.03em}
+.fcard .n.pair{font-size:clamp(26px,2.5vw,32px);padding:.12em 0}
+.fcard .n small{font-size:.5em;color:var(--muted);letter-spacing:0;font-weight:400}
+.fcard .n .arr{color:var(--muted);font-size:.6em;margin:0 .15em}
+.fcard p{font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.fcard .src{margin-top:auto;padding-top:10px;border-top:1px dashed var(--rule);font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.02em}
+.note{margin-top:18px;font-size:14px;color:var(--muted);max-width:60em}
+
+/* ---------- explorer ---------- */
+.explore-sec{background:var(--sunk);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.explorer{display:grid;grid-template-columns:400px 1fr;height:min(880px,calc(100dvh - var(--head) - 48px));min-height:620px;
+  background:var(--panel);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.side{border-right:1px solid var(--rule);overflow-y:auto;display:flex;flex-direction:column;overscroll-behavior:contain}
+.pad{padding:18px 20px}
+.ctrl{border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:14px}
+label.fld,.fld{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.fld-hint{font-size:12px;color:var(--muted);margin-top:6px}
+.select{position:relative}
+.select::after{content:"";position:absolute;right:14px;top:50%;width:8px;height:8px;border-right:1.5px solid var(--ink-2);border-bottom:1.5px solid var(--ink-2);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+select,input[type=search]{width:100%;min-height:46px;padding:10px 14px;font:inherit;font-size:16px;
+  border:1px solid var(--rule-2);border-radius:8px;background:#fff;color:var(--ink);-webkit-appearance:none;appearance:none}
+select{padding-right:38px;font-weight:500}
+input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23776e64' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat 14px 50%}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--sunk);border:1px solid var(--rule);border-radius:9px;padding:3px;gap:3px}
+.seg button{font:500 13.5px/1.2 var(--sans);min-height:40px;padding:6px 8px;border:0;border-radius:7px;background:transparent;color:var(--ink-2);cursor:pointer}
+.seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(26,22,18,.12),0 0 0 1px var(--rule)}
+.tool-row{display:flex;gap:8px}
+.tool-row .btn{flex:1;border-radius:8px;min-height:40px;font-size:13.5px;padding:0 10px}
+.tool-row .btn[aria-pressed=true]{background:var(--sky-soft);border-color:var(--sky);color:var(--sky)}
+
+/* headline readout */
+.readout{border-bottom:1px solid var(--rule);background:
+  repeating-linear-gradient(180deg,transparent 0 27px,rgba(227,219,207,.45) 27px 28px),var(--panel)}
+.readout .lede{font-family:var(--serif);font-size:18px;line-height:1.4;margin:0 0 12px}
+.big{font-family:var(--mono);font-size:52px;line-height:1;font-weight:500;letter-spacing:-.035em}
+.big small{font-size:15px;letter-spacing:0;color:var(--muted);margin-left:6px;font-weight:400}
+.sub{font-size:13px;color:var(--muted);margin-top:8px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-top:16px}
 .stat{background:var(--panel);padding:11px 12px}
-.stat .k{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.stat .v{font-family:"IBM Plex Mono",monospace;font-size:19px;margin-top:3px;font-weight:500}
-.stat .v.wide{font-size:16px}
-
-.flag{margin:16px 0 0;padding:11px 13px;border-left:3px solid var(--warn);background:#fdf6ec;font-size:12.5px;line-height:1.5;color:#5c3d16}
+.stat .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:var(--mono);font-size:20px;margin-top:3px;font-weight:500}
+.flag{margin:16px 0 0;padding:11px 13px;border-left:3px solid var(--warn);background:#fdf3e6;border-radius:0 6px 6px 0;font-size:13px;line-height:1.5;color:#5c3d16}
 .flag b{font-weight:600}
 
 /* village list */
-.listhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:16px 22px 9px}
-.listhead h2{font-size:15px}
-.listhead .count{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted)}
-.rows{padding:0 12px 22px}
-.row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;
-  padding:8px 10px;border-radius:2px;cursor:pointer;border:1px solid transparent}
-.row:hover,.row:focus-visible{background:#f3efe7;border-color:var(--rule);outline:none}
-.row .nm{font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.row .pp{font-size:11px;color:var(--muted)}
-.row .tt{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:500;text-align:right}
-.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.list{display:flex;flex-direction:column}
+.listhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:18px 20px 10px}
+.listhead h3{font-size:17px}
+.listhead .count{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.list .search{padding:0 20px 10px}
+.rows{padding:0 10px 8px}
+.row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;width:100%;text-align:left;font:inherit;color:inherit;
+  min-height:48px;padding:8px 10px;border-radius:8px;cursor:pointer;border:1px solid transparent;background:none}
+.row:hover,.row:focus-visible{background:var(--sunk);border-color:var(--rule);outline:none}
+.row .nm{font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .pp{font-size:12px;color:var(--muted);padding-left:16px}
+.row .tt{font-family:var(--mono);font-size:15px;font-weight:500;text-align:right}
+.row .tt span{font-size:10.5px;color:var(--muted);font-weight:400}
+.empty{padding:14px 10px;color:var(--muted);font-size:14px}
+.more{margin:4px 20px 20px}
+.more .btn{width:100%;border-radius:8px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px;flex:none}
+.side-foot{margin-top:auto;padding:16px 20px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--muted);line-height:1.55}
+.side-foot b{color:var(--ink-2);font-weight:600}
 
-.foot{padding:18px 22px;font-size:11.5px;color:var(--muted);line-height:1.55}
-.foot a{color:var(--sky)}
-.foot p{margin:0 0 9px}
-
-/* ---------- map ---------- */
-#map{position:relative}
-.legend{position:absolute;left:14px;bottom:14px;background:rgba(255,253,249,.95);
-  border:1px solid var(--rule);border-radius:2px;padding:11px 13px;font-size:11.5px;
-  backdrop-filter:blur(6px);max-width:230px}
-.legend .t{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.legend .k{display:flex;align-items:center;gap:8px;margin:4px 0}
-.tools{position:absolute;right:14px;top:14px;display:flex;flex-direction:column;gap:7px;align-items:flex-end}
-.btn{font:inherit;font-size:12.5px;padding:7px 11px;background:rgba(255,253,249,.95);
-  border:1px solid var(--rule);border-radius:2px;cursor:pointer;color:var(--ink);backdrop-filter:blur(6px)}
-.btn[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.maplibregl-popup-content{font-family:"IBM Plex Sans",sans-serif;font-size:13px;padding:11px 13px;border-radius:2px}
-.pop-n{font-family:Newsreader,serif;font-size:15px;margin-bottom:6px}
-.pop-r{display:flex;justify-content:space-between;gap:16px;font-size:12.5px;padding:2px 0}
+/* map */
+#map{position:relative;min-height:0;background:#ece7df}
+.legend{position:absolute;left:12px;bottom:12px;z-index:2;background:rgba(255,253,249,.94);
+  border:1px solid var(--rule);border-radius:8px;padding:10px 12px;font-size:12.5px;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:var(--shadow)}
+.legend .t{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.legend .ks{display:grid;grid-template-columns:auto auto;gap:3px 14px}
+.legend .k{display:flex;align-items:center;white-space:nowrap}
+.legend .fac{display:none;margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);gap:3px 14px;grid-template-columns:auto auto}
+.legend.show-fac .fac{display:grid}
+.ring{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid;margin-right:8px;flex:none}
+.legend .scn{margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--sky)}
+.maplibregl-popup-content{font-family:var(--sans);font-size:13px;padding:12px 14px;border-radius:8px;box-shadow:var(--shadow)}
+.maplibregl-popup-close-button{font-size:18px;width:28px;height:28px}
+.pop-n{font-family:var(--serif);font-size:16px;margin:0 18px 8px 0;line-height:1.25}
+.pop-r{display:flex;justify-content:space-between;gap:18px;font-size:13px;padding:3px 0;border-top:1px solid var(--rule)}
 .pop-r .mono{font-weight:500}
-.loading{position:absolute;inset:0;display:grid;place-items:center;background:var(--paper);z-index:5;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);letter-spacing:.08em}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.loading{position:absolute;inset:0;display:grid;place-items:center;background:var(--paper);z-index:5;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em;text-align:center;padding:20px}
+
+/* explorer on phones and tablets: one column, controls → readout → map → list */
+@media(max-width:899px){
+  .explorer{display:flex;flex-direction:column;height:auto;min-height:0}
+  .side{display:contents}
+  .ctrl{order:1}
+  .readout{order:2}
+  #map{order:3;height:min(68dvh,560px);min-height:360px;border-bottom:1px solid var(--rule)}
+  .list{order:4}
+  .side-foot{order:5}
+  .big{font-size:46px}
+  .legend{left:8px;top:8px;bottom:auto;padding:8px 10px;font-size:11.5px}
+}
+
+/* ---------- method ---------- */
+.tiers{display:grid;gap:12px}
+@media(min-width:820px){.tiers{grid-template-columns:repeat(3,1fr)}}
+.tier{background:var(--panel);border:1px solid var(--rule);border-radius:var(--radius);padding:22px 20px}
+.tier .st{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:14px}
+.tier .st::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st.yes{color:var(--field);background:#e8f0e6}
+.st.part{color:#8a6a0d;background:#f8f0d6}
+.st.no{color:var(--thar);background:#f6e5dc}
+.tier h3{font-size:21px;margin-bottom:6px}
+.tier .q{font-family:var(--serif);font-style:italic;color:var(--ink-2);margin-bottom:10px}
+.tier p{font-size:14.5px;color:var(--ink-2)}
+.method{display:grid;gap:28px;margin-top:40px}
+@media(min-width:900px){.method{grid-template-columns:1fr 1fr;gap:48px}}
+.method h3{font-size:22px;margin-bottom:12px}
+.method p{color:var(--ink-2);font-size:15.5px}
+.method p+p{margin-top:10px}
+.facts{align-self:start;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden}
+.facts div{background:var(--panel);padding:16px}
+.facts .v{font-family:var(--mono);font-size:24px;font-weight:500;letter-spacing:-.02em}
+.facts .k{font-size:13px;color:var(--muted);margin-top:2px;line-height:1.4}
+.limits{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.limits li{font-size:14.5px;color:var(--ink-2);padding-left:20px;position:relative}
+.limits li::before{content:"";position:absolute;left:2px;top:.65em;width:8px;height:1.5px;background:var(--rule-2)}
+
+/* ---------- cite ---------- */
+.cite-sec{background:var(--ink);color:#efe9df}
+.cite-sec .eyebrow{color:#a89e91}
+.cite-sec .sec-head p{color:#cfc6b9}
+.cite-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+@media(min-width:960px){.cite-grid{grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}}
+.abs{font-family:var(--serif);font-size:19px;line-height:1.55;color:#efe9df}
+.abs+.abs{margin-top:14px}
+.ref-list{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.ref{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid #3a332c;border-radius:8px;color:#efe9df;text-decoration:none;transition:border-color .15s,background .15s}
+.ref:hover{border-color:#6b6157;background:#221d18}
+.ref .l{display:flex;flex-direction:column;min-width:0}
+.ref .l b{font-weight:500;font-size:15px}
+.ref .l span{font-size:12.5px;color:#a89e91;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ref svg{width:18px;height:18px;flex:none;color:#a89e91}
+.cbox{background:#221d18;border:1px solid #3a332c;border-radius:var(--radius);overflow:hidden}
+.ctabs{display:flex;border-bottom:1px solid #3a332c;overflow-x:auto;scrollbar-width:none}
+.ctabs::-webkit-scrollbar{display:none}
+.ctabs button{font:500 13.5px var(--sans);color:#a89e91;background:none;border:0;padding:14px 16px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;min-height:48px}
+.ctabs button[aria-selected=true]{color:#fff;border-bottom-color:var(--silt)}
+.ctext{margin:0;padding:20px;font-family:var(--serif);font-size:16.5px;line-height:1.6;color:#efe9df;white-space:pre-wrap;word-break:break-word;min-height:150px}
+.ctext.code{font-family:var(--mono);font-size:12.5px;line-height:1.65;white-space:pre;overflow-x:auto;word-break:normal}
+.cfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid #3a332c}
+.cfoot span{font-size:12.5px;color:#a89e91}
+.copy{background:#efe9df;color:var(--ink);border-color:#efe9df}
+.copy:hover{background:#fff;border-color:#fff}
+.code-cite{margin-top:16px;font-size:13.5px;color:#a89e91;line-height:1.55}
+.code-cite a{color:#d9cfc1}
+
+/* ---------- footer ---------- */
+.site-foot{background:#120f0c;color:#a89e91;font-size:13.5px;padding:36px 0 calc(36px + env(safe-area-inset-bottom))}
+.foot-grid{display:grid;gap:24px}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.3fr 1fr 1fr}}
+.site-foot h4{margin:0 0 10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:#7d7367;font-weight:500}
+.site-foot a{color:#d9cfc1;text-decoration-color:#5a5148}
+.site-foot a:hover{color:#fff}
+.site-foot p+p{margin-top:6px}
+.foot-base{margin-top:28px;padding-top:18px;border-top:1px solid #2a241f;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:12.5px}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;pointer-events:none;
+  background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-size:14px;transition:opacity .2s,transform .2s;z-index:100}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-<div class="app">
-  <aside class="side">
-    <div class="masthead">
-      <div class="eyebrow">Rural Healthcare Accessibility Index</div>
-      <h1>Travel time to health facilities</h1>
-      <p>Estimated road travel time from each village in Sindh to its nearest health facility. Pick a district.</p>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="RHAI home">
+      <span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M5.5 1.5h5v4h4v5h-4v4h-5v-4h-4v-5h4z" fill="#faf7f2"/></svg></span>
+      <span class="brand-txt"><b>RHAI</b><span>Rural Healthcare Accessibility Index · Sindh</span></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a class="lnk" href="#findings">Findings</a>
+      <a class="lnk" href="#explore">Explorer</a>
+      <a class="lnk" href="#method">Method</a>
+      <a class="lnk" href="#cite">Cite</a>
+      <a class="btn sm primary" href="https://ijournalar.com/site/index.php/ijar/article/view/606" target="_blank" rel="noopener">Read the paper</a>
+      <a class="icon-btn" href="https://github.com/ArsalanKaleem/Rural-Healthcare-Accessibility-Index--RHAI-" target="_blank" rel="noopener" aria-label="Source code on GitHub">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= hero ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <a class="badge" href="https://ijournalar.com/site/index.php/ijar/article/view/606" target="_blank" rel="noopener">
+        <span class="pill">Published</span><span class="t">International Journal of Advanced Research · Vol. 3, No. 5 (2026)</span>
+      </a>
+      <h1>How far is care for <em>rural Sindh?</em></h1>
+      <p class="lede">Road travel time from <b>5,159 villages</b> to the nearest health facility, and a measurement of what open geospatial data leaves out. Built on open data alone, the estimate <b>doubles travel times</b> and counts <b>ten times</b> as many people as underserved.</p>
+      <div class="cta">
+        <a class="btn primary" href="#explore">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
+          Explore the map</a>
+        <a class="btn" href="https://ijournalar.com/site/index.php/ijar/article/view/606" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
+          Read the paper</a>
+        <a class="btn" href="#cite">Cite this work</a>
+      </div>
     </div>
 
-    <div class="block">
-      <label class="fld" for="district">District</label>
-      <select id="district"></select>
+    <article class="paper" aria-label="Published paper">
+      <div class="jr"><span class="eyebrow">IJAR · Research article</span><span class="eyebrow">ISSN 3106-7980</span></div>
+      <h2>What open geospatial data can and cannot tell us about geographic access to rural public primary care: a village-level case study from Sindh, Pakistan</h2>
+      <div class="au"><a href="https://orcid.org/0009-0002-9054-6965" target="_blank" rel="noopener">Arsalan Kaleem</a></div>
+      <dl>
+        <div><dt>Volume</dt><dd>3 (5)</dd></div>
+        <div><dt>Pages</dt><dd>1606–1624</dd></div>
+        <div><dt>Published</dt><dd>Sep 2026</dd></div>
+      </dl>
+      <div class="acts">
+        <a class="btn sm primary" href="https://ijournalar.com/site/index.php/ijar/article/download/606/434" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+          PDF</a>
+        <a class="btn sm" href="https://ijournalar.com/site/index.php/ijar/article/view/606" target="_blank" rel="noopener">Article page</a>
+        <a class="btn sm" href="#cite">Cite</a>
+      </div>
+      <div class="kw"><span>spatial accessibility</span><span>OpenStreetMap</span><span>data completeness</span><span>geocoding</span><span>Pakistan</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= findings ================= -->
+<section class="sec" id="findings">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Key findings</div><h2>Open data misses most rural clinics</h2></div>
+      <p>Two facility layers, everything else held constant: open data alone (2,725 facilities), and open data plus 616 facilities recovered from the PPHI Sindh register (3,308).</p>
+    </div>
+    <div class="findings">
+      <div class="fcard">
+        <div class="n">2.01<small>×</small></div>
+        <p>Overstatement of the population-weighted median travel time when only open data is used: 14.3 min against 7.1 min.</p>
+        <div class="src">Robust to excluding zero-distance cases (1.96×)</div>
+      </div>
+      <div class="fcard">
+        <div class="n pair">6.95M<span class="arr">→</span>0.68M</div>
+        <p>People more than 30 minutes from care, open data against the corrected layer. A tenfold overstatement of the underserved.</p>
+        <div class="src">Over 60 min: 1.26M → 0.05M</div>
+      </div>
+      <div class="fcard">
+        <div class="n">5.2<small>%</small></div>
+        <p>Share of register facilities within 250 m of any open-data facility. The two sources describe largely different buildings.</p>
+        <div class="src">616 of 1,357 register facilities geocoded</div>
+      </div>
+      <div class="fcard">
+        <div class="n">34<small>×</small></div>
+        <p>Largest gain in a district's facility count (Ghotki, 1 → 34). Rural districts gain; metropolitan Karachi gains nothing.</p>
+        <div class="src">District rankings shift by up to 14 places</div>
+      </div>
+    </div>
+    <p class="note">Tando Allahyar, a district of over a million people, has zero health facilities in open geospatial data.</p>
+  </div>
+</section>
+
+<!-- ================= explorer ================= -->
+<section class="sec explore-sec" id="explore">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">District explorer</div><h2>Look up a district</h2></div>
+      <p>Pick a district to see how long its villages take to reach care. Tap a dot or a village in the list for details.</p>
     </div>
 
-    <div class="readout" id="readout"></div>
+    <div class="explorer">
+      <aside class="side">
+        <div class="ctrl pad">
+          <div>
+            <label class="fld" for="district">District</label>
+            <div class="select"><select id="district"></select></div>
+            <div class="fld-hint">Ordered by median travel time, longest first</div>
+          </div>
+          <div>
+            <span class="fld" id="scnLbl">Facility layer</span>
+            <div class="seg" role="group" aria-labelledby="scnLbl">
+              <button type="button" data-scn="B" aria-pressed="true">With PPHI register</button>
+              <button type="button" data-scn="A" aria-pressed="false">Open data only</button>
+            </div>
+          </div>
+          <div class="tool-row">
+            <button type="button" class="btn" id="toggleFac" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>
+              <span>Show facilities</span></button>
+            <button type="button" class="btn" id="download">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+              District CSV</button>
+          </div>
+        </div>
 
-    <div class="listhead">
-      <h2>Villages, furthest first</h2>
-      <span class="count" id="vcount"></span>
-    </div>
-    <div class="block" style="border:0;padding-top:0">
-      <input type="search" id="search" placeholder="Find a village by name" aria-label="Find a village by name">
-    </div>
-    <div class="rows" id="rows"></div>
+        <div class="readout pad" id="readout" aria-live="polite"></div>
 
-    <div class="foot">
-      <p><b>What this measures.</b> How long it takes to reach a facility by road. Not whether the facility is staffed, stocked or open.</p>
-      <p id="metaline"></p>
-      <p><a href="https://github.com/ArsalanKaleem/Rural-Healthcare-Accessibility-Index--RHAI-">Method and data on GitHub</a></p>
-    </div>
-  </aside>
+        <div class="list">
+          <div class="listhead">
+            <h3>Villages, furthest first</h3>
+            <span class="count" id="vcount"></span>
+          </div>
+          <div class="search">
+            <input type="search" id="search" placeholder="Find a village by name" aria-label="Find a village by name" autocomplete="off">
+          </div>
+          <div class="rows" id="rows"></div>
+          <div class="more" id="more" hidden><button type="button" class="btn" id="moreBtn">Show more</button></div>
+        </div>
 
-  <div id="map">
-    <div class="loading" id="loading">Loading villages…</div>
-    <div class="tools">
-      <button class="btn" id="toggleFac" aria-pressed="false">Show facilities</button>
-      <button class="btn" id="toggleScn" aria-pressed="false" title="Scenario A uses open data only and overstates travel time">Compare with open data only</button>
-      <button class="btn" id="download">Download district CSV</button>
-    </div>
-    <div class="legend">
-      <div class="t">Minutes to nearest facility</div>
-      <div class="k"><span class="dot" style="background:var(--field)"></span>under 15</div>
-      <div class="k"><span class="dot" style="background:var(--silt)"></span>15 to 30</div>
-      <div class="k"><span class="dot" style="background:var(--dust)"></span>30 to 60</div>
-      <div class="k"><span class="dot" style="background:var(--thar)"></span>over 60</div>
-      <div class="t" style="margin-top:10px" id="legScn">Scenario B — with PPHI register</div>
+        <div class="side-foot">
+          <p><b>What this measures.</b> How long it takes to reach a facility by road. Not whether the facility is staffed, stocked or open.</p>
+          <p id="metaline" style="margin-top:6px"></p>
+        </div>
+      </aside>
+
+      <div id="map" role="region" aria-label="Map of village travel times">
+        <div class="loading" id="loading">Loading villages…</div>
+        <div class="legend" id="legend">
+          <div class="t">Minutes to nearest facility</div>
+          <div class="ks">
+            <div class="k"><span class="dot" style="background:var(--field)"></span>under 15</div>
+            <div class="k"><span class="dot" style="background:var(--silt)"></span>15–30</div>
+            <div class="k"><span class="dot" style="background:var(--dust)"></span>30–60</div>
+            <div class="k"><span class="dot" style="background:var(--thar)"></span>over 60</div>
+          </div>
+          <div class="fac">
+            <div class="k"><span class="ring" style="border-color:var(--sky)"></span>PPHI register</div>
+            <div class="k"><span class="ring" style="border-color:var(--ink)"></span>Open data</div>
+          </div>
+          <div class="scn" id="legScn">Scenario B · with PPHI register</div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- ================= method ================= -->
+<section class="sec" id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Scope and method</div><h2>Reachable is not the same as available</h2></div>
+      <p>The index estimates physical reachability. It says nothing about whether the facility is staffed, stocked or open when needed.</p>
+    </div>
+
+    <div class="tiers">
+      <div class="tier">
+        <span class="st yes">Answered</span>
+        <h3>1. Reachable</h3>
+        <div class="q">Can a person get there?</div>
+        <p>Village-to-facility travel time over the OpenStreetMap road network, with speeds set for rural road classes.</p>
+      </div>
+      <div class="tier">
+        <span class="st part">Partly</span>
+        <h3>2. Physically present</h3>
+        <div class="q">Does the building exist?</div>
+        <p>Satellite check of a stratified sample: 42 of 50 geocodes had a plausible facility structure within 500 m (84%, 95% CI 71.5–91.7).</p>
+      </div>
+      <div class="tier">
+        <span class="st no">Not answered</span>
+        <h3>3. Operational</h3>
+        <div class="q">Is it staffed, stocked, open?</div>
+        <p>Needs ground data. Imagery can confirm a roof, not a doctor.</p>
+      </div>
+    </div>
+
+    <div class="method">
+      <div>
+        <h3>How the numbers were made</h3>
+        <p>Travel time from every village was computed with one multi-source Dijkstra traversal seeded from all facility nodes, over per-district OSM drive networks with a 15 km halo so edge villages can reach facilities across district lines. An independent routing check on a long rural journey agreed within 3%.</p>
+        <p>PPHI Sindh publishes its facility lists as PDFs with names but no coordinates. These were parsed and geocoded by matching each facility's settlement name against gazetteers, constrained to its own district and verified against district polygons.</p>
+        <ul class="limits">
+          <li>Facilities sit at settlement centroids, typically 0–2 km from the building.</li>
+          <li>Scenario B is still an undercount, worst in Tando Allahyar, Tando Muhammad Khan and Umerkot.</li>
+          <li>Speeds are judgement, not survey. Both scenarios use the same speeds, so the comparison holds.</li>
+        </ul>
+      </div>
+      <div class="facts">
+        <div><div class="v">5,159</div><div class="k">villages routed</div></div>
+        <div><div class="v">25</div><div class="k">districts</div></div>
+        <div><div class="v">3,308</div><div class="k">facilities in the corrected layer</div></div>
+        <div><div class="v">45.4%</div><div class="k">of the PPHI register geocoded</div></div>
+        <div><div class="v">9.2 min</div><div class="k">median travel time, corrected</div></div>
+        <div><div class="v">19.1 min</div><div class="k">median travel time, open data</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= cite ================= -->
+<section class="sec cite-sec" id="cite">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Paper and citation</div><h2>Read and cite the paper</h2></div>
+      <p>Published in the International Journal of Advanced Research, Volume 3, Issue 5, September 2026.</p>
+    </div>
+    <div class="cite-grid">
+      <div>
+        <p class="abs">Open geospatial data is used routinely to study access to care in low- and middle-income countries, but its completeness for rural health facilities had not been checked against an authoritative register.</p>
+        <p class="abs">This study does that for Sindh and finds that open data omits most rural public primary care. Analyses built on it risk mistaking misreported populations for underserved ones.</p>
+        <div class="ref-list">
+          <a class="ref" href="https://ijournalar.com/site/index.php/ijar/article/view/606" target="_blank" rel="noopener">
+            <span class="l"><b>Article page</b><span>ijournalar.com/site/index.php/ijar/article/view/606</span></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="ref" href="https://ijournalar.com/site/index.php/ijar/article/download/606/434" target="_blank" rel="noopener">
+            <span class="l"><b>Download PDF</b><span>Full text, pp. 1606–1624</span></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+          </a>
+          <a class="ref" href="https://github.com/ArsalanKaleem/Rural-Healthcare-Accessibility-Index--RHAI-" target="_blank" rel="noopener">
+            <span class="l"><b>Code and data</b><span>github.com/ArsalanKaleem/Rural-Healthcare-Accessibility-Index--RHAI-</span></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="cbox">
+          <div class="ctabs" role="tablist" aria-label="Citation format">
+            <button type="button" role="tab" data-fmt="apa" aria-selected="true">APA</button>
+            <button type="button" role="tab" data-fmt="mla" aria-selected="false">MLA</button>
+            <button type="button" role="tab" data-fmt="chicago" aria-selected="false">Chicago</button>
+            <button type="button" role="tab" data-fmt="bibtex" aria-selected="false">BibTeX</button>
+          </div>
+          <pre class="ctext" id="citeText" role="tabpanel"></pre>
+          <div class="cfoot">
+            <span id="citeFmt">APA 7th edition</span>
+            <button type="button" class="btn sm copy" id="copyCite">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              Copy</button>
+          </div>
+        </div>
+        <p class="code-cite">Using the code or derived data? Please cite the paper above and link the <a href="https://github.com/ArsalanKaleem/Rural-Healthcare-Accessibility-Index--RHAI-">repository</a>. Code is MIT-licensed; derived data is CC-BY 4.0, subject to source licences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Author</h4>
+        <p style="color:#efe9df;font-size:15px">Arsalan Kaleem</p>
+        <p>ORCID <a href="https://orcid.org/0009-0002-9054-6965" target="_blank" rel="noopener">0009-0002-9054-6965</a></p>
+        <p><a href="mailto:arsalanabbasi.here@gmail.com">arsalanabbasi.here@gmail.com</a></p>
+        <p style="margin-top:10px;max-width:34em">If you hold facility coordinate data for Sindh and can share it, please get in touch. A complete register would be the largest single improvement to this work.</p>
+      </div>
+      <div>
+        <h4>Data sources</h4>
+        <p>OpenStreetMap (ODbL) · GeoNames (CC-BY 4.0) · GADM v4.1 · healthsites.io / HDX · PPHI Sindh facility lists · WorldPop-derived population</p>
+      </div>
+      <div>
+        <h4>Related</h4>
+        <p><a href="https://doi.org/10.5281/zenodo.21422759" target="_blank" rel="noopener">SWAI — Sindh Water Access Index</a>, the same 5,159 villages measured for drinking-water access.</p>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Arsalan Kaleem · Code MIT · Data CC-BY 4.0</span>
+      <span>Basemap © OpenStreetMap contributors</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script>
-const C={field:'#5b7c5a',silt:'#c9a227',dust:'#c2703d',thar:'#8f3b1b',sky:'#2f5d7c',ink:'#14100c'};
+const C={field:'#4f7a52',silt:'#c9a227',dust:'#c2703d',thar:'#8f3b1b',sky:'#2f5d7c',ink:'#1a1612'};
 const fmt=n=>n==null?'—':n.toLocaleString();
 const mins=n=>n==null?'—':(n<10?n.toFixed(1):Math.round(n));
 const pop=n=>n==null?'—':n>=1e6?(n/1e6).toFixed(2)+'M':n>=1e3?Math.round(n/1e3)+'k':n;
 const colour=t=>t==null?'#bbb':t<15?C.field:t<30?C.silt:t<60?C.dust:C.thar;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const $=id=>document.getElementById(id);
+const narrow=()=>matchMedia('(max-width:899px)').matches;
+const PAGE=60;
 
-let V=[],D=[],F=null,META={},cur=null,scn='B',showFac=false,map,popup;
+let V=[],D=[],F=null,META={},cur=null,scn='B',showFac=false,map,popup,mapReady=false,list=[],shown=0;
 
 async function boot(){
   const [v,d,m]=await Promise.all([
@@ -175,105 +625,118 @@ async function boot(){
     fetch('data/districts.json').then(r=>r.json()),
     fetch('data/meta.json').then(r=>r.json()).catch(()=>({}))
   ]);
-  V=v.rows.map(r=>({id:r[0],name:r[1],district:r[2],lon:r[3],lat:r[4],tA:r[5],tB:r[6],pop:r[7]}));
+  V=v.rows.map((r,i)=>({i,id:r[0],name:r[1],district:r[2],lon:r[3],lat:r[4],tA:r[5],tB:r[6],pop:r[7]}));
   D=d; META=m;
-  document.getElementById('metaline').textContent =
-    `${fmt(META.villages||V.length)} villages · ${META.districts||D.length} districts · generated ${META.generated||''}`;
+  $('metaline').textContent=
+    `${fmt(META.villages||V.length)} villages · ${META.districts||D.length} districts · data generated ${META.generated||''}`;
 
-  const sel=document.getElementById('district');
-  sel.innerHTML=D.map(x=>`<option value="${x.d}">${x.d}</option>`).join('');
+  const sel=$('district');
+  sel.innerHTML=D.map(x=>`<option value="${esc(x.d)}">${esc(x.d)}</option>`).join('');
   sel.addEventListener('change',e=>select(e.target.value));
 
   initMap();
   select(D[0].d);
-  document.getElementById('loading').remove();
+  $('loading').remove();
 }
 
 function initMap(){
   map=new maplibregl.Map({
     container:'map',
     style:{version:8,sources:{
-      osm:{type:'raster',tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
-           tileSize:256,attribution:'© OpenStreetMap contributors'}},
-      layers:[{id:'osm',type:'raster',source:'osm',paint:{'raster-saturation':-0.75,'raster-opacity':0.5}}]},
-    center:[68.6,26.2],zoom:6.1,attributionControl:{compact:true}
+      base:{type:'raster',tileSize:256,tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+        attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}},
+      layers:[{id:'base',type:'raster',source:'base',paint:{'raster-saturation':-0.8,'raster-opacity':0.55,'raster-contrast':-0.1}}]},
+    center:[68.6,26.2],zoom:5.6,attributionControl:{compact:true},
+    cooperativeGestures:true
   });
-  map.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
-  popup=new maplibregl.Popup({closeButton:true,maxWidth:'270px'});
+  map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');
+  map.addControl(new maplibregl.FullscreenControl(),'top-right');
+  popup=new maplibregl.Popup({closeButton:true,maxWidth:'280px',offset:8});
 
   map.on('load',()=>{
     map.addSource('v',{type:'geojson',data:fc([])});
     map.addLayer({id:'v',type:'circle',source:'v',paint:{
-      'circle-radius':['interpolate',['linear'],['zoom'],6,3,9,5.5,12,8],
-      'circle-color':['get','c'],'circle-opacity':.88,
-      'circle-stroke-width':1,'circle-stroke-color':'rgba(20,16,12,.35)'}});
+      'circle-radius':['interpolate',['linear'],['zoom'],6,3.5,9,6,12,9],
+      'circle-color':['get','c'],'circle-opacity':.9,
+      'circle-stroke-width':1,'circle-stroke-color':'rgba(255,255,255,.85)'}});
     map.addSource('f',{type:'geojson',data:fc([])});
-    map.addLayer({id:'f',type:'symbol',source:'f',layout:{
-      'icon-image':'','text-field':'+','text-size':13,'text-allow-overlap':true},
-      paint:{'text-color':['case',['==',['get','s'],1],C.sky,C.ink],'text-opacity':.75}});
-    map.on('click','v',e=>showPopup(e.features[0]));
+    map.addLayer({id:'f',type:'circle',source:'f',paint:{
+      'circle-radius':['interpolate',['linear'],['zoom'],6,3,10,5,13,7],
+      'circle-color':'#fff',
+      'circle-stroke-width':['interpolate',['linear'],['zoom'],6,1.5,12,2.5],
+      'circle-stroke-color':['case',['==',['get','s'],1],C.sky,C.ink]}});
+    map.on('click','v',e=>showPopup(V[e.features[0].properties.i]));
     map.on('mouseenter','v',()=>map.getCanvas().style.cursor='pointer');
     map.on('mouseleave','v',()=>map.getCanvas().style.cursor='');
-    if(cur) draw();
+    mapReady=true;
+    if(cur){ draw(); fit(false); }
   });
 
-  document.getElementById('toggleScn').addEventListener('click',e=>{
-    scn = scn==='B' ? 'A' : 'B';
-    const on = scn==='A';
-    e.target.setAttribute('aria-pressed',on);
-    e.target.textContent = on ? 'Showing open data only' : 'Compare with open data only';
-    document.getElementById('legScn').textContent =
-      on ? 'Scenario A — open data only' : 'Scenario B — with PPHI register';
+  document.querySelectorAll('[data-scn]').forEach(b=>b.addEventListener('click',()=>{
+    if(scn===b.dataset.scn) return;
+    scn=b.dataset.scn;
+    document.querySelectorAll('[data-scn]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    $('legScn').textContent = scn==='A' ? 'Scenario A · open data only' : 'Scenario B · with PPHI register';
+    popup.remove();
     render();
-  });
-  document.getElementById('toggleFac').addEventListener('click',async e=>{
+  }));
+  $('toggleFac').addEventListener('click',async e=>{
+    const btn=e.currentTarget;
     showFac=!showFac;
-    e.target.setAttribute('aria-pressed',showFac);
-    e.target.textContent = showFac ? 'Hide facilities' : 'Show facilities';
+    btn.setAttribute('aria-pressed',showFac);
+    btn.querySelector('span').textContent = showFac ? 'Hide facilities' : 'Show facilities';
+    $('legend').classList.toggle('show-fac',showFac);
     if(showFac && !F){
       try{ F=await fetch('data/facilities.json').then(r=>r.json()); }
       catch(err){ F={rows:[]}; }
     }
     drawFac();
   });
-  document.getElementById('search').addEventListener('input',()=>renderList());
-  document.getElementById('download').addEventListener('click',csv);
+  $('search').addEventListener('input',()=>renderList());
+  $('moreBtn').addEventListener('click',()=>renderRows(shown+PAGE));
+  $('download').addEventListener('click',csv);
 }
 
 const fc=f=>({type:'FeatureCollection',features:f});
+const tOf=v=>scn==='B'?v.tB:v.tA;
+const inDistrict=()=>V.filter(v=>v.district===cur.d);
 
 function select(name){
   cur=D.find(x=>x.d===name);
-  document.getElementById('district').value=name;
-  document.getElementById('search').value='';
+  $('district').value=name;
+  $('search').value='';
+  if(popup) popup.remove();
   render();
-  const pts=V.filter(v=>v.district===name);
-  if(pts.length&&map&&map.isStyleLoaded()){
-    const b=new maplibregl.LngLatBounds();
-    pts.forEach(p=>b.extend([p.lon,p.lat]));
-    map.fitBounds(b,{padding:60,maxZoom:10,duration:600});
-  }
+  fit(true);
+}
+
+function fit(animate){
+  if(!mapReady) return;
+  const pts=inDistrict();
+  if(!pts.length) return;
+  const b=new maplibregl.LngLatBounds();
+  pts.forEach(p=>b.extend([p.lon,p.lat]));
+  map.fitBounds(b,{padding:narrow()?36:64,maxZoom:10,duration:animate?600:0});
 }
 
 function render(){ readout(); draw(); renderList(); }
 
 function readout(){
   const d=cur, B=scn==='B';
-  const med=B?d.medB:d.medA, wmed=B?d.wmedB:d.wmedA;
+  const med=B?d.medB:d.medA, wmed=B?d.wmedB:d.wmedA, p90=B?d.p90B:d.p90A;
   const o30=B?d.over30B:d.over30A, o60=B?d.over60B:d.over60A;
-  const el=document.getElementById('readout');
-  el.innerHTML=`
-    <p class="lede">In <b>${d.d}</b>, half of villages are within</p>
+  $('readout').innerHTML=`
+    <p class="lede">In <b>${esc(d.d)}</b>, half of villages are within</p>
     <div class="big">${mins(med)}<small>minutes of a facility</small></div>
     <div class="sub">Population-weighted median ${mins(wmed)} min · ${fmt(d.n)} villages${d.pop?` · ${pop(d.pop)} people`:''}</div>
     <div class="stats">
       <div class="stat"><div class="k">People over 30 min</div><div class="v">${pop(o30)}</div></div>
       <div class="stat"><div class="k">People over 60 min</div><div class="v">${pop(o60)}</div></div>
       <div class="stat"><div class="k">Facilities counted</div><div class="v">${fmt(B?d.facTotal:d.facOpen)}</div></div>
-      <div class="stat"><div class="k">Furthest village</div><div class="v">${mins(B?d.maxB:d.p90A)} min</div></div>
+      <div class="stat"><div class="k">9 in 10 villages within</div><div class="v">${mins(p90)} min</div></div>
     </div>
     ${d.undercounted&&B?`<div class="flag"><b>These times are a best case.</b>
-      Only ${d.geoRate||0}% of the ${fmt(d.regTotal)} facilities PPHI operates in ${d.d} could be
+      Only ${d.geoRate||0}% of the ${fmt(d.regTotal)} facilities PPHI operates in ${esc(d.d)} could be
       placed on the map, so the real network is denser than shown and some villages
       will be closer to care than these figures suggest.</div>`:''}
     ${!B?`<div class="flag"><b>Open data only.</b> This view leaves out most rural public
@@ -282,75 +745,123 @@ function readout(){
 
 function draw(){
   if(!map||!map.getSource('v'))return;
-  const B=scn==='B';
-  const f=V.filter(v=>v.district===cur.d).map(v=>{
-    const t=B?v.tB:v.tA;
-    return {type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
-      properties:{c:colour(t),n:v.name||'Unnamed village',tA:v.tA,tB:v.tB,p:v.pop}};
-  });
+  const f=inDistrict().map(v=>({type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
+    properties:{c:colour(tOf(v)),i:v.i}}));
   map.getSource('v').setData(fc(f));
   drawFac();
 }
 
 function drawFac(){
   if(!map||!map.getSource('f'))return;
-  if(!showFac||!F){ map.getSource('f').setData(fc([])); return; }
-  const pts=V.filter(v=>v.district===cur.d);
-  if(!pts.length){ map.getSource('f').setData(fc([])); return; }
+  const pts=inDistrict();
+  if(!showFac||!F||!pts.length){ map.getSource('f').setData(fc([])); return; }
   let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
   pts.forEach(p=>{x0=Math.min(x0,p.lon);x1=Math.max(x1,p.lon);y0=Math.min(y0,p.lat);y1=Math.max(y1,p.lat)});
   const pad=.25;
-  const f=F.rows.filter(r=>r[0]>x0-pad&&r[0]<x1+pad&&r[1]>y0-pad&&r[1]<y1+pad)
+  // Scenario A has no register facilities, so hide them there
+  const f=F.rows.filter(r=>r[0]>x0-pad&&r[0]<x1+pad&&r[1]>y0-pad&&r[1]<y1+pad&&(scn==='B'||r[2]===0))
     .map(r=>({type:'Feature',geometry:{type:'Point',coordinates:[r[0],r[1]]},properties:{s:r[2]}}));
   map.getSource('f').setData(fc(f));
 }
 
-function showPopup(ft){
-  const p=ft.properties;
-  popup.setLngLat(ft.geometry.coordinates).setHTML(`
-    <div class="pop-n">${p.n}</div>
-    <div class="pop-r"><span>With PPHI register</span><span class="mono">${mins(+p.tB)} min</span></div>
-    <div class="pop-r"><span>Open data only</span><span class="mono">${mins(+p.tA)} min</span></div>
-    ${p.p&&p.p!=='null'?`<div class="pop-r"><span>Population</span><span class="mono">${fmt(+p.p)}</span></div>`:''}
+function showPopup(v){
+  popup.setLngLat([v.lon,v.lat]).setHTML(`
+    <div class="pop-n" dir="auto">${esc(v.name||'Unnamed village')}</div>
+    <div class="pop-r"><span>With PPHI register</span><span class="mono">${mins(v.tB)} min</span></div>
+    <div class="pop-r"><span>Open data only</span><span class="mono">${mins(v.tA)} min</span></div>
+    ${v.pop?`<div class="pop-r"><span>Population</span><span class="mono">${fmt(v.pop)}</span></div>`:''}
   `).addTo(map);
 }
 
 function renderList(){
-  const q=document.getElementById('search').value.trim().toLowerCase();
-  const B=scn==='B';
-  let list=V.filter(v=>v.district===cur.d);
+  const q=$('search').value.trim().toLowerCase();
+  list=inDistrict();
   if(q) list=list.filter(v=>(v.name||'').toLowerCase().includes(q));
-  list.sort((a,b)=>((B?b.tB:b.tA)??-1)-((B?a.tB:a.tA)??-1));
-  document.getElementById('vcount').textContent=`${fmt(list.length)} shown`;
-  document.getElementById('rows').innerHTML=list.slice(0,300).map(v=>{
-    const t=B?v.tB:v.tA;
-    return `<div class="row" tabindex="0" data-lon="${v.lon}" data-lat="${v.lat}">
-      <div><div class="nm"><span class="dot" style="background:${colour(t)}"></span>${v.name||'Unnamed village'}</div>
-      ${v.pop?`<div class="pp">${fmt(v.pop)} people</div>`:''}</div>
-      <div class="tt">${mins(t)}<span style="font-size:10px;color:var(--muted)"> min</span></div>
-    </div>`}).join('') || `<div style="padding:14px 10px;color:var(--muted);font-size:13px">No village matches that name in ${cur.d}.</div>`;
-  document.querySelectorAll('.row').forEach(el=>{
-    const go=()=>{map.flyTo({center:[+el.dataset.lon,+el.dataset.lat],zoom:12,duration:700})};
-    el.addEventListener('click',go);
-    el.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
-  });
+  list.sort((a,b)=>(tOf(b)??-1)-(tOf(a)??-1));
+  $('vcount').textContent=`${fmt(list.length)} village${list.length===1?'':'s'}`;
+  renderRows(PAGE);
+}
+
+function renderRows(n){
+  shown=Math.min(n,list.length);
+  $('rows').innerHTML=list.slice(0,shown).map(v=>{
+    const t=tOf(v);
+    return `<button type="button" class="row" data-i="${v.i}">
+      <span style="min-width:0"><span class="nm" style="display:block"><span class="dot" style="background:${colour(t)}"></span><span dir="auto">${esc(v.name||'Unnamed village')}</span></span>
+      ${v.pop?`<span class="pp" style="display:block">${fmt(v.pop)} people</span>`:''}</span>
+      <span class="tt">${mins(t)}<span> min</span></span>
+    </button>`}).join('') || `<div class="empty">No village matches that name in ${esc(cur.d)}.</div>`;
+  const left=list.length-shown;
+  $('more').hidden=left<=0;
+  $('moreBtn').textContent=`Show ${Math.min(PAGE,left)} more`;
+  $('rows').querySelectorAll('.row').forEach(el=>el.addEventListener('click',()=>{
+    const v=V[+el.dataset.i];
+    if(narrow()) $('map').scrollIntoView({behavior:'smooth',block:'center'});
+    map.flyTo({center:[v.lon,v.lat],zoom:12,duration:700});
+    map.once('moveend',()=>showPopup(v));
+  }));
 }
 
 function csv(){
-  const rows=V.filter(v=>v.district===cur.d)
-    .sort((a,b)=>(b.tB??-1)-(a.tB??-1));
+  const rows=inDistrict().sort((a,b)=>(b.tB??-1)-(a.tB??-1));
   const head='village_id,name,district,lon,lat,minutes_scenarioB,minutes_scenarioA,population';
   const body=rows.map(v=>[v.id,`"${(v.name||'').replace(/"/g,'""')}"`,v.district,
     v.lon,v.lat,v.tB??'',v.tA??'',v.pop??''].join(',')).join('\n');
-  const blob=new Blob([head+'\n'+body],{type:'text/csv;charset=utf-8'});
+  const blob=new Blob(['﻿'+head+'\n'+body],{type:'text/csv;charset=utf-8'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
-  a.download=`RHAI_${cur.d.replace(/\s+/g,'_')}.csv`;
-  a.click();URL.revokeObjectURL(a.href);
+  a.download=`RHAI_${cur.d.replace(/\W+/g,'_')}.csv`;
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
 
+/* ---------- citation ---------- */
+const TITLE='What open geospatial data can and cannot tell us about geographic access to rural public primary care: A village-level case study from Sindh, Pakistan';
+const TITLE_TC='What Open Geospatial Data Can and Cannot Tell Us about Geographic Access to Rural Public Primary Care: A Village-Level Case Study from Sindh, Pakistan';
+const URL_ART='https://ijournalar.com/site/index.php/ijar/article/view/606';
+const CITE={
+  apa:{label:'APA 7th edition',html:`Kaleem, A. (2026). ${TITLE}. <i>International Journal of Advanced Research</i>, <i>3</i>(5), 1606–1624. ${URL_ART}`},
+  mla:{label:'MLA 9th edition',html:`Kaleem, Arsalan. “${TITLE_TC}.” <i>International Journal of Advanced Research</i>, vol. 3, no. 5, 2026, pp. 1606–24.`},
+  chicago:{label:'Chicago author-date',html:`Kaleem, Arsalan. 2026. “${TITLE_TC}.” <i>International Journal of Advanced Research</i> 3 (5): 1606–24. ${URL_ART}.`},
+  bibtex:{label:'BibTeX',code:true,html:esc(`@article{kaleem2026open,
+  author  = {Kaleem, Arsalan},
+  title   = {${TITLE_TC.replace('Sindh, Pakistan','{Sindh}, {Pakistan}')}},
+  journal = {International Journal of Advanced Research},
+  year    = {2026},
+  volume  = {3},
+  number  = {5},
+  pages   = {1606--1624},
+  issn    = {3106-7980},
+  url     = {${URL_ART}}
+}`)}
+};
+function showCite(k){
+  const c=CITE[k];
+  document.querySelectorAll('[data-fmt]').forEach(b=>b.setAttribute('aria-selected',b.dataset.fmt===k));
+  $('citeText').innerHTML=c.html;
+  $('citeText').classList.toggle('code',!!c.code);
+  $('citeFmt').textContent=c.label;
+}
+document.querySelectorAll('[data-fmt]').forEach(b=>b.addEventListener('click',()=>showCite(b.dataset.fmt)));
+$('copyCite').addEventListener('click',async()=>{
+  const text=$('citeText').textContent;
+  try{ await navigator.clipboard.writeText(text); }
+  catch(e){
+    const r=document.createRange(); r.selectNodeContents($('citeText'));
+    const s=getSelection(); s.removeAllRanges(); s.addRange(r);
+    document.execCommand('copy');
+  }
+  toast('Citation copied');
+});
+let toastT;
+function toast(msg){
+  const t=$('toast'); t.textContent=msg; t.classList.add('on');
+  clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('on'),1800);
+}
+showCite('apa');
+
 boot().catch(e=>{
-  document.getElementById('loading').textContent='Could not load the data files. Run rhai_21_build_web.py first.';
+  $('loading').textContent='Could not load the data files. Run rhai_21_build_web.py first.';
   console.error(e);
 });
 </script>

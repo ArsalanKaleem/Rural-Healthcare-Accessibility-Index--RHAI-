@@ -257,11 +257,30 @@ minutes from the nearest health facility under open data. Water-rich, healthcare
 
 ## Citation
 
+The paper: [International Journal of Advanced Research, 3(5), 1606–1624](https://ijournalar.com/site/index.php/ijar/article/view/606) ([PDF](https://ijournalar.com/site/index.php/ijar/article/download/606/434))
+
 ```
-Kaleem, A. (2026). Rural Healthcare Accessibility Index (RHAI): village-level
-travel time to health facilities in Sindh, Pakistan.
-https://github.com/ArsalanKaleem/Rural-Healthcare-Accessibility-Index--RHAI-
+Kaleem, A. (2026). What open geospatial data can and cannot tell us about
+geographic access to rural public primary care: A village-level case study
+from Sindh, Pakistan. International Journal of Advanced Research, 3(5),
+1606–1624. https://ijournalar.com/site/index.php/ijar/article/view/606
 ```
+
+```bibtex
+@article{kaleem2026open,
+  author  = {Kaleem, Arsalan},
+  title   = {What Open Geospatial Data Can and Cannot Tell Us about Geographic Access to Rural Public Primary Care: A Village-Level Case Study from {Sindh}, {Pakistan}},
+  journal = {International Journal of Advanced Research},
+  year    = {2026},
+  volume  = {3},
+  number  = {5},
+  pages   = {1606--1624},
+  issn    = {3106-7980},
+  url     = {https://ijournalar.com/site/index.php/ijar/article/view/606}
+}
+```
+
+Code and data: https://github.com/ArsalanKaleem/Rural-Healthcare-Accessibility-Index--RHAI-
 
 ORCID: [0009-0002-9054-6965](https://orcid.org/0009-0002-9054-6965)
 
