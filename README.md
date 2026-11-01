@@ -264,7 +264,7 @@ Routing scripts are resumable — rerun to pick up any district that failed.
 ## Related work
 
 **SWAI — Sindh Water Access Index.** Same 5,159 villages, drinking-water accessibility.
-DOI: 10.5281/zenodo.21422759
+[District explorer](https://arsalankaleem.me/Sindh-Water-Access-index-SWAI-/) · DOI: 10.5281/zenodo.21422759
 
 Cross-project note: Shah Bandar scores 93.2/100 for water accessibility but sits 104
 minutes from the nearest health facility under open data. Water-rich, healthcare-poor.
