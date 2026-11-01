@@ -61,6 +61,7 @@ section{scroll-margin-top:calc(var(--head) + 8px)}
   color:var(--ink);text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;white-space:nowrap}
 .btn:hover{border-color:var(--ink-2);background:#fff}
 .btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .btn.primary:hover{background:#000}
 .btn.sm{min-height:36px;padding:0 14px;font-size:13.5px}
@@ -902,6 +903,9 @@ function setView(k){
   $('viewHint').textContent=VIEW_HINT[k];
   $('legT').innerHTML=LEGEND_TITLE[k];
   $('legend').classList.toggle('view-heat',k==='heat');
+  // sizing only applies to village dots
+  $('toggleSize').disabled=k!=='dots';
+  $('toggleSize').title=k==='dots'?'':'Only applies to the Villages view';
   syncURL();
   popup&&popup.remove();
   draw();
