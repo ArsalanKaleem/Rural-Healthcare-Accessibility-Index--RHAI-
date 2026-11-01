@@ -703,6 +703,9 @@ function initMap(){
       'circle-stroke-width':['interpolate',['linear'],['zoom'],6,1.5,12,2.5],
       'circle-stroke-color':['case',['==',['get','s'],1],C.sky,C.ink]}});
     map.on('click','v',e=>showPopup(V[e.features[0].properties.i]));
+    map.on('click','h',e=>showHex(HEX[e.features[0].properties.k],e.lngLat));
+    map.on('mouseenter','h',()=>map.getCanvas().style.cursor='pointer');
+    map.on('mouseleave','h',()=>map.getCanvas().style.cursor='');
     map.on('mousemove','v',e=>{
       map.getCanvas().style.cursor='pointer';
       if(!hoverable) return;
@@ -872,6 +875,18 @@ function showPopup(v){
     ${v.pop?`<div class="pop-r"><span>Population</span><span class="mono">${fmt(v.pop)}</span></div>`:''}
   `).addTo(map);
   mark(v);   // after addTo: reopening fires 'close', which clears the ring
+}
+
+function showHex(h,at){
+  hover.remove(); mark(null);
+  const named=h.pts.filter(v=>v.name).sort((a,b)=>(tOf(b)??-1)-(tOf(a)??-1));
+  popup.setLngLat(at).setHTML(`
+    <div class="pop-n">${fmt(h.pts.length)} village${h.pts.length===1?'':'s'} in this hexagon</div>
+    <div class="pop-r"><span>Median travel time</span><span class="mono">${mins(h.med)} min</span></div>
+    ${h.people?`<div class="pop-r"><span>People</span><span class="mono">${fmt(h.people)}</span></div>
+    <div class="pop-r"><span>People over 30 min</span><span class="mono">${fmt(h.o30)}</span></div>`:''}
+    ${named.length?`<div class="pop-r"><span>Furthest</span><span dir="auto">${esc(named[0].name)} · <span class="mono">${mins(tOf(named[0]))}</span></span></div>`:''}
+  `).addTo(map);
 }
 
 function renderList(){
