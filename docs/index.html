@@ -872,6 +872,43 @@ function csv(){
   setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
 
+/* ---------- hexagon summary ---------- */
+// Group villages into pointy-top hexagons of circumradius r km, using a local
+// equirectangular projection centred on the points (fine at district scale).
+function hexbin(pts,r){
+  const lat0=pts.reduce((a,p)=>a+p.lat,0)/pts.length*Math.PI/180;
+  const kx=111.32*Math.cos(lat0), ky=110.57, S3=Math.sqrt(3);
+  const bins=new Map();
+  for(const p of pts){
+    const x=p.lon*kx, y=p.lat*ky;
+    const fq=(S3/3*x-y/3)/r, fr=(2/3*y)/r, fs=-fq-fr;
+    let q=Math.round(fq), rr=Math.round(fr), ss=Math.round(fs);
+    const dq=Math.abs(q-fq), dr=Math.abs(rr-fr), ds=Math.abs(ss-fs);
+    if(dq>dr&&dq>ds) q=-rr-ss; else if(dr>ds) rr=-q-ss;
+    const key=q+','+rr;
+    if(!bins.has(key)) bins.set(key,{q,r:rr,pts:[]});
+    bins.get(key).pts.push(p);
+  }
+  return [...bins.values()].map(b=>{
+    const cx=r*S3*(b.q+b.r/2), cy=r*1.5*b.r, ring=[];
+    for(let i=0;i<=6;i++){
+      const a=Math.PI/180*(60*i+30);
+      ring.push([(cx+r*Math.cos(a))/kx,(cy+r*Math.sin(a))/ky]);
+    }
+    return {ring,pts:b.pts};
+  });
+}
+
+// Population-weighted median; villages without a population count once.
+function wmedian(items){
+  const a=items.filter(x=>x.t!=null).sort((p,q)=>p.t-q.t);
+  if(!a.length) return null;
+  const tot=a.reduce((s,x)=>s+x.w,0);
+  let acc=0;
+  for(const x of a){ acc+=x.w; if(acc>=tot/2) return x.t; }
+  return a[a.length-1].t;
+}
+
 /* ---------- citation ---------- */
 const TITLE='What open geospatial data can and cannot tell us about geographic access to rural public primary care: A village-level case study from Sindh, Pakistan';
 const TITLE_TC='What Open Geospatial Data Can and Cannot Tell Us about Geographic Access to Rural Public Primary Care: A Village-Level Case Study from Sindh, Pakistan';
