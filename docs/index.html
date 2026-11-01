@@ -674,9 +674,12 @@ async function boot(){
   sel.innerHTML=D.map(x=>`<option value="${esc(x.d)}">${esc(x.d)}</option>`).join('');
   sel.addEventListener('change',e=>select(e.target.value));
 
+  // ?d=<district>&scn=A|B&view=dots|hex|heat restores a shared view
+  const qs=new URLSearchParams(location.search);
   initMap();
-  setView('dots');
-  select(D[0].d);
+  if(qs.get('scn')==='A') setScn('A');
+  setView(VIEW_HINT[qs.get('view')]?qs.get('view'):'dots');
+  select(D.some(x=>x.d===qs.get('d'))?qs.get('d'):D[0].d);
   $('loading').remove();
 }
 
@@ -762,9 +765,7 @@ function initMap(){
 
   document.querySelectorAll('[data-scn]').forEach(b=>b.addEventListener('click',()=>{
     if(scn===b.dataset.scn) return;
-    scn=b.dataset.scn;
-    document.querySelectorAll('[data-scn]').forEach(x=>x.setAttribute('aria-pressed',x===b));
-    $('legScn').textContent = scn==='A' ? 'Scenario A · open data only' : 'Scenario B · with PPHI register';
+    setScn(b.dataset.scn);
     popup.remove();
     render();
   }));
@@ -836,6 +837,20 @@ function select(name){
   fit(true);
 }
 
+function setScn(k){
+  scn=k;
+  document.querySelectorAll('[data-scn]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.scn===k));
+  $('legScn').textContent = k==='A' ? 'Scenario A · open data only' : 'Scenario B · with PPHI register';
+}
+
+function syncURL(){
+  if(!cur) return;
+  const q=new URLSearchParams({d:cur.d});
+  if(scn!=='B') q.set('scn',scn);
+  if(view!=='dots') q.set('view',view);
+  history.replaceState(null,'',`?${q}${location.hash}`);
+}
+
 function fit(animate){
   if(!mapReady) return;
   const pts=inDistrict();
@@ -845,7 +860,7 @@ function fit(animate){
   map.fitBounds(b,{padding:narrow()?36:64,maxZoom:10,duration:animate?600:0});
 }
 
-function render(){ readout(); draw(); renderList(); }
+function render(){ readout(); draw(); renderList(); syncURL(); }
 
 function readout(){
   const d=cur, B=scn==='B';
@@ -887,6 +902,7 @@ function setView(k){
   $('viewHint').textContent=VIEW_HINT[k];
   $('legT').innerHTML=LEGEND_TITLE[k];
   $('legend').classList.toggle('view-heat',k==='heat');
+  syncURL();
   popup&&popup.remove();
   draw();
 }
