@@ -219,6 +219,8 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
 .legend .scn{margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--sky)}
 .maplibregl-popup-content{font-family:var(--sans);font-size:13px;padding:12px 14px;border-radius:8px;box-shadow:var(--shadow)}
 .maplibregl-popup-close-button{font-size:18px;width:28px;height:28px}
+.hover-tip .maplibregl-popup-content{padding:6px 10px;font-size:12.5px;pointer-events:none}
+.hover-tip .maplibregl-popup-tip{display:none}
 .pop-n{font-family:var(--serif);font-size:16px;margin:0 18px 8px 0;line-height:1.25}
 .pop-r{display:flex;justify-content:space-between;gap:18px;font-size:13px;padding:3px 0;border-top:1px solid var(--rule)}
 .pop-r .mono{font-weight:500}
@@ -626,7 +628,8 @@ const narrow=()=>matchMedia('(max-width:899px)').matches;
 const PAGE=60;
 
 const hidden=new Set();   // travel-time bands switched off in the legend
-let V=[],D=[],F=null,META={},cur=null,scn='B',showFac=false,sizeByPop=false,map,popup,mapReady=false,list=[],shown=0;
+const hoverable=matchMedia('(hover:hover) and (pointer:fine)').matches;
+let V=[],D=[],F=null,META={},cur=null,scn='B',showFac=false,sizeByPop=false,map,popup,hover,mapReady=false,list=[],shown=0;
 
 async function boot(){
   const [v,d,m]=await Promise.all([
@@ -661,6 +664,7 @@ function initMap(){
   map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');
   map.addControl(new maplibregl.FullscreenControl(),'top-right');
   popup=new maplibregl.Popup({closeButton:true,maxWidth:'280px',offset:8});
+  hover=new maplibregl.Popup({closeButton:false,closeOnClick:false,className:'hover-tip',offset:10});
 
   map.on('load',()=>{
     map.addSource('v',{type:'geojson',data:fc([])});
@@ -681,8 +685,14 @@ function initMap(){
       'circle-stroke-width':['interpolate',['linear'],['zoom'],6,1.5,12,2.5],
       'circle-stroke-color':['case',['==',['get','s'],1],C.sky,C.ink]}});
     map.on('click','v',e=>showPopup(V[e.features[0].properties.i]));
-    map.on('mouseenter','v',()=>map.getCanvas().style.cursor='pointer');
-    map.on('mouseleave','v',()=>map.getCanvas().style.cursor='');
+    map.on('mousemove','v',e=>{
+      map.getCanvas().style.cursor='pointer';
+      if(!hoverable) return;
+      const v=V[e.features[0].properties.i];
+      hover.setLngLat([v.lon,v.lat]).setHTML(
+        `<span dir="auto">${esc(v.name||'Unnamed village')}</span> · <b class="mono">${mins(tOf(v))} min</b>`).addTo(map);
+    });
+    map.on('mouseleave','v',()=>{ map.getCanvas().style.cursor=''; hover.remove(); });
     mapReady=true;
     if(cur){ draw(); fit(false); }
   });
@@ -800,6 +810,7 @@ function drawFac(){
 }
 
 function showPopup(v){
+  hover.remove();
   popup.setLngLat([v.lon,v.lat]).setHTML(`
     <div class="pop-n" dir="auto">${esc(v.name||'Unnamed village')}</div>
     <div class="pop-r"><span>With PPHI register</span><span class="mono">${mins(v.tB)} min</span></div>
