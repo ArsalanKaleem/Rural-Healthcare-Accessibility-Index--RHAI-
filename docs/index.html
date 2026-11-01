@@ -162,8 +162,8 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
 .seg{display:grid;grid-template-columns:1fr 1fr;background:var(--sunk);border:1px solid var(--rule);border-radius:9px;padding:3px;gap:3px}
 .seg button{font:500 13.5px/1.2 var(--sans);min-height:40px;padding:6px 8px;border:0;border-radius:7px;background:transparent;color:var(--ink-2);cursor:pointer}
 .seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(26,22,18,.12),0 0 0 1px var(--rule)}
-.tool-row{display:flex;gap:8px}
-.tool-row .btn{flex:1;border-radius:8px;min-height:40px;font-size:13.5px;padding:0 10px}
+.tool-row{display:flex;flex-wrap:wrap;gap:8px}
+.tool-row .btn{flex:1 1 auto;border-radius:8px;min-height:40px;font-size:13.5px;padding:0 10px}
 .tool-row .btn[aria-pressed=true]{background:var(--sky-soft);border-color:var(--sky);color:var(--sky)}
 
 /* headline readout */
@@ -431,6 +431,9 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
             <button type="button" class="btn" id="toggleFac" aria-pressed="false">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>
               <span>Show facilities</span></button>
+            <button type="button" class="btn" id="toggleSize" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="7" cy="15" r="3"/><circle cx="16" cy="11" r="6"/></svg>
+              <span>Size by population</span></button>
             <button type="button" class="btn" id="download">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
               District CSV</button>
@@ -623,7 +626,7 @@ const narrow=()=>matchMedia('(max-width:899px)').matches;
 const PAGE=60;
 
 const hidden=new Set();   // travel-time bands switched off in the legend
-let V=[],D=[],F=null,META={},cur=null,scn='B',showFac=false,map,popup,mapReady=false,list=[],shown=0;
+let V=[],D=[],F=null,META={},cur=null,scn='B',showFac=false,sizeByPop=false,map,popup,mapReady=false,list=[],shown=0;
 
 async function boot(){
   const [v,d,m]=await Promise.all([
@@ -663,10 +666,12 @@ function initMap(){
     map.addSource('v',{type:'geojson',data:fc([])});
     // soft dark halo under each dot so it reads against the grey basemap
     map.addLayer({id:'v-halo',type:'circle',source:'v',paint:{
-      'circle-radius':['interpolate',['linear'],['zoom'],6,6,9,8.5,12,12],
+      'circle-radius':radius(1.75),
       'circle-color':'rgba(26,22,18,.28)','circle-blur':.6}});
-    map.addLayer({id:'v',type:'circle',source:'v',paint:{
-      'circle-radius':['interpolate',['linear'],['zoom'],6,4.5,9,6.5,12,10],
+    map.addLayer({id:'v',type:'circle',source:'v',
+      layout:{'circle-sort-key':['-',0,['get','p']]},   // big villages underneath small ones
+      paint:{
+      'circle-radius':radius(0),
       'circle-color':['get','c'],'circle-opacity':1,
       'circle-stroke-width':1.5,'circle-stroke-color':'#fff'}});
     map.addSource('f',{type:'geojson',data:fc([])});
@@ -708,12 +713,26 @@ function initMap(){
     b.setAttribute('aria-pressed',!hidden.has(k));
     draw(); renderList();
   }));
+  $('toggleSize').addEventListener('click',e=>{
+    sizeByPop=!sizeByPop;
+    e.currentTarget.setAttribute('aria-pressed',sizeByPop);
+    if(!mapReady) return;
+    map.setPaintProperty('v','circle-radius',radius(0));
+    map.setPaintProperty('v-halo','circle-radius',radius(1.75));
+  });
   $('search').addEventListener('input',()=>renderList());
   $('moreBtn').addEventListener('click',()=>renderRows(shown+PAGE));
   $('download').addEventListener('click',csv);
 }
 
 const fc=f=>({type:'FeatureCollection',features:f});
+
+// dot radius by zoom; with sizeByPop the area tracks village population
+function radius(pad){
+  if(!sizeByPop) return ['interpolate',['linear'],['zoom'],6,4.5+pad,9,6.5+pad,12,10+pad];
+  const s=['interpolate',['linear'],['sqrt',['get','p']],0,3.5,60,6,140,11,300,18];
+  return ['interpolate',['linear'],['zoom'],6,['+',['*',.75,s],pad],12,['+',['*',1.5,s],pad]];
+}
 const tOf=v=>scn==='B'?v.tB:v.tA;
 const inDistrict=()=>V.filter(v=>v.district===cur.d);
 
@@ -762,7 +781,7 @@ function readout(){
 function draw(){
   if(!map||!map.getSource('v'))return;
   const f=inDistrict().filter(v=>!hidden.has(band(tOf(v)))).map(v=>({type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
-    properties:{c:colour(tOf(v)),i:v.i}}));
+    properties:{c:colour(tOf(v)),i:v.i,p:v.pop||0}}));
   map.getSource('v').setData(fc(f));
   drawFac();
 }
