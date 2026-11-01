@@ -24,10 +24,10 @@
   --sunk:#f3eee6;
   --rule:#e3dbcf;           /* hairline */
   --rule-2:#cfc5b6;
-  --field:#4f7a52;          /* irrigated green — under 15 min */
-  --silt:#c9a227;           /* canal silt — 15 to 30 */
-  --dust:#c2703d;           /* dust — 30 to 60 */
-  --thar:#8f3b1b;           /* desert — over 60 */
+  --field:#2e7d5b;          /* irrigated green — under 15 min */
+  --silt:#e0ac2b;           /* canal silt — 15 to 30 */
+  --dust:#d4612a;           /* dust — 30 to 60 */
+  --thar:#8e1f1a;           /* desert — over 60 */
   --sky:#2f5d7c;            /* register/PPHI accent */
   --sky-soft:#e6eef4;
   --muted:#776e64;
@@ -607,7 +607,7 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script>
-const C={field:'#4f7a52',silt:'#c9a227',dust:'#c2703d',thar:'#8f3b1b',sky:'#2f5d7c',ink:'#1a1612'};
+const C={field:'#2e7d5b',silt:'#e0ac2b',dust:'#d4612a',thar:'#8e1f1a',sky:'#2f5d7c',ink:'#1a1612'};
 const fmt=n=>n==null?'—':n.toLocaleString();
 const mins=n=>n==null?'—':(n<10?n.toFixed(1):Math.round(n));
 const pop=n=>n==null?'—':n>=1e6?(n/1e6).toFixed(2)+'M':n>=1e3?Math.round(n/1e3)+'k':n;
@@ -645,7 +645,7 @@ function initMap(){
     style:{version:8,sources:{
       base:{type:'raster',tileSize:256,tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
         attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}},
-      layers:[{id:'base',type:'raster',source:'base',paint:{'raster-saturation':-0.8,'raster-opacity':0.55,'raster-contrast':-0.1}}]},
+      layers:[{id:'base',type:'raster',source:'base',paint:{'raster-saturation':-0.9,'raster-opacity':0.45,'raster-contrast':-0.1}}]},
     center:[68.6,26.2],zoom:5.6,attributionControl:{compact:true},
     cooperativeGestures:true
   });
@@ -655,10 +655,14 @@ function initMap(){
 
   map.on('load',()=>{
     map.addSource('v',{type:'geojson',data:fc([])});
+    // soft dark halo under each dot so it reads against the grey basemap
+    map.addLayer({id:'v-halo',type:'circle',source:'v',paint:{
+      'circle-radius':['interpolate',['linear'],['zoom'],6,6,9,8.5,12,12],
+      'circle-color':'rgba(26,22,18,.28)','circle-blur':.6}});
     map.addLayer({id:'v',type:'circle',source:'v',paint:{
-      'circle-radius':['interpolate',['linear'],['zoom'],6,3.5,9,6,12,9],
-      'circle-color':['get','c'],'circle-opacity':.9,
-      'circle-stroke-width':1,'circle-stroke-color':'rgba(255,255,255,.85)'}});
+      'circle-radius':['interpolate',['linear'],['zoom'],6,4.5,9,6.5,12,10],
+      'circle-color':['get','c'],'circle-opacity':1,
+      'circle-stroke-width':1.5,'circle-stroke-color':'#fff'}});
     map.addSource('f',{type:'geojson',data:fc([])});
     map.addLayer({id:'f',type:'circle',source:'f',paint:{
       'circle-radius':['interpolate',['linear'],['zoom'],6,3,10,5,13,7],
