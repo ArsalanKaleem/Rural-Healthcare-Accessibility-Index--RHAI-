@@ -209,6 +209,10 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
 .legend .t{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .legend .ks{display:grid;grid-template-columns:auto auto;gap:3px 14px}
 .legend .k{display:flex;align-items:center;white-space:nowrap}
+.legend .t .hint{text-transform:none;letter-spacing:0;font-family:var(--sans)}
+.band{font:inherit;color:inherit;background:none;border:0;padding:3px 4px;margin:-3px -4px;border-radius:5px;cursor:pointer;text-align:left}
+.band:hover{background:var(--sunk)}
+.band[aria-pressed=false]{opacity:.38;text-decoration:line-through}
 .legend .fac{display:none;margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);gap:3px 14px;grid-template-columns:auto auto}
 .legend.show-fac .fac{display:grid}
 .ring{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid;margin-right:8px;flex:none}
@@ -456,12 +460,12 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
       <div id="map" role="region" aria-label="Map of village travel times">
         <div class="loading" id="loading">Loading villages…</div>
         <div class="legend" id="legend">
-          <div class="t">Minutes to nearest facility</div>
+          <div class="t">Minutes to nearest facility <span class="hint">· tap to filter</span></div>
           <div class="ks">
-            <div class="k"><span class="dot" style="background:var(--field)"></span>under 15</div>
-            <div class="k"><span class="dot" style="background:var(--silt)"></span>15–30</div>
-            <div class="k"><span class="dot" style="background:var(--dust)"></span>30–60</div>
-            <div class="k"><span class="dot" style="background:var(--thar)"></span>over 60</div>
+            <button type="button" class="k band" data-band="0" aria-pressed="true"><span class="dot" style="background:var(--field)"></span>under 15</button>
+            <button type="button" class="k band" data-band="1" aria-pressed="true"><span class="dot" style="background:var(--silt)"></span>15–30</button>
+            <button type="button" class="k band" data-band="2" aria-pressed="true"><span class="dot" style="background:var(--dust)"></span>30–60</button>
+            <button type="button" class="k band" data-band="3" aria-pressed="true"><span class="dot" style="background:var(--thar)"></span>over 60</button>
           </div>
           <div class="fac">
             <div class="k"><span class="ring" style="border-color:var(--sky)"></span>PPHI register</div>
@@ -612,11 +616,13 @@ const fmt=n=>n==null?'—':n.toLocaleString();
 const mins=n=>n==null?'—':(n<10?n.toFixed(1):Math.round(n));
 const pop=n=>n==null?'—':n>=1e6?(n/1e6).toFixed(2)+'M':n>=1e3?Math.round(n/1e3)+'k':n;
 const colour=t=>t==null?'#bbb':t<15?C.field:t<30?C.silt:t<60?C.dust:C.thar;
+const band=t=>t==null?-1:t<15?0:t<30?1:t<60?2:3;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const $=id=>document.getElementById(id);
 const narrow=()=>matchMedia('(max-width:899px)').matches;
 const PAGE=60;
 
+const hidden=new Set();   // travel-time bands switched off in the legend
 let V=[],D=[],F=null,META={},cur=null,scn='B',showFac=false,map,popup,mapReady=false,list=[],shown=0;
 
 async function boot(){
@@ -696,6 +702,12 @@ function initMap(){
     }
     drawFac();
   });
+  document.querySelectorAll('.band').forEach(b=>b.addEventListener('click',()=>{
+    const k=+b.dataset.band;
+    hidden.has(k)?hidden.delete(k):hidden.add(k);
+    b.setAttribute('aria-pressed',!hidden.has(k));
+    draw();
+  }));
   $('search').addEventListener('input',()=>renderList());
   $('moreBtn').addEventListener('click',()=>renderRows(shown+PAGE));
   $('download').addEventListener('click',csv);
@@ -749,7 +761,7 @@ function readout(){
 
 function draw(){
   if(!map||!map.getSource('v'))return;
-  const f=inDistrict().map(v=>({type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
+  const f=inDistrict().filter(v=>!hidden.has(band(tOf(v)))).map(v=>({type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},
     properties:{c:colour(tOf(v)),i:v.i}}));
   map.getSource('v').setData(fc(f));
   drawFac();
