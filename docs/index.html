@@ -174,6 +174,12 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
 .big{font-family:var(--mono);font-size:52px;line-height:1;font-weight:500;letter-spacing:-.035em}
 .big small{font-size:15px;letter-spacing:0;color:var(--muted);margin-left:6px;font-weight:400}
 .sub{font-size:13px;color:var(--muted);margin-top:8px}
+.dist-h{margin-top:16px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.dist{display:flex;height:12px;border-radius:6px;overflow:hidden;margin-top:7px;background:var(--rule);gap:2px}
+.dist span{height:100%}
+.dist-l{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;margin-top:8px;font-size:12.5px;color:var(--ink-2)}
+.dist-l span{display:flex;align-items:center}
+.dist-l b{margin-left:auto;font-weight:500;color:var(--ink)}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-top:16px}
 .stat{background:var(--panel);padding:11px 12px}
 .stat .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -811,6 +817,7 @@ function readout(){
     <p class="lede">In <b>${esc(d.d)}</b>, half of villages are within</p>
     <div class="big">${mins(med)}<small>minutes of a facility</small></div>
     <div class="sub">Population-weighted median ${mins(wmed)} min · ${fmt(d.n)} villages${d.pop?` · ${pop(d.pop)} people`:''}</div>
+    ${distBar()}
     <div class="stats">
       <div class="stat"><div class="k">People over 30 min</div><div class="v">${pop(o30)}</div></div>
       <div class="stat"><div class="k">People over 60 min</div><div class="v">${pop(o60)}</div></div>
@@ -844,6 +851,23 @@ function setView(k){
   $('legend').classList.toggle('view-heat',k==='heat');
   popup&&popup.remove();
   draw();
+}
+
+const BAND_LABEL=['under 15','15–30','30–60','over 60'];
+const BAND_COLOUR=()=>[C.field,C.silt,C.dust,C.thar];
+
+// stacked bar: share of the district's people in each travel-time band
+function distBar(){
+  const vs=inDistrict(), byPop=vs.some(v=>v.pop);
+  const tot=[0,0,0,0];
+  vs.forEach(v=>{const b=band(tOf(v)); if(b>=0) tot[b]+=byPop?(v.pop||0):1;});
+  const sum=tot.reduce((a,b)=>a+b,0)||1, pct=tot.map(x=>100*x/sum);
+  const show=p=>p>0&&p<1?'<1':Math.round(p);
+  const cols=BAND_COLOUR();
+  return `<div class="dist-h">Share of ${byPop?'people':'villages'} by minutes to care</div>
+    <div class="dist" role="img" aria-label="${pct.map((p,i)=>`${BAND_LABEL[i]} minutes: ${show(p)}%`).join(', ')}">
+      ${pct.map((p,i)=>p?`<span style="width:${p}%;background:${cols[i]}"></span>`:'').join('')}</div>
+    <div class="dist-l">${pct.map((p,i)=>`<span><i class="dot" style="background:${cols[i]}"></i>${BAND_LABEL[i]}<b class="mono">${show(p)}%</b></span>`).join('')}</div>`;
 }
 
 function draw(){
