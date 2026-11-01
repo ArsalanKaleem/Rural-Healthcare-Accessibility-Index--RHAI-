@@ -694,7 +694,15 @@ function initMap(){
   map.addControl(new maplibregl.FullscreenControl(),'top-right');
   map.addControl(new ButtonControl([
     {title:'Zoom to district',run:()=>fit(true),
-     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><circle cx="12" cy="12" r="2.5"/></svg>'}
+     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><circle cx="12" cy="12" r="2.5"/></svg>'},
+    // the basemap's roads and Urdu labels can crowd the dots; let people switch it off
+    {title:'Hide basemap',run:btn=>{
+       const off=map.getLayoutProperty('base','visibility')!=='none';
+       map.setLayoutProperty('base','visibility',off?'none':'visible');
+       btn.setAttribute('aria-pressed',off);
+       btn.title=off?'Show basemap':'Hide basemap'; btn.setAttribute('aria-label',btn.title);
+     },
+     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>'}
   ]),'top-right');
   popup=new maplibregl.Popup({closeButton:true,maxWidth:'280px',offset:8});
   popup.on('close',()=>mark(null));
