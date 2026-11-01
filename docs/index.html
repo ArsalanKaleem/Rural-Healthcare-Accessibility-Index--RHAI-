@@ -231,6 +231,9 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
 .ramp-l{display:flex;justify-content:space-between;margin-top:4px;font-size:11px;color:var(--muted)}
 .ring{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid;margin-right:8px;flex:none}
 .legend .scn{margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--sky)}
+.ctl-btn{display:grid!important;place-items:center}
+.ctl-btn svg{width:17px;height:17px;color:var(--ink)}
+.ctl-btn[aria-pressed=true]{background:var(--sky-soft)!important}
 .maplibregl-popup-content{font-family:var(--sans);font-size:13px;padding:12px 14px;border-radius:8px;box-shadow:var(--shadow)}
 .maplibregl-popup-close-button{font-size:18px;width:28px;height:28px}
 .hover-tip .maplibregl-popup-content{padding:6px 10px;font-size:12.5px;pointer-events:none}
@@ -689,6 +692,10 @@ function initMap(){
   });
   map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');
   map.addControl(new maplibregl.FullscreenControl(),'top-right');
+  map.addControl(new ButtonControl([
+    {title:'Zoom to district',run:()=>fit(true),
+     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><circle cx="12" cy="12" r="2.5"/></svg>'}
+  ]),'top-right');
   popup=new maplibregl.Popup({closeButton:true,maxWidth:'280px',offset:8});
   popup.on('close',()=>mark(null));
   hover=new maplibregl.Popup({closeButton:false,closeOnClick:false,className:'hover-tip',offset:10});
@@ -785,6 +792,23 @@ function initMap(){
 }
 
 const fc=f=>({type:'FeatureCollection',features:f});
+
+// a group of plain icon buttons styled like MapLibre's own controls
+class ButtonControl{
+  constructor(btns){ this.btns=btns; }
+  onAdd(){
+    const el=document.createElement('div');
+    el.className='maplibregl-ctrl maplibregl-ctrl-group';
+    this.btns.forEach(b=>{
+      const x=document.createElement('button');
+      x.type='button'; x.className='ctl-btn'; x.title=b.title; x.setAttribute('aria-label',b.title);
+      x.innerHTML=b.icon; x.addEventListener('click',()=>b.run(x));
+      el.appendChild(x);
+    });
+    return el;
+  }
+  onRemove(){}
+}
 
 // dot radius by zoom; with sizeByPop the area tracks village population
 function radius(pad){
