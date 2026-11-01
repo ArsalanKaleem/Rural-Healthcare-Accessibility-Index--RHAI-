@@ -664,6 +664,7 @@ function initMap(){
   map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');
   map.addControl(new maplibregl.FullscreenControl(),'top-right');
   popup=new maplibregl.Popup({closeButton:true,maxWidth:'280px',offset:8});
+  popup.on('close',()=>mark(null));
   hover=new maplibregl.Popup({closeButton:false,closeOnClick:false,className:'hover-tip',offset:10});
 
   map.on('load',()=>{
@@ -678,6 +679,10 @@ function initMap(){
       'circle-radius':radius(0),
       'circle-color':['get','c'],'circle-opacity':1,
       'circle-stroke-width':1.5,'circle-stroke-color':'#fff'}});
+    map.addSource('sel',{type:'geojson',data:fc([])});
+    map.addLayer({id:'sel',type:'circle',source:'sel',paint:{
+      'circle-radius':['interpolate',['linear'],['zoom'],6,10,12,17],
+      'circle-color':'rgba(0,0,0,0)','circle-stroke-width':2.5,'circle-stroke-color':C.ink}});
     map.addSource('f',{type:'geojson',data:fc([])});
     map.addLayer({id:'f',type:'circle',source:'f',paint:{
       'circle-radius':['interpolate',['linear'],['zoom'],6,3,10,5,13,7],
@@ -809,6 +814,11 @@ function drawFac(){
   map.getSource('f').setData(fc(f));
 }
 
+function mark(v){
+  if(!mapReady) return;
+  map.getSource('sel').setData(fc(v?[{type:'Feature',geometry:{type:'Point',coordinates:[v.lon,v.lat]},properties:{}}]:[]));
+}
+
 function showPopup(v){
   hover.remove();
   popup.setLngLat([v.lon,v.lat]).setHTML(`
@@ -817,6 +827,7 @@ function showPopup(v){
     <div class="pop-r"><span>Open data only</span><span class="mono">${mins(v.tA)} min</span></div>
     ${v.pop?`<div class="pop-r"><span>Population</span><span class="mono">${fmt(v.pop)}</span></div>`:''}
   `).addTo(map);
+  mark(v);   // after addTo: reopening fires 'close', which clears the ring
 }
 
 function renderList(){
