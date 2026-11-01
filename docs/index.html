@@ -216,6 +216,11 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
 .band[aria-pressed=false]{opacity:.38;text-decoration:line-through}
 .legend .fac{display:none;margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);gap:3px 14px;grid-template-columns:auto auto}
 .legend.show-fac .fac{display:grid}
+.heat-key{display:none;width:170px}
+.legend.view-heat .heat-key{display:block}
+.legend.view-heat .ks{display:none}
+.ramp{height:10px;border-radius:5px;background:linear-gradient(90deg,rgba(224,172,43,.25),var(--silt),var(--dust),var(--thar),#4a0d0a)}
+.ramp-l{display:flex;justify-content:space-between;margin-top:4px;font-size:11px;color:var(--muted)}
 .ring{display:inline-block;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid;margin-right:8px;flex:none}
 .legend .scn{margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--sky)}
 .maplibregl-popup-content{font-family:var(--sans);font-size:13px;padding:12px 14px;border-radius:8px;box-shadow:var(--shadow)}
@@ -475,13 +480,14 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
       <div id="map" role="region" aria-label="Map of village travel times">
         <div class="loading" id="loading">Loading villages…</div>
         <div class="legend" id="legend">
-          <div class="t">Minutes to nearest facility <span class="hint">· tap to filter</span></div>
+          <div class="t" id="legT">Minutes to nearest facility <span class="hint">· tap to filter</span></div>
           <div class="ks">
             <button type="button" class="k band" data-band="0" aria-pressed="true"><span class="dot" style="background:var(--field)"></span>under 15</button>
             <button type="button" class="k band" data-band="1" aria-pressed="true"><span class="dot" style="background:var(--silt)"></span>15–30</button>
             <button type="button" class="k band" data-band="2" aria-pressed="true"><span class="dot" style="background:var(--dust)"></span>30–60</button>
             <button type="button" class="k band" data-band="3" aria-pressed="true"><span class="dot" style="background:var(--thar)"></span>over 60</button>
           </div>
+          <div class="heat-key" aria-hidden="true"><div class="ramp"></div><div class="ramp-l"><span>fewer people</span><span>more</span></div></div>
           <div class="fac">
             <div class="k"><span class="ring" style="border-color:var(--sky)"></span>PPHI register</div>
             <div class="k"><span class="ring" style="border-color:var(--ink)"></span>Open data</div>
@@ -824,11 +830,18 @@ const VIEW_HINT={
   hex:'Villages grouped into hexagons, coloured by their population-weighted median.',
   heat:'Where people live 30 minutes or more from the nearest facility. Darker means more people.'
 };
+const LEGEND_TITLE={
+  dots:'Minutes to nearest facility <span class="hint">· tap to filter</span>',
+  hex:'Median minutes per hexagon <span class="hint">· tap to filter</span>',
+  heat:'People 30+ min from care'
+};
 
 function setView(k){
   view=k;
   document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.view===k));
   $('viewHint').textContent=VIEW_HINT[k];
+  $('legT').innerHTML=LEGEND_TITLE[k];
+  $('legend').classList.toggle('view-heat',k==='heat');
   popup&&popup.remove();
   draw();
 }
