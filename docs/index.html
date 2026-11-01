@@ -242,6 +242,9 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
 .pop-n{font-family:var(--serif);font-size:16px;margin:0 18px 8px 0;line-height:1.25}
 .pop-r{display:flex;justify-content:space-between;gap:18px;font-size:13px;padding:3px 0;border-top:1px solid var(--rule)}
 .pop-r .mono{font-weight:500}
+.map-note{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:min(320px,80%);
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;box-shadow:var(--shadow);
+  padding:12px 14px;font-size:13.5px;line-height:1.45;text-align:center;color:var(--ink-2)}
 .loading{position:absolute;inset:0;display:grid;place-items:center;background:var(--paper);z-index:5;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em;text-align:center;padding:20px}
 
 /* explorer on phones and tablets: one column, controls → readout → map → list */
@@ -491,6 +494,7 @@ input[type=search]{padding-left:40px;background:#fff url("data:image/svg+xml,%3C
 
       <div id="map" role="region" aria-label="Map of village travel times">
         <div class="loading" id="loading">Loading villages…</div>
+        <div class="map-note" id="mapNote" role="status" hidden></div>
         <div class="legend" id="legend">
           <div class="t" id="legT">Minutes to nearest facility <span class="hint">· tap to filter</span></div>
           <div class="ks">
@@ -936,7 +940,16 @@ function draw(){
   map.getSource('h').setData(fc(view==='hex'?hexFeatures(pts):[]));
   const hull=convexHull(inDistrict().map(v=>[v.lon,v.lat]));
   map.getSource('ext').setData(fc(hull.length>2?[{type:'Feature',geometry:{type:'LineString',coordinates:[...hull,hull[0]]},properties:{}}]:[]));
-  map.getSource('heat').setData(fc(view==='heat'?heatFeatures():[]));
+  const heat=view==='heat'?heatFeatures():[];
+  map.getSource('heat').setData(fc(heat));
+  // say why the map is empty instead of leaving a blank canvas
+  const note = view==='heat'&&!heat.length
+      ? `No villages in ${cur.d} are 30 minutes or more from a facility on this layer.`
+    : view!=='heat'&&!pts.length&&hidden.size
+      ? 'Every travel-time band shown here is switched off. Tap one in the legend to bring it back.'
+    : '';
+  $('mapNote').textContent=note;
+  $('mapNote').hidden=!note;
   drawFac();
 }
 
